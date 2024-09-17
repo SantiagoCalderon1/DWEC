@@ -1,0 +1,36 @@
+<!-- Generador de Contraseñas Aleatorias -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas Aleatorias</title>
+</head>
+<body>
+    <h1>Generador de Contraseñas Aleatorias</h1>
+    <div id="contenedor">
+        <output id="display" readonly> 
+        <div id="options">
+            <input type="checkbox" name="numeros" id="op-1">
+            <label for="op-1">Números.</label>
+            <br>
+            <input type="checkbox" name="letras-mayusculas" id="op-2">
+            <label for="op-2">Letras mayúsculas.</label>
+            <br>
+            <input type="checkbox" name="letras-minusculas" id="op-3">
+            <label for="op-3">Letras minúsculas.</label>
+            <br>
+            <input type="checkbox" name="caracteres-especiales" id="op-4">
+            <label for="op-4">Caracteres especiales.</label>
+            <br>
+        </div>
+        <br>
+            
+        <div id="btns">
+            <button onclick="generatePassword()" id="btn-generate" >Generar Contraseña</button>
+            <button onclick="clearDisplay()" id="btn-clear">Borrar</button>
+        </div>
+    </div>
+    
+</body>
+</html>
