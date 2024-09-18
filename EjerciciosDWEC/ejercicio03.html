@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
-</head>
-<body>
-    <h1>Ejercicio 01</h1>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 03</title>
+        <!-- Santiago Calderon Castaño-->
+
+  </head>
+  <body>
+    <!--Ejercicio 03
+    Crear un Array asociativo con los índices marca, modelo, fecha, cilindrada, motor, potencia
+    y asignarle valores. Mostrar el resultado. -->
+    <h1>Ejercicio 03</h1>
+
+    <script>
+      /*Este ejercicio no lo pedían pero investigando en internet lo que es
+      un Array Asociativo, descubrí que es un array de tipo objeto.*/
+      let ArrayAsociativo = {
+        marca: "Ferrari",
+        modelo: "Huracan",
+        fecha: "2015",
+        cilindrada: 5.2,
+        motor: "Gasolina",
+        potencia: 640,
+      };
+
+      //Para acceder al valor de un elemento del array asociativo se usa . y el atributo
+      document.write(
+        "La marca del coche es: " +
+          ArrayAsociativo.marca +
+          "<br> El modelo del coche es: " +
+          ArrayAsociativo.modelo +
+          "<br>  La fecha de fabricación del coche es: " +
+          ArrayAsociativo.fecha +
+          "<br> La cilindrada del coche es: " +
+          ArrayAsociativo.cilindrada +
+          "<br> El tipo de motor del coche es: " +
+          ArrayAsociativo.motor +
+          "<br> La potencia del coche es: " +
+          ArrayAsociativo.potencia
+      );
+    </script>
+  </body>
 </html>
