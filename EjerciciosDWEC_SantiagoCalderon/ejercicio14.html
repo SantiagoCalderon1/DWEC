@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 13</title>
+    <!-- Santiago Calderon Castaño-->
+</head>
+
+<body>
+    <h1>Ejercicio 13</h1>
+    <!--EJERCICIO 13.
+    Programa que muestre en pantalla la tabla de multiplicar del 1 al 10 -->
+    <script>
+
+        for (let index1 = 1; index1 < 11; index1++) { // Empezamos el for con index1 = 1 porque no queremos la tabla del 0
+            document.write('<br>', "Tabla del " + index1, '<br>', "**********", '<br>'); //aqui se imprime Tabla del x por cada tabla que queremos
+            for (let index2 = 1; index2 < 11; index2++) { // segundo for que será el que se itere 10 veces por cada tabla, que lo usaremos para el resultado de la multiplicación
+                document.write(index1 + " x " + index2 + " = " + (index1 * index2), '<br>'); // hacemos e imprimios la operación 
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

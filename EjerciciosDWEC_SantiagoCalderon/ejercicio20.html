@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 20</title>
+    <!-- Santiago Calderon Castaño-->
+  </head>
+
+  <body>
+    <h1>Ejercicio 20</h1>
+    <!--EJERCICIO  20
+    Realizar un juego para adivinar un número. Para ello pedir un número N, y luego ir pidiendo
+números indicando “mayor” o “menor” según sea mayor o menor con respecto a N. El
+proceso termina cuando el usuario acierta-->
+
+    <script>
+      let numeroSecreto = Math.floor(Math.random() * 100); //Genera un número aleatorio entre 0 y 99
+      let continuar = true;
+      do {
+        let numero = parseInt(prompt("Ingrese un número: "));
+
+        if (numero == numeroSecreto) {
+          //Si el número ingresado es igual al número secreto
+          alert("¡Lo has acertado!");
+          continuar = false;
+        } else if (numero < numeroSecreto) {
+          //Si el número ingresado es menor que el número secreto
+          alert("El número introducido es menor.");
+          continuar = true;
+        } else if (numero > numeroSecreto) {
+          //Si el número ingresado es mayor que el número secreto
+          alert("El número introducido es mayor.");
+          continuar = true;
+        }
+      } while (continuar);
+    </script>
+  </body>
+</html>

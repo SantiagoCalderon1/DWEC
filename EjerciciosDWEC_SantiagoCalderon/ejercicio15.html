@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 15</title>
+    <!-- Santiago Calderon Castaño-->
+</head>
+
+<body>
+    <h1>Ejercicio 15</h1>
+    <!--EJERCICIO 15.
+    Programa que muestre los números del 1 al 100 sin mostrar los múltiplos de 5.  -->
+
+    <script>
+        for (let index = 1; index < 101; index++) { // El for para listar los numeros de 1 (inlcuido) a 101 (excluido)
+            if (index % 5 == 0) { // aqui filtramos, si el modulo 5 de un numero es igual a 0 significa que ese número es multiplo de 5
+                document.write(index, '<br>') //aqui imprimimos el número
+            }
+        }
+    </script>
+</body>
+
+</html>

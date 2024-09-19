@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 22</title>
+    <!-- Santiago Calderon Castaño-->
+  </head>
+
+  <body>
+    <h1>Ejercicio 22</h1>
+    <!--EJERCICIO  22
+    Pedir números hasta que se introduzca uno negativo, y calcular la media. -->
+
+    <script>
+      let continuar; //uso esta variable como auxiliar para saber si se debe continuar o no
+      let contador = 0; //variable para contar los números introducidos y poder hacer la media
+      let suma = 0; //variable para sumar los números introducidos y poder hacer la media
+      do {
+        let numero = parseInt(
+          prompt("Ingrese un número (negativo para terminar): ")
+        ); //pedir un número al usuario
+
+        if (numero < 0) {
+          alert("La media es " + suma / contador);
+          continuar = false;
+        } else {
+          contador++; //incremento el contador cada vez que se introduce un número positivo
+          suma += numero; //sumo el número introducido a la suma
+          continuar = true; //si se introduce un número positivo, se debe seguir pidiendo números
+        }
+      } while (continuar); // mientras que la  variable sea true, se ejecutará el bucle
+    </script>
+  </body>
+</html>
