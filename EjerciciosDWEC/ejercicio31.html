@@ -4,16 +4,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 31</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 31</h1>
+    <!--EJERCICIO 31
+    Pide un número (que debe estar entre 0 y 10) y mostrar la tabla de multiplicar de dicho
+número.  -->
 
     <script>
+        //Declaraciones de variables
+        let numero = 0, continuar;
+        do {
+            numero = parseInt(prompt(`Ingrese un número entre 0 y 10: `)); //pido al usuario un numero
+            continuar = false;
+            if (numero < 0 || numero > 10) { //filtro el numero
+                alert("Error, el numero debe estar entre 0 y 10.")
+                continuar = true;
+            }
+        } while (continuar);
 
+        for (let index = 1; index < 11; index++) { // creo la tabla de multiplicar
+            let resultado = numero * index;
+            document.write(`${numero} x ${index} = ${resultado}`, '<br>');
+        }
     </script>
 </body>
 

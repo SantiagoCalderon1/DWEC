@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 30</title>
     <!-- Santiago Calderon Castaño-->
 </head>
-
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 30</h1>
+    <!--EJERCICIO 30 
+    Dadas las edades y alturas de 5 alumnos, mostrar la edad y la estatura media, la cantidad
+de alumnos mayores de 18 años, y la cantidad de alumnos que miden más de 1.75. -->
 
     <script>
+        let cantidadMayoresEdad = 0, cantidadMasAltura_175 = 0, edades = 0, alturas = 0;
+        for (let index = 1; index < 6; index++) {  // For de 1 a 6
+            let edad = parseInt(prompt(`Ingrese la edad  número ${index}`)); // pido las edades 
+            if (edad > 18) {
+                cantidadMayoresEdad++;
+            }
+            edades += edad;
+        }
+
+        for (let index = 1; index < 6; index++) {  // For de 1 a 6
+            let altura = parseInt(prompt(`Ingrese la altura número ${index}`)); // pido las alturas 
+            if (altura > 1.75) {
+                cantidadMasAltura_175++; //esta variable le puse un nombre muy largo y raro, normalmente no suelo hacerlo.
+            }
+            alturas += altura;
+        }
+
+        //imprimios los datos
+        document.write("La edad media es: " + (edades / 5), '<br>',
+            "La estatura media es: " + (alturas / 5), '<b>');
+
+        document.write("La cantidad de alumnos mayores de 18 es: " + cantidadMayoresEdad, '<br>', 
+            "La cantidad de alumnos que midem más de 1.75cm es: " + cantidadMasAltura_175);
 
     </script>
 </body>
