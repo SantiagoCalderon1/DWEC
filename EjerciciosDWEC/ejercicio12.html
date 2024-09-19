@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 12</title>
-    <!-- Santiago Calderon Castaño-->
-  </head>
-  <body>
-    <h1>Ejercicio 12</h1>
-    <!--EJERCICIO 12.
-    Programa que muestre por pantalla los 5 primeros números pares. -->
-    <script>
-      let contador = 0;
-      let index = 1;
 
-      do {
-        if (index % 2 == 0) {
-            "Número par: " + index;
-            contador++;
-            index++;
-        }else{
-            contador--;
-        }
-      } while (contador <= 5);
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 12</title>
+  <!-- Santiago Calderon Castaño-->
+</head>
+
+<body>
+  <!--EJERCICIO 12.
+    Programa que muestre por pantalla los 5 primeros números pares. -->
+  <h1>Ejercicio 12</h1>
+  <script>
+    let i = 1, contador = 0;
+
+    while (contador < 5) {
+      if (i % 2 == 0) {  // si el modulo de i es igual a 0, i sería un número par
+        contador++; // aquí aumentamos 1 en el contador 
+        document.write(i, '<br>');  //imprimimos a i
+      }
+      i++; // aquí aumentamos 1 a i
+    }
+  </script>
+</body>
 </html>
