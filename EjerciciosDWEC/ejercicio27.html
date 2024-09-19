@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 27</title>
     <!-- Santiago Calderon Castaño-->
-</head>
+  </head>
 
-<body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+  <body>
+    <h1>Ejercicio 27</h1>
+    <!--EJERCICIO 27
+    Pedir un número y calcular su factorial. -->
 
     <script>
-
+      let numero = parseInt(prompt("Ingrese un número: "));
+      let factorial = 1;
+      for (let index = numero; index > 0; index--) {
+        factorial *= index;
+      }
+      document.write("El factorial de " + numero + " es " + factorial);
     </script>
-</body>
-
+  </body>
 </html>

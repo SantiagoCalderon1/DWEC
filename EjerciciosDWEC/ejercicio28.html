@@ -1,20 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 28</title>
     <!-- Santiago Calderon Castaño-->
-</head>
+  </head>
 
-<body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+  <body>
+    <h1>Ejercicio 28</h1>
+    <!--EJERCICIO  28
+        Pedir 10 números. Mostrar la media de los números positivos, la media de los números
+negativos y la cantidad de ceros. -->
 
     <script>
+      let cantidadPositivos = 0,
+        cantidadNegativos = 0,
+        cantidadCeros = 0,
+        sumaPositivos = 0,
+        sumaNegativos = 0,
+        sumaCeros = 0;
 
+      for (let index = 1; index < 11; index++) {
+        let numero = parseInt(prompt(`Ingrese el número ${index}`));
+
+        if (numero > 0) {
+          cantidadPositivos++;
+          sumaPositivos += numero;
+        } else if (numero < 0) {
+          cantidadNegativos++;
+          sumaNegativos += numero;
+        } else if (numero == 0) {
+          cantidadCeros++;
+          sumaCeros += numero;
+        }
+      }
+
+      document.write(
+        "Cantidad de positivos: " +
+          cantidadPositivos +
+          "  Media de los positivos: " +
+          sumaPositivos * cantidadPositivos,
+        "<br>"
+      );
+
+      document.write(
+        "Cantidad de negativos: " +
+          cantidadNegativos +
+          "  Media de los negativps: " +
+          sumaNegativos * cantidadNegativos,
+        "<br>"
+      );
+
+      document.write(
+        "Cantidad de ceros: " +
+          cantidadCeros +
+          "  Media de los ceros: " +
+          sumaCeros * cantidadCeros,
+        "<br>"
+      );
     </script>
-</body>
-
+  </body>
 </html>
