@@ -4,16 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 23</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 23</h1>
+    <!--EJERCICIO  23
+        Pedir un número N, y mostrar todos los números del 1 al N. -->
 
     <script>
+        let numero = parseInt(
+          prompt("Ingrese un número (negativo para terminar): ")
+        ); //pedir un número al usuario
 
+        for (let index = 1; index <= numero; index++) {
+            document.write(index,'<br>');
+        } 
     </script>
 </body>
 

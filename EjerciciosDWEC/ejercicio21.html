@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 21</title>
     <!-- Santiago Calderon Castaño-->
-</head>
+  </head>
 
-<body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+  <body>
+    <h1>Ejercicio 21</h1>
+    <!--EJERCICIO  21
+    Pedir números hasta que se teclee un 0, mostrar la suma de todos los números introducidos. -->
 
     <script>
+      let suma = 0;
+      let continuar = true; //Variable para controlar el bucle while
+      do {
+        let numero = parseInt(prompt("Introduce un número (0 para terminar)"));  //Pedimos un número al usuario
 
+        if (numero != 0) {
+          suma += numero;   //Si el número no es 0, lo sumamos a la suma
+          continuar = true;  //Si el número no es 0, seguimos en el bucle
+        } else {
+          alert("la suma de todos los números introducidos es: " + suma);   //Si el número es 0, mostramos la suma y salimos del bucle
+          continuar = false;
+        }
+      } while (continuar);   //Mientras la variable sea true, seguimos en el bucle
     </script>
-</body>
-
+  </body>
 </html>

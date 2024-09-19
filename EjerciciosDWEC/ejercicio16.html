@@ -14,7 +14,7 @@
     Leer un número y mostrar su cuadrado, repetir el proceso hasta que se introduzca un número negativo. -->
 
     <script>
-        let continuar;
+        let continuar; //uso esta variable como auxiliar para saber si se debe continuar o no
         do {
             let num = parseInt(prompt("Introduce un número para hallar su cuadrado o un número negativo para terminar: "));
             if (num >= 0) {
@@ -24,7 +24,7 @@
                 alert("Adíos...")
                 continuar = false;
             }
-        } while (continuar);
+        } while (continuar); // mientras que la  variable sea true, se ejecutará el bucle
     </script>
 </body>
 

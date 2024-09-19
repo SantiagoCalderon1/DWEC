@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 17</title>
     <!-- Santiago Calderon Castaño-->
-</head>
+  </head>
 
-<body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+  <body>
+    <h1>Ejercicio 17</h1>
+    <!--EJERCICIO  
+    Leer un número e indicar si es positivo o negativo. El proceso se repetirá hasta que se
+introduzca un 0. -->
 
     <script>
-
+      let continuar= true; //uso esta variable como auxiliar para saber si se debe continuar o no
+      do {
+        let numero = parseInt(prompt("Ingrese un número (0 para terminar): "));
+        if (numero > 0) {
+          alert("El número es positivo");
+          continuar = true;
+        } else if (numero < 0) {
+          alert("El número es negativo");
+          continuar = true;
+        } else if (numero == 0) {
+          alert("Adíos...");
+          continuar = false;
+        }
+      } while (continuar); // mientras que la  variable sea true, se ejecutará el bucle
     </script>
-</body>
-
+    </script>
+  </body>
 </html>
