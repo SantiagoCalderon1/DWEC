@@ -1,1 +1,92 @@
-/* Generador de Contraseñas Aleatorias */
+/* Generador de Contraseñas Aleatorias  Santiago Calderon Castaño*/
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#contenedor {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+
+/* Estilo para la salida de la contraseña */
+#display {
+    background-color: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Opciones de checkboxes */
+#options {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.check {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Botones */
+#btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+#btn-clear {
+    background-color: #e74c3c;
+}
+
+#btn-clear:hover {
+    background-color: #c0392b;
+}
+
+
+
