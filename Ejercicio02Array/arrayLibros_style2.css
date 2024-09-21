@@ -1,0 +1,47 @@
+/* Tipografía*/
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    padding: 25px;
+}
+
+table{
+    width: 100%;
+    border: none;
+    box-shadow: 0 4px 10px #6c6b6b;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #2e4b9c;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    width: 33%;
+}
+
+td{
+    background-color: #abd4e4;
+    color: #000;
+    padding: 10px;
+    text-align: left;
+    width: 66%;
+}
+
+th:hover, td:hover{
+    background-color: #e1f5fe;
+    color: #000;
+    cursor: pointer;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+    /* Color alternado para filas */
+}

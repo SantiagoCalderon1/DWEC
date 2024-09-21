@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio sobre arrays</title>
+  <link rel="stylesheet" href="arrayLibros_style.css">
+  <!--Ejercicio sobre Array - Santiago Calderon Castaño-->
+</head>
+
+<body>
+  <h1>Ejercicio sobre array</h1>
+
+  <div id="buscar">
+    <input id="input"></input>
+    <button onclick="buscarLibro()" id="btn-Buscar">Buscar</button>
+    <button onclick="limpiarBusqueda()" id="btn-Borrar">Limpiar Busqueda</button>
+  </div>
+  <!--
+  Para recordar!!!!!
+  <tr>: Table Row (fila).
+  <th>: Table Header (encabezado).
+  <td>: Table Data (datos)
+    -->
+
+  <table border="1">
+    <tr>
+      <th>Código</th>
+      <td id="codigo"></td>
+    </tr>
+    <tr>
+      <th>Título</th>
+      <td id="titulo"></td>
+    </tr>
+    <tr>
+      <th>Autor</th>
+      <td id="autor"></td>
+    </tr>
+    <tr>
+      <th>Editorial</th>
+      <td id="editorial"></td>
+    </tr>
+    <tr>
+      <th>Tema</th>
+      <td id="tema"></td>
+    </tr>
+    <tr>
+      <th>ISBN</th>
+      <td id="isbn"></td>
+    </tr>
+    <tr>
+      <th>Páginas</th>
+      <td id="paginas"></td>
+    </tr>
+    <tr>
+      <th>Precio</th>
+      <td id="precio"></td>
+    </tr>
+  </table>
+  <script src="arrayLibros_js.js"></script>
+</body>
+
+</html>

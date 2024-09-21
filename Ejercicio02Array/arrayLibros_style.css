@@ -1,0 +1,125 @@
+/*Ejercicio sobre Array - Santiago Calderon Castaño*/
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    /* Fondo suave */
+    color: #000000;
+    /* Color de texto */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4A90E2;
+    /* Color azul */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    /* Tamaño de fuente grande */
+}
+
+#buscar {
+    display: flex;
+    justify-content: center;
+    /* Posicionar los botones en el medio */
+    margin: 20px 0;
+    /* Espacio entre los botones con respecto al título y la tabla*/
+}
+
+#input {
+    padding: 10px;
+    border: 1px solid #4A90E2;
+    /* Color de borde muy mono azul */
+    border-radius: 5px;
+    /* Bordes redondeados del input */
+    width: 250px;
+    /* Ajusta el tamaño según sea necesario */
+    font-size: 16px;
+    /* Tamaño de fuente para el input */
+}
+
+#btn-Buscar,
+#btn-Borrar {
+    padding: 10px 15px;
+    margin-left: 10px;
+    /* Espaciado entre botones */
+    border: none;
+    border-radius: 5px;
+    /* Bordes redondeados de los botones */
+    background-color: #4A90E2;
+    /* Color de fondo */
+    color: white;
+    /* Color de texto */
+    font-size: 16px;
+    /* Tamaño de fuente para los botones */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s;
+    /* Suave transición */
+}
+
+#btn-Buscar:hover,
+#btn-Borrar:hover {
+    background-color: #357ABD;
+    /* Color al pasar el ratón */
+}
+
+#btn-Borrar {
+    background-color: #D9534F;
+    /* Color diferente para el botón de limpiar */
+}
+
+#btn-Borrar:hover {
+    background-color: #C9302C;
+    /* Color al pasar el ratón para limpiar */
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    /* Eliminar espacios entre celdas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+th {
+    font-size: 25px;
+    background-color: #4A90E2;
+    /* Color de fondo para encabezados */
+    color: white;
+    /* Texto blanco para el encabezado */
+    padding: 13px;
+    /* Espaciado */
+    text-align: left;
+    /* Alinear texto a la izquierda */
+    width: 125px;
+    /* Tamaño de celda*/
+}
+
+td {
+    font-size: 25px;
+    background-color: #fff;
+    /* Fondo blanco para datos */
+    padding: 15px;
+    /* Espaciado */
+    border-bottom: 1px solid #ddd;
+    /* Línea separadora */
+    width: 250px;
+    /* Tamaño de celda*/
+}
+
+tr:nth-child(even) td {
+    background-color: #f8f5f5;
+    /* Color alternado para filas */
+}
+
+th:hover {
+    background-color: #e1f5fe;
+    /* Color de fondo al pasar el ratón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón */
+    color: #000;
+    /* Texto negro al pasar el ratón */
+}
