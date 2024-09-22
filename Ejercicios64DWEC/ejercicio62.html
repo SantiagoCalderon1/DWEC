@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 62</title>
+    <!-- Santiago Calderon Castaño-->
+</head>
+
+<body>
+    <!-- EJERCICIO  62
+    Escribe un programa que muestre, cuente y sume los múltiplos de 3 que hay entre 1 y un
+    número leído por teclado. -->
+    <h1>Ejercicio 62</h1>
+
+    <script>
+        let numero = parseInt(prompt("Introduce un número"));
+
+        for (let index = 1; index <= numero; index++) { // El for para listar los numeros de 1 (inlcuido) a numero (incluido)
+            if (index % 3 == 0) { // aqui filtramos, si el modulo 3 de un numero es igual a 0 significa que ese número es multiplo de 3
+                document.write(index, '<br>') //aqui imprimimos el número
+            }
+        }
+    </script>
+</body>
+
+</html>

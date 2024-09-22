@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 60</title>
+    <!-- Santiago Calderon Castaño-->
+</head>
+
+<body>
+    <!-- EJERCICIO  60
+     Realiza un programa que vaya pidiendo números hasta que se introduzca un 
+     numero negativo y nos diga cuantos números se han introducido, la media 
+     de los impares y el mayor de los pares. El número negativo sólo se utiliza
+    para indicar el final de la introducción de datos, pero no se incluye en 
+    el cómputo. -->
+    <h1>Ejercicio 60</h1>
+
+    <script>
+        // Inicializamos los arrays para almacenar los números pares e impares
+        let pares = [];
+        let impares = [];
+
+        let contador = 0;
+        let continuar = true;
+
+        do {
+            let num = parseInt(prompt("Introduce un número (negativo para finalizar): "));
+            // Si el número es negativo, salimos del bucle
+            if (num < 0) {
+                continuar = false;
+            } else {
+                contador++;
+                // Si el número es par, lo agregamos al array de pares
+                if (num % 2 === 0) {
+                    pares.push(num);
+                } else { // Si el número es impar, lo agregamos al array de impares
+                    impares.push(num);
+                }
+            }
+        } while (continuar)
+
+        // Calculamos la media de los impares
+        let mediaImpares = impares.length > 0 ? impares.reduce((a, b) => a + b, 0) / impares.length : 0;
+        /*
+        reduce es un método que reduce un array a un único valor aplicando una 
+        función a cada elemento. 
+        En este caso, (a, b) => a + b suma los elementos del array `impares`, 
+        comenzando con 0 como acumulador. Devuelve la suma de todos los números
+        impares. */
+
+        // Calculamos el mayor de los pares, la función max devuelve el mayor de todos los pares
+        let mayorPar = pares.length > 0 ? Math.max(...pares) : 0;
+        /* 
+        ...pares es el operador spread, que "expande" el array `pares` en una 
+        lista de valores. 
+        Por ejemplo, si `pares = [2, 4, 6, 8]`, se convierte en Math.max(2, 4, 6, 8), 
+        y devuelve el mayor valor, que es 8. 
+        */
+
+
+        // Mostramos los resultados
+        alert(`Se han introducido ${contador} números.`);
+        alert(`La media de los impares es ${mediaImpares.toFixed(2)}.`);
+        alert(`El mayor de los pares es ${mayorPar}.`);
+    </script>
+</body>
+
+</html>

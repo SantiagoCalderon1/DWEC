@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 59</title>
+    <!-- Santiago Calderon Castaño-->
+</head>
+
+<body>
+    <!-- EJERCICIO  59
+    Escribe un programa que obtenga los números enteros comprendidos entre dos 
+    números introducidos por teclado y validados como distintos, el programa 
+    debe empezar por el menor de los enteros introducidos e ir incrementando 
+    de 7 en 7. -->
+    <h1>Ejercicio 59</h1>
+    <script>
+        //declaración de variables
+        let num1 = 0;
+        let num2 = 0;
+
+        // Pedimos al usuario que introduzca dos números enteros distintos
+        do {
+            num1 = parseInt(prompt("Introduce un número."));
+            num2 = parseInt(prompt("Introduce un número."));
+
+            if (num1 === num2) {
+                alert("Los números deben ser distintos");
+            }
+        } while (num1 === num2);
+
+        // buscamos el menor y mayor para saber los limites
+        let menor = Math.min(num1, num2);
+        let mayor = Math.max(num1, num2);
+
+        // array para almacenar los datos
+        let resultado = [];
+        for (let i = menor; i <= mayor; i += 7) {
+            resultado.push(i);
+        }
+
+        // imprimir los resultados
+        alert("Los números enteros comprendidos entre " + menor + " y " + mayor + " son: " + resultado.join(", "));
+
+    </script>
+</body>
+
+</html>

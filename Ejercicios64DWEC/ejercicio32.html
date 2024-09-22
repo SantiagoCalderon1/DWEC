@@ -4,16 +4,96 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 32</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 32</h1>
+    <!--EJERCICIO  32
+    Una empresa que se dedica a la venta de desinfectantes necesita un programa 
+    para gestionar las facturas. En cada factura figura: el código del artículo, 
+    la cantidad vendida en litros y el precio por litro.
+
+    Se pide de 5 facturas introducidas: Facturación total, cantidad en litros 
+    vendidos del artículo 1 y cuantas facturas se emitieron de más de 600 €. -->
+
+    <table border="1">
+        <tr>
+            <th>Cantidad de litros vendidos</th>
+            <td id="cantidadVendida"></td>
+        </tr>
+        <tr>
+            <th>Número de facturas mayor a 600€</th>
+            <td id="numeroFacturas"></td>
+        </tr>
+        <tr>
+            <th>Facturación total</th>
+            <td id="facturacionTotal"></td>
+        </tr>
+    </table>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Cantidad de litros vendidos fact 1</th>
+            <td id="Cant-Vend-Fact-1"></td>
+        </tr>
+    </table>
 
     <script>
+        // Array de facturas
+        let facturas = [
+            {
+                codigo: "001",
+                cantidad: 130,
+                precio: 25,
+            }, {
+                codigo: "002",
+                cantidad: 141,
+                precio: 13,
+            }, {
+                codigo: "003",
+                cantidad: 72,
+                precio: 50
+            }, {
+                codigo: "004",
+                cantidad: 10,
+                precio: 120,
+            }, {
+                codigo: "005",
+                cantidad: 85,
+                precio: 190
+            }];
 
+        let facturacionTotal = 0;
+        let cantidadVendida = 0;
+        let cantidadFacturasMayorA600 = 0;
+
+        let cantidadLitrosVendidosArticulo1 = 0;
+
+        facturas.forEach(factura => {
+            if ((factura.precio * factura.cantidad) > 0) {
+                facturacionTotal += factura.precio * factura.precio;
+            }
+
+            if (factura.cantidad > 0) {
+                cantidadVendida += factura.cantidad;
+            }
+
+            if ((factura.precio * factura.cantidad) > 600) { 
+                cantidadFacturasMayorA600++;
+            }
+
+            if (factura.codigo === "001") {
+                cantidadLitrosVendidosArticulo1 += factura.cantidad;
+            }
+        });
+
+        // imprimiendo los datos
+        document.getElementById("facturacionTotal").innerHTML = facturacionTotal + " €";
+        document.getElementById("cantidadVendida").innerHTML = cantidadVendida + " lt";
+        document.getElementById("numeroFacturas").innerHTML = cantidadFacturasMayorA600;
+        document.getElementById("Cant-Vend-Fact-1").innerHTML = cantidadLitrosVendidosArticulo1 + " lt";
     </script>
 </body>
 

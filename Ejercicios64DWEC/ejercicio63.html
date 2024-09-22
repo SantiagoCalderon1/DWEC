@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 63</title>
+    <!-- Santiago Calderon Castaño-->
+</head>
+
+<body>
+    <!-- EJERCICIO 63
+    Escribe un programa que calcule el factorial de un número entero leído por teclado. -->
+    <h1>Ejercicio 63</h1>
+
+    <script>
+        // Pedimos al usuario que introduzca un número entero
+        let numero = parseInt(prompt("Introduce un número"));
+        let suma = 0;
+        if (numero < 0) {
+            alert("por favor introduce un número positivo.")
+        } else {
+            let factorial = 1;
+            for (let index = numero; index > 0; index--) {
+                factorial *= index;
+            }
+            document.write("El factorial de " + numero + " es " + factorial);
+        }
+    </script>
+</body>
+
+</html>
