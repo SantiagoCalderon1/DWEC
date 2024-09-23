@@ -4,15 +4,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 38</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 38</h1>
+    <!--EJERCICIO  38
+    Pedir 5 números e indicar si alguno es múltiplo de 3.-->
 
     <script>
+        let esMultiploDeTres = false;
+
+        // Pedimos 5 números al usuario
+        for (let i = 1; i <= 5; i++) {
+            let numero = parseInt(prompt(`Introduce el número ${i}:`));
+
+            // Comprobamos si el número es múltiplo de 3
+            if (numero % 3 === 0) {
+                esMultiploDeTres = true;
+            }
+        }
+
+        // Mostramos el resultado
+        if (esMultiploDeTres) {
+            alert("Al menos uno de los números es múltiplo de 3.");
+        } else {
+            alert("Ninguno de los números es múltiplo de 3.");
+        }
 
     </script>
 </body>

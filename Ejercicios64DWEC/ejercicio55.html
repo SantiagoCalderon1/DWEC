@@ -4,14 +4,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 55</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO  55
+    Escribe un programa que muestre en tres columnas, el cuadrado y el cubo de los 5 primeros
+números enteros a partir de uno que se introduce por teclado. -->
+    <h1>Ejercicio 55</h1>
     <script>
+        // Pedir al usuario que introduzca un número
+        let num = parseInt(prompt("Introduce un número entero: "));
+
+        // Verificar que el número sea un entero
+        if (Number.isInteger(num)) {
+            document.write("<table border='1'>");
+            document.write("<tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>");
+
+            // Mostrar los 5 primeros números, con su cuadrado y su cubo
+            for (let i = num; i < num + 5; i++) {
+                let cuadrado = i * i;
+                let cubo = i * i * i;
+                document.write(`<tr><td>${i}</td><td>${cuadrado}</td><td>${cubo}</td></tr>`);
+            }
+
+            document.write("</table>");  // Cerrar la tabla
+        } else {
+            alert("Por favor, introduce un número entero válido.");
+        }
     </script>
 </body>
 

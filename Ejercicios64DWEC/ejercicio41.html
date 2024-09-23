@@ -4,14 +4,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 41</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO  41
+     Escribe un programa que calcule el salario semanal de un trabajador teniendo en cuenta
+    que las horas ordinarias (40 primeras horas de trabajo) se pagan a 12 euros la hora. A partir
+    de la hora 41, se pagan a 16 euros la hora.-->
+    <h1>Ejercicio 41</h1>
     <script>
+        let horasTrabajadas = parseInt(prompt("Introduce las horas trabajadas en la semana: "));
+
+        const tarifaOrdinaria = 12; // Euros por hora para las primeras 40 horas
+        const tarifaExtra = 16; // Euros por hora a partir de la hora 41
+
+        let salario = 0;
+
+        // Calculamos el salario según las horas trabajadas
+        if (horasTrabajadas <= 40) {
+            salario = horasTrabajadas * tarifaOrdinaria;
+        } else {
+            let horasExtra = horasTrabajadas - 40;
+            salario = (40 * tarifaOrdinaria) + (horasExtra * tarifaExtra);
+        }
+
+        // Mostramos los datos
+        alert("El salario semanal es: " + salario.toFixed(2) + " euros.");
+
     </script>
 </body>
 

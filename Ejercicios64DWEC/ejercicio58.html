@@ -4,14 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 58</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO  58
+    Realiza un programa que sume los 100 números siguientes a un número entero y positivo
+    introducido por teclado. Se debe comprobar que el dato introducido es correcto (que es un
+    número positivo). -->
+    <h1>Ejercicio 58</h1>
+    
     <script>
+        let num = parseInt(prompt("Introduce un número"));
+
+        if (typeof num === "number" && num >= 0) {
+            let aux = 0;
+            for (let index = (num + 1); index <= (num + 100); index++){
+                aux += index;
+            }
+            alert("El resultado es: " + aux);
+        } else {
+            alert("Debe ser un número entero positivo");
+        }
     </script>
 </body>
 

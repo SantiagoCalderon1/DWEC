@@ -4,14 +4,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 45</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
+    <!-- EJERCICIO  45
+     Realiza un minicuestionario con 4 preguntas tipo test sobre las asignaturas que se imparten
+en el curso. Cada pregunta acertada sumará un punto. El programa mostrará al final la
+calificación obtenida. -->
     <h1>Ejercicio </h1>
     <script>
+        let puntuacion = 0;
+
+        let respuesta1 = prompt("1. ¿Cuál es la abreviación de Desarrollo de aplicaciones web?\nA) DAW\nB) DIW\nC) DWEC").toUpperCase();
+        if (respuesta1 === "A") {
+            puntuacion++;
+        }
+
+        let respuesta2 = prompt("2. ¿Qué lenguaje se utiliza para hacer páginas web?\nA) HTML\nB) C++\nC) Python").toUpperCase();
+        if (respuesta2 === "A") {
+            puntuacion++;
+        }
+
+        let respuesta3 = prompt("3. ¿Cuál es el símbolo de JavaScript?\nA) JS\nB) JAVA\nC) JSS").toUpperCase();
+        if (respuesta3 === "A") {
+            puntuacion++;
+        }
+
+        let respuesta4 = prompt("4. ¿Qué asignatura se centra en el diseño de bases de datos?\nA) Programación\nB) Sistemas de Información\nC) Matemáticas").toUpperCase();
+        if (respuesta4 === "B") {
+            puntuacion++;
+        }
+
+        alert("Tu puntuación final es: " + puntuacion + " de 4");
+
     </script>
 </body>
 

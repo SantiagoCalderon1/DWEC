@@ -4,14 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 42</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO 42
+    Realiza un programa que calcule la media de tres notas. -->
+    <h1>Ejercicio 42</h1>
     <script>
+        // Pedimos al usuario que introduzca tres notas
+        let nota1 = parseFloat(prompt("Introduce la primera nota: "));
+        let nota2 = parseFloat(prompt("Introduce la segunda nota: "));
+        let nota3 = parseFloat(prompt("Introduce la tercera nota: "));
+
+        // Calculamos la media
+        let media = (nota1 + nota2 + nota3) / 3;
+
+        // Mostramos el resultado
+        alert("La media de las tres notas es: " + media.toFixed(2));
+
     </script>
 </body>
 

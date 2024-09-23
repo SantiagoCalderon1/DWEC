@@ -4,14 +4,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 57</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO  57
+    Escribe un programa que diga si un número introducido por teclado es o no primo. Un
+número primo es aquel que sólo es divisible entre él mismo y la unidad. -->
+    <h1>Ejercicio 57</h1>
     <script>
+        // Pedimos al usuario que introduzca un número
+        let num = parseInt(prompt("Introduce un número."))
+        let esPrimo = false;
+
+        if (num <= 1) {
+            esPrimo = false
+        } else if (num == 2) {
+            esPrimo = true;
+        } else if (num > 2) {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    esPrimo = false; // Si se encuentra un divisor, no es primo
+                }
+            }
+        } else {
+            esPrimo = true;
+        }
+
+        alert("El número " + num + " " + (esPrimo ? "es primo" : "no es primo"));
     </script>
 </body>
 

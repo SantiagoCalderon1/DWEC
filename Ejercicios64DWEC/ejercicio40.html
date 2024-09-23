@@ -4,15 +4,50 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 40</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 40</h1>
+    <!--EJERCICIO  40
+    Escribe un programa en que dado un número del 1 a 7 escriba el correspondiente nombre
+del día de la semana. 
+
+-->
 
     <script>
+        let diaNumero = parseInt(prompt("Introduce un número del 1 al 7:"));
+
+        let nombreDia;
+
+        switch (diaNumero) {
+            case 1:
+                nombreDia = "Lunes";
+                break;
+            case 2:
+                nombreDia = "Martes";
+                break;
+            case 3:
+                nombreDia = "Miércoles";
+                break;
+            case 4:
+                nombreDia = "Jueves";
+                break;
+            case 5:
+                nombreDia = "Viernes";
+                break;
+            case 6:
+                nombreDia = "Sábado";
+                break;
+            case 7:
+                nombreDia = "Domingo";
+                break;
+            default:
+                nombreDia = "Número inválido. Debe ser del 1 al 7.";
+        }
+
+        alert("El día de la semana correspondiente es: " + nombreDia);
 
     </script>
 </body>

@@ -4,15 +4,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 37</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 37</h1>
+    <!--EJERCICIO  37
+    Pedir 5 calificaciones de alumnos y decir al final si hay algún suspenso. -->
 
     <script>
+        let haySuspenso = false;
+
+        // Pedimos 5 calificaciones al usuario
+        for (let i = 1; i <= 5; i++) {
+            let calificacion = parseFloat(prompt(`Introduce la calificación del alumno ${i}:`));
+
+            // Comprobamos si la calificación es menor que 5 (suspenso)
+            if (calificacion < 5) {
+                haySuspenso = true;
+            }
+        }
+
+        // Mostramos el resultado
+        if (haySuspenso) {
+            alert("Hay al menos un suspenso.");
+        } else {
+            alert("Todos los alumnos están aprobados.");
+        }
 
     </script>
 </body>

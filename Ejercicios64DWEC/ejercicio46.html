@@ -4,14 +4,61 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 46</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO  46
+    Calcula la nota de un trimestre de la asignatura Programación. El programa pedirá las dos
+    notas que ha sacado el alumno en los dos primeros controles. Si la media de los dos
+    controles da un número mayor o igual a 5, el alumno está aprobado y se mostrará la
+    media. En caso de que la media sea un número menor que 5, el alumno habrá tenido que
+    hacer el examen de recuperación que se califica como apto o no apto, por tanto, se debe
+    preguntar al usuario ¿Cuál ha sido el resultado de la recuperación? (apto/no apto). Si el
+    resultado de la recuperación es apto, la nota será un 5; en caso contrario, la nota será 1.
+
+    Ejemplo 1:
+    Nota del primer control: 7
+    Nota del segundo control: 10
+    Tu nota de Programación es 8.5
+    Ejemplo 2:
+    Nota del primer control: 6
+    Nota del segundo control: 3
+    ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): apto
+    Tu nota de Programación es 5
+    Ejemplo 3:
+    Nota del primer control: 6
+    Nota del segundo control: 3
+    ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): no apto
+    Tu nota de Programación es 1 
+-->
+    <h1>Ejercicio 46</h1>
     <script>
+        // Pedimos las notas 
+        let nota1 = parseFloat(prompt("Nota del primer control: "));
+        let nota2 = parseFloat(prompt("Nota del segundo control: "));
+
+        // Calculamos la media
+        let media = (nota1 + nota2) / 2;
+
+        if (media >= 5) {
+            // Si la media es 5 o más, mostramos la media
+            alert("Tu nota de Programación es " + media.toFixed(2));
+        } else {
+            // Si la media es menor que 5, preguntamos el resultado de la recuperación
+            let resultadoRecuperacion = prompt("Cuál ha sido el resultado de la recuperación? (apto/no apto): ").toLowerCase();
+
+            // Ponemos la nota según el resultado de la recuperación
+            let notaFinal;
+            if (resultadoRecuperacion === "apto") {
+                notaFinal = 5;
+            } else {
+                notaFinal = 1;
+            }
+            // Mostramos los datos
+            alert("Tu nota de Programación es " + notaFinal);
+        }
     </script>
 </body>
 

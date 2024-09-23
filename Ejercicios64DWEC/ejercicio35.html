@@ -4,16 +4,31 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 35</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 35</h1>
+    <!--EJERCICIO 35 
+    Pedir un número N, introducir N sueldos, y mostrar el sueldo máximo. -->
 
     <script>
+        // Pedir el número de sueldos
+        let N = parseInt(prompt("Introduce la cantidad de sueldos a ingresar:"));
 
+        let maxSueldo = 0;
+
+        // Bucle para introducir los sueldos
+        for (let i = 1; i <= N; i++) {
+            let sueldo = parseFloat(prompt(`Introduce el sueldo ${i}:`));
+
+            // Comprobar si el sueldo actual es mayor que el máximo encontrado
+            if (sueldo > maxSueldo) {
+                maxSueldo = sueldo;
+            }
+        }
+        alert("El sueldo máximo es: " + maxSueldo);
     </script>
 </body>
 

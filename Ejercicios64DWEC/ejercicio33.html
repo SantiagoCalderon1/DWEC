@@ -4,16 +4,85 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 33</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 33</h1>
+    <!--EJERCICIO  33
+    Igual que el anterior pero suponiendo que no se introduce el precio por litro.
+Solo existen tres productos con precios:
+1- 0,6 €/litro, 2- 3 €/litro y 3- 1,25 €/litro. -->
 
+    <table border="1">
+        <tr>
+            <th>Cantidad de litros vendidos</th>
+            <td id="cantidadVendida"></td>
+        </tr>
+        <tr>
+            <th>Número de facturas mayor a 600€</th>
+            <td id="numeroFacturas"></td>
+        </tr>
+        <tr>
+            <th>Facturación total</th>
+            <td id="facturacionTotal"></td>
+        </tr>
+    </table>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Cantidad de litros vendidos fact 1</th>
+            <td id="Cant-Vend-Fact-1"></td>
+        </tr>
+    </table>
+    
     <script>
-
+        // Array de facturas
+        let facturas = [
+            { codigo: "001", cantidad: 130 }, // 0.6 €/litro
+            { codigo: "002", cantidad: 141 }, // 3 €/litro
+            { codigo: "003", cantidad: 72 },  // 1.25 €/litro
+            { codigo: "004", cantidad: 10 },  // 0.6 €/litro
+            { codigo: "005", cantidad: 85 }    // 3 €/litro
+        ];
+    
+        const preciosPorLitro = {
+            "001": 0.6,
+            "002": 3,
+            "003": 1.25
+        };
+    
+        let facturacionTotal = 0;
+        let cantidadVendida = 0;
+        let cantidadFacturasMayorA600 = 0;
+    
+        let cantidadLitrosVendidosArticulo1 = 0;
+    
+        facturas.forEach(factura => {
+            const precioPorLitro = preciosPorLitro[factura.codigo];
+            const totalFactura = precioPorLitro * factura.cantidad;
+    
+            facturacionTotal += totalFactura;
+    
+            if (factura.cantidad > 0) {
+                cantidadVendida += factura.cantidad;
+            }
+    
+            if (totalFactura > 600) { 
+                cantidadFacturasMayorA600++;
+            }
+    
+            if (factura.codigo === "001") {
+                cantidadLitrosVendidosArticulo1 += factura.cantidad;
+            }
+        });
+    
+        // imprimiendo los datos
+        document.getElementById("facturacionTotal").innerHTML = facturacionTotal.toFixed(2) + " €";
+        document.getElementById("cantidadVendida").innerHTML = cantidadVendida + " lt";
+        document.getElementById("numeroFacturas").innerHTML = cantidadFacturasMayorA600;
+        document.getElementById("Cant-Vend-Fact-1").innerHTML = cantidadLitrosVendidosArticulo1 + " lt";
     </script>
 </body>
 

@@ -4,14 +4,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 53</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO  53
+    Realiza el control de acceso a una caja fuerte. La combinación será un número de 4 cifras.
+    El programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el
+    mensaje “Lo siento, esa no es la combinación”y si acertamos se nos dirá “La caja fuerte se
+    ha abierto satisfactoriamente”. Tendremos cuatro oportunidades para abrir la caja fuerte.-->
+    <h1>Ejercicio 53</h1>
     <script>
+        // Definimos la combinación correcta
+        const combinacionCorrecta = "1234";
+        let intentos = 4; // Número de intentos permitidos
+        while (intentos > 0) {
+            let combinacionUsuario = prompt("Introduce la combinación de 4 cifras:");
+            // Comprobamos si la combinación es correcta
+            if (combinacionUsuario === combinacionCorrecta) {
+                alert("La caja fuerte se ha abierto satisfactoriamente.");
+                break; // Salimos del bucle si la combinación es correcta
+            } else {
+                intentos--; // Restamos un intento
+                if (intentos > 0) {
+                    alert("Esa no es la combinación. Te quedan " + intentos + " intentos.");
+                } else {
+                    alert("Has agotado tus intentos.");
+                }
+            }
+        }
     </script>
 </body>
 

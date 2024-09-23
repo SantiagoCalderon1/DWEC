@@ -4,15 +4,39 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 34</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 34</h1>
+    <!--EJERCICIO  34
+    Dadas 6 notas, escribir la cantidad de alumnos aprobados y suspensos. -->
 
     <script>
+        // Inicializar contadores
+        let aprobados = 0;
+        let suspensos = 0;
+
+        for (let i = 1; i <= 6; i++) {
+            let nota = parseFloat(prompt(`Introduce la nota del alumno ${i}:`));
+
+            // Comprobar si la nota es válida (0 a 10)
+            if (nota >= 0 && nota <= 10) {
+                // Contar aprobados y suspensos
+                if (nota >= 5) {
+                    aprobados++;
+                } else {
+                    suspensos++;
+                }
+            } else {
+                alert("Nota no válida, debe estar entre 0 y 10.");
+                i--; // Volver a pedir la nota
+            }
+        }
+
+        // Mostrar resultados
+        alert(`Alumnos aprobados: ${aprobados}\nAlumnos suspensos: ${suspensos}`);
 
     </script>
 </body>

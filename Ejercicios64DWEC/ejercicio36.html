@@ -4,15 +4,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 36</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <h1>Ejercicio </h1>
-    <!--EJERCICIO  -->
+    <h1>Ejercicio 36</h1>
+    <!--EJERCICIO  36
+    Pedir 10 números, y mostrar al final si se ha introducido alguno negativo. -->
 
     <script>
+        let hayNegativo = false;
+
+        // Pedimos 10 números al usuario
+        for (let i = 1; i <= 10; i++) {
+            let numero = parseFloat(prompt(`Introduce el número ${i}:`));
+
+            // Comprobamos si el número es negativo
+            if (numero < 0) {
+                hayNegativo = true;
+            }
+        }
+
+        // Mostramos el resultado
+        if (hayNegativo) {
+            alert("Se ha introducido al menos un número negativo.");
+        } else {
+            alert("Todos los números son positivos.");
+        }
 
     </script>
 </body>

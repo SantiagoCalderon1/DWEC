@@ -4,14 +4,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 56</title>
     <!-- Santiago Calderon Castaño-->
 </head>
 
 <body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+    <!-- EJERCICIO  56
+     Escribe un programa que pida una base y un exponente (entero positivo) y que calcule la
+potencia. -->
+    <h1>Ejercicio 56</h1>
     <script>
+        let base = 0, exponente = 0;
+        do {
+            do {
+                base = parseInt(prompt("Introduce la base: "));
+                if (base < 0) {
+                    alert("La base debe ser un entero positivo.")
+                }
+            } while (base < 0);
+
+            do {
+                exponente = parseInt(prompt("Introduce el exponente: "));
+                if (exponente < 0) {
+                    alert("el exponente debe ser un entero positivo.")
+                }
+            } while (exponente < 0);
+
+        } while (base < 0 || exponente < 0);
+
+        alert("La potencia de " + base + " es " + Math.pow(base, exponente));
     </script>
 </body>
 
