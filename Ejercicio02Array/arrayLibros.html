@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio sobre arrays</title>
+    <!--Santiago Calderon Castaño-->
+  </head>
+  <body>
+    <h1>Ejercicio sobre array</h1>
+    <table border="1">
+      <tr>
+        <th>Código</th>
+        <th id="codigo"></th>
+      </tr>
+      <tr>
+        <td>Título</td>
+        <td id="titulo"></td>
+      </tr>
+      <tr>
+        <td>Autor</td>
+        <td id="autor"></td>
+      </tr>
+      <tr>
+        <td>Editorial</td>
+        <td id="editorial"></td>
+      </tr>
+      <tr>
+        <td>Tema</td>
+        <td id="tema"></td>
+      </tr>
+      <tr>
+        <td>ISBN</td>
+        <td id="isbn"></td>
+      </tr>
+      <tr>
+        <td>Páginas</td>
+        <td id="paginas"></td>
+      </tr>
+      <tr>
+        <td>Precio</td>
+        <td id="precio"></td>
+      </tr>
+    </table>
+
+    <script>
+      let arrayLibros = [
+        [
+          "1",
+          "Access para Windows",
+          "Charles Siagel",
+          "Anaya",
+          "Informatica",
+          "85-7614-759-7",
+          "450",
+          45.67,
+        ],
+        [
+          "2",
+          "Salud",
+          "Eduardo Almansa",
+          "Deusto",
+          "Medicina",
+          "24-3547590-1",
+          "153",
+          23.18,
+        ],
+        [
+          "3",
+          "Redes de Computadores",
+          "Luis Cárcel",
+          "Parainfo",
+          "Informática",
+          "47-8829-435-7",
+          "215",
+          32.86,
+        ],
+      ];
+
+      let codigoLibro = parseInt(prompt("Introduce el código del libro"));
+
+      function buscarLibro(input) {
+        for (let index = 0; index < arrayLibros.length - 1; index1++) {
+          let 
+          if (arrayLibros[index][0] == input) {
+              return 
+            }
+        }
+      }     
+    </script>
+  </body>
+</html>
