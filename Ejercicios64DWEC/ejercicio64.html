@@ -1,18 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio </title>
+    <title>Ejercicio 64</title>
     <!-- Santiago Calderon Castaño-->
-</head>
+  </head>
 
-<body>
-    <!-- EJERCICIO  -->
-    <h1>Ejercicio </h1>
+  <body>
+    <!-- EJERCICIO  64 
+    Escribe un programa que calcule el precio final de un producto según su base imponible 
+    (precio antes de impuestos), el tipo de IVA aplicado (general, reducido o superreducido) y 
+    el código promocional. Los tipos de IVA general, reducido y superreducido son del 21%, 10% 
+    y 4% respectivamente. Los códigos promocionales pueden ser nopro, mitad, meno5 o 5porc 
+    que significan respectivamente que no se aplica promoción, el precio se reduce a la mitad, 
+    se descuentan 5 euros o se descuenta el 5%. El ejercicio se da por bueno si se muestran los 
+    valores correctos, aunque los números no estén tabulados. 
+    
+    Ejemplo: 
+    Introduzca la base imponible: 25 
+    Introduzca el tipo de IVA (general, reducido o superreducido): reducido 
+    Introduzca el código promocional (nopro, mitad, meno5 o 5porc): mitad 
+    Base imponible 25.00 
+    Cód. promo. (mitad): -12.50 
+    IVA (10%) 1.25 
+    Precio con IVA 13.75 
+    TOTAL 13.75
+    -->
+
+    <h1>Ejercicio 64</h1>
+
     <script>
-    </script>
-</body>
+      const IVA_GENERAL = 21;
+      const IVA_REDUCIDO = 10;
+      const IVA_SUPER_REDUCIDO = 4;
 
+      const nopro = 0;
+      const mitad = 2; //significa que el precio se reduce a la mitad
+      const meno5 = -5;
+      const cincoPorc = -0.05;
+
+      let baseImponible = parseFloat(prompt("Introduzca la base imponible:"));
+      let tipoIVA = prompt(
+        "Introduzca el tipo de IVA (general, reducido o superreducido)"
+      ).toLowerCase;
+      let codigoPromocional = prompt(
+        "Introduzca el código promocional (nopro, mitad, menos5, 5porc)"
+      ).toLocaleLowerCase;
+
+      document.write("Base imponible: " + baseImponible);
+      document.write("Cód. promo (" + codigoPromocional +"): " +  calcularDescuento(codigoPromocional, baseImponible));
+      document.write("IVA (" + tipoIVA+ "" + "" ): " + baseImponible);
+      
+
+
+
+      // Calculo del precio con IVA
+      do {
+        switch (tipoIVA) {
+          case "general": baseImponible -= IVA_GENERAL; //21%
+            break;
+          case "reducido": baseImponible -= IVA_REDUCIDO;//10%
+            break;
+          case "superreducido": baseImponible -= IVA_SUPER_REDUCIDO;//4%
+            break;
+          default: alert("No se permite otro tipo  de IVA (general, reducido o superreducido)");
+            break;
+        }
+      } while (
+        tipoIVA != "general" ||
+        tipoIVA != "reducido" ||
+        tipoIVA != "superreducido"
+      );
+
+      function calcularDescuento(codigoPromocional, codigoPromocional) {
+        
+      }
+      // Calculo del precio con Promo
+      do {
+        switch (codigoPromocional) {
+          case "nopro": return baseImponible - nopro; //0 de descuento
+            break;
+          case "mitad": return baseImponible / mitad ; //2
+            break;
+          case "menos5": return baseImponible - meno5; //5% €
+            break;
+            case "5porc": return baseImponible - cincoPorc;// 0.5%
+            break;
+          default: alert("No se permite otro tipo  de IVA (general, reducido o superreducido)");
+            break;
+        }
+      } while (
+        tipoIVA != "nopro" ||
+        tipoIVA != "mitad" ||
+        tipoIVA != "menos5"||
+        tipoIVA != "5porc"
+      );
+
+    </script>
+  </body>
 </html>
