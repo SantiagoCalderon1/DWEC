@@ -69,20 +69,27 @@
       let baseImponible = parseFloat(prompt("Introduzca la base imponible:"));
 
       let tipoIVA = "";
+      let salir = false;
+
       do {
+        salir = false;
         tipoIVA = prompt("Introduzca el tipo de IVA (general, reducido o superreducido)").toLowerCase();
         if (tipoIVA !== "general" && tipoIVA !== "reducido" && tipoIVA !== "superreducido") {
           alert("Tipo de IVA inválido, debe ser (general, reducido o superreducido)")
+          salir = true;
         }
-      } while (tipoIVA !== "general" && tipoIVA !== "reducido" && tipoIVA !== "superreducido");
+      } while (salir);
 
       let codigoPromocional = "";
+      
       do {
+        salir = false;
         codigoPromocional = prompt("Introduzca el código promocional (nopro, mitad, menos5, 5porc)").toLowerCase();
         if (codigoPromocional !== "nopro" && codigoPromocional !== "mitad" && codigoPromocional !== "menos5" && codigoPromocional !== "5porc") {
           alert("Código promocional inválido")
+          salir = true;
         }
-      } while (codigoPromocional !== "nopro" && codigoPromocional !== "mitad" && codigoPromocional !== "menos5" && codigoPromocional !== "5porc");
+      } while (salir);
 
 
       // Calcular descuento y base imponible con descuento

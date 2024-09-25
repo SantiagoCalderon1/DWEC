@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador de palabras</title>
+  </head>
+  <body>
+    <h1>Contador de palabras en tiempo real</h1>
+    <div id="contenedor">
+      <div id="input">
+        <input
+          type="text"
+          id="display"
+          onkeydown="detectKeysPress(event)"
+          onkeyup="clearDisplay(event)"
+        />
+      </div>
+      <button id="btn">Contar</button>
+      <div id="output">
+        <p id="palabras">Palabras: <span id="palabras-num">0</span></p>
+        <p id="caracteres">Caracteres: <span id="caracteres-num">0</span></p>
+      </div>
+    </div>
+
+    <script>
+      let contador = 0;
+      let contenidoInput = " ";
+
+      function detectKeysPress(event) {
+        let teclaPresionada = event.key;
+        if (
+          teclaPresionada !== " " &&
+          teclaPresionada !== "Enter" &&
+          teclaPresionada !== "Backspace"
+        ) {
+          contador++;
+        } 
+        if (teclaPresionada === "Backspace") {
+            contador--;
+        }
+        document.getElementById("caracteres-num").innerHTML = contador;
+      }
+
+     
+
+      function clearDisplay(event) {
+        let teclaPresionada = event.key;
+        if (teclaPresionada === "Backspace") {
+          contenidoInput = document.getElementById("display").value;
+          if (contenidoInput === "") {
+            document.getElementById("caracteres-num").innerHTML = "0";
+            contador = 0;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
