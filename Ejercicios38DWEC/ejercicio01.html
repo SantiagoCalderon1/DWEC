@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+    <!--Santiago Calderon Castaño-->
+</head>
+<body>
+    <h1>Ejercicio 01</h1>
+    <!--
+    Mostrar una fecha con formato dd/mm/aaaa utilizando 0 delante de los días o meses de 1
+    digito. 
+    -->
+    <script>
+        let fecha = new Date();
+        let dia = (fecha.getDate());
+        let mes = (fecha.getMonth() + 1);
+
+        document.write("La fecha (dd/mm/aaaa) es: " + (dia < 10 ? "0" + dia : dia)+ "/" + (mes < 10 ? "0" + mes: mes) + "/" + (fecha.getFullYear()));
+    </script>
+</body>
+</html>

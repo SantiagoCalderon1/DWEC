@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 02</title>
+    <!--Santiago Calderon Castaño-->
+  </head>
+  <body>
+    <h1>Ejercicio 02</h1>
+    <!--
+    Mostrar una fecha con formato DiaSemana, DiaMes de Mes del Año a las
+    horas:minutos:segundos. Por ejemplo: Miercoles, 9 de Diciembre del 2015 a las 18:45:32. 
+    -->
+    <script>
+      let fecha = new Date();
+
+      let diaSemana = fecha.toLocaleString("es-ES", { weekday: "long" });
+      let mes = fecha.toLocaleString("es-ES", { month: "long" });
+
+      document.write(
+        "La fecha es: " +
+          diaSemana +
+          ", " +
+          fecha.getDate() +
+          " de " +
+          mes +
+          " del " +
+          fecha.getFullYear() +
+          " a las " +
+          fecha.getHours() +
+          ":" +
+          fecha.getMinutes() +
+          ":" +
+          fecha.getSeconds()
+      );
+    </script>
+  </body>
+</html>
