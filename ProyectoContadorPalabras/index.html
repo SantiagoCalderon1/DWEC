@@ -1,59 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contador de palabras</title>
-  </head>
-  <body>
-    <h1>Contador de palabras en tiempo real</h1>
-    <div id="contenedor">
-      <div id="input">
-        <input
-          type="text"
-          id="display"
-          onkeydown="detectKeysPress(event)"
-          onkeyup="clearDisplay(event)"
-        />
-      </div>
-      <button id="btn">Contar</button>
-      <div id="output">
-        <p id="palabras">Palabras: <span id="palabras-num">0</span></p>
-        <p id="caracteres">Caracteres: <span id="caracteres-num">0</span></p>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador de palabras</title>
+</head>
+
+<body>
+  <h1>Contador de palabras en tiempo real</h1>
+  <div id="contenedor">
+    <div class="input">
+      <input type="text" id="display" />
     </div>
+    <div class="msg">
+      <span class="datos">Palabras: <span id="palabras-count">0</span></span>
+      <span class="datos">Caracteres: <span id="caracteres-count">0</span></span>
+    </div>
+  </div>
 
-    <script>
-      let contador = 0;
-      let contenidoInput = " ";
+  <script>
+    let contadorCaracteres = 0;
+    let contadorPalabras = 0;
 
-      function detectKeysPress(event) {
-        let teclaPresionada = event.key;
-        if (
-          teclaPresionada !== " " &&
-          teclaPresionada !== "Enter" &&
-          teclaPresionada !== "Backspace"
-        ) {
-          contador++;
-        } 
-        if (teclaPresionada === "Backspace") {
-            contador--;
-        }
-        document.getElementById("caracteres-num").innerHTML = contador;
-      }
+    //El evento esta atento a los cambios realizados en el inpur
+    document.addEventListener("input", function (event) {
+      // aqui obtenemos el texto del input y le quitamos los posibles espacios (" ") del inicio y final con .trim()
+      let input = document.getElementById("display").value.trim(); 
 
-     
+      contadorPalabras = input.split(' ').filter(palabra => palabra.length > 0).length;
+      /*
+      input.split(' ')
+      Pasamos la cadena a un array de subcadenas usando un ' ' como delimitador.
+      Ejemplo: "Hola mundo" -> ['hola',' ','mundo']
 
-      function clearDisplay(event) {
-        let teclaPresionada = event.key;
-        if (teclaPresionada === "Backspace") {
-          contenidoInput = document.getElementById("display").value;
-          if (contenidoInput === "") {
-            document.getElementById("caracteres-num").innerHTML = "0";
-            contador = 0;
-          }
-        }
-      }
-    </script>
-  </body>
+
+      .filter(palabra => palabra.length > 0)
+      Filtramos el array para eliminar las subcadenas vacías.
+
+      .length;
+      Obtenemos el tamaño del array, que seria todas las palabras.
+      */
+      
+      contadorCaracteres = input.split('').filter(caracter => {
+        return caracter !== ' ';
+      }).join('').length;
+      /*
+      input.split('')
+      Pasamos la cadena a un array de caracteres individuales.
+      Ejemplo: "Hola mundo" -> ['h','o','l','a',' ','m','u','n','d','o']
+
+      .filter(caracter => {
+        return caracter !== ' ';
+      })
+      Filtramos el array para eliminar los espacios en blanco. (nos devuelve los caracteres diferentes a ' ')
+      
+      .join('')
+      Convertimos el array a una sola cadena nuevamente 
+
+      .length;
+      Obtenemos el tamaño de la cadena, que seria el número de caracteres.
+
+      */
+      
+      document.getElementById("palabras-count").innerHTML = contadorPalabras;
+      document.getElementById("caracteres-count").innerHTML = contadorCaracteres;
+      //Insertamos los resultados
+    }
+    );
+
+        // document.addEventListener("keydown", function (event) {
+    //   // aqui conprobamos que las teclas sean solo caracteres imprimibles
+    //   if (event.key.length === 1) {
+    //     // aqui convertimos las teclas a codigo ASCII, a = 97
+    //     let codigoAscii = event.key.charCodeAt(0);
+    //     if (codigoAscii >= 33 && codigoAscii <= 126) {
+    //       contadorCaracteres++;
+    //     }
+    //     document.getElementById("caracteres-count").innerHTML = contadorCaracteres;
+    //   }
+
+    // }
+    // );
+
+    // document.addEventListener("keyup", function (event) {
+    //   // aqui es para decrementar los contadores 
+    //   if (event.key === "Backspace" || event.key === "Delete") {
+    //     let input = document.getElementById("display").value.trim();  // trim() elimina " " del princio y final
+    //     if (input === "") {
+    //       // reiniciando contadores
+    //       contadorCaracteres = 0;
+    //       contadorPalabras = 0;
+    //       document.getElementById("caracteres-count").innerHTML = 0;
+    //       document.getElementById("palabras-count").innerHTML = 0;
+    //     } else {
+    //       //contar cuantos caracteres hay
+    //       input = input.split('').filter(caracter => {
+    //         return caracter !== ' ';
+    //       }).join('');
+    //       contadorCaracteres = input.length;
+    //       document.getElementById("caracteres-count").innerHTML = contadorCaracteres;
+    //     }
+    //   }
+    // });
+
+
+    // function clearDisplay(event) {
+    //   let teclaPresionada = event.keyCode;
+    //   if (teclaPresionada == 82) {
+    //     if (document.getElementById("display").value === "") {
+    //       document.getElementById("caracteres-num").innerHTML = "0";
+    //       contadorCaracteres = 0;
+    //     }
+    //   }
+    // }
+  </script>
+</body>
+
 </html>
