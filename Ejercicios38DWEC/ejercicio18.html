@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 18</title>
     <!--Santiago Calderon Castaño-->
 </head>
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 18</h1>
+    <p>Te número para la ONCE es: <span id="ONCE"></span></p>
+    <script>
+
+    // Generamos un número aleatorio entre 0 y 99999 y lo pasamos a String
+    let numeroPremiado = Math.floor(Math.random() * 100000).toString().padStart(5, '0');
+    //Con padStart(5,'0') nos aseguramos de que siempre tenga 5 dígitos, 
+    //rellenando con ceros a la izquierda si es necesario.
+
+    document.getElementById("ONCE").innerHTML = numeroPremiado;
+
+
+
+    </script>
 </body>
 </html>

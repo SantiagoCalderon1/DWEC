@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 04</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 04</h1>
+    <!-- Resta 5 años, 11 meses y 18 días a la fecha actual. -->
+    <script>
+        let fecha = new Date();
+
+        //  Obtener la fecha
+        let dia = fecha.getDate();
+        let mes = fecha.getMonth() + 1;
+        let año = fecha.getFullYear();
+
+        document.write("<p>La fecha (dd/mm/aaaa) es: " + (dia < 10 ? "0" : "") + dia + "/" + (mes < 10 ? "0" : "") + mes + "/" + año + "</p>");
+
+        //Hacemos la resta del tiempo que queremos
+        fecha.setFullYear(fecha.getFullYear() - 5);
+        fecha.setMonth(fecha.getMonth() - 11);
+        fecha.setDate(fecha.getDate() - 18);
+
+        //  Obtener la fecha
+        dia = fecha.getDate();
+        mes = fecha.getMonth() + 1;
+        año = fecha.getFullYear();
+
+        document.write("<p>La nueva fecha (dd/mm/aaaa) es: " + (dia < 10 ? "0" : "") + dia + "/" + (mes < 10 ? "0" : "") + mes + "/" + año + "</p>");
+
+    </script>
 </body>
+
 </html>

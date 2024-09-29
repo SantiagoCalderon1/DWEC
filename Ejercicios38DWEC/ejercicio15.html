@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 15</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 15</h1>
+    <script>
+        //Declarar variables
+        let num = parseFloat(prompt("Introduce un número con decimales: "));
+
+        if (isNaN(num)) {
+            document.write("El dato introducido no es un número.")
+        } else {
+            document.write("<p>El resultado de la raíz cuadrada es: " + Math.sqrt(num).toFixed(3) + "</p>") // con Math.sqrt() se consigue la raíz cuadrada.
+            document.write("<p>El resultado del cuadrado es: " + Math.pow(num, 2) + "</p>") // con Math.pow(x,2) se consigue el cuadrado.
+        }
+
+    </script>
 </body>
+
 </html>

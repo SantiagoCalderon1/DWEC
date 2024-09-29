@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 13</title>
     <!--Santiago Calderon Castaño-->
 </head>
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 13</h1>
+    <script>
+        //Declarar variables
+        let num = parseFloat(prompt("Introduce un número con decimales: "));
+
+        if (isNaN(num)) {
+            document.write("El dato introducido no es un número.")
+        } else {
+            document.write("El resultado es: " + Math.ceil(num)) // con Math.ceil() se redonde al próximo entero superior
+        }
+    </script>
 </body>
 </html>

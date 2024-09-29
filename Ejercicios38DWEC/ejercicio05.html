@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 05</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 05</h1>
+    <!--Introducir el número de horas trabajadas por un empleado y la fecha en 
+    las que las trabajo. Si el día fue sábado o domingo el precio hora trabajada 
+    es 20€ en caso contrario 15€. Calcula la cantidad de dinero que habrá que 
+    pagar al empleado por las horas trabajadas. -->
+
+    <script>
+        //decidí crear 2 constantes para manjear las tarifas.
+        const TARIFA_FIN_SEMANA = 20;
+        const TARIFA_SEMANA = 15;
+        let totalCobrar = 0;
+
+        let horasTrabajadas = parseFloat(prompt("Introduce las horas trabajadas: "));
+        let fechaTrabajada = prompt("Introduce la fecha en la que trabajaste (dd/mm/aaaa)").split('/');
+        /*convierto la cadena a un array con .split('/') y lo divido por '/' para luego obtener sus indices a la hora construir la facha, todo para no hacer mas variables */
+
+        let fecha = new Date(
+            parseInt(fechaTrabajada[2]), // año
+            parseInt(fechaTrabajada[1] - 1), // mes
+            parseInt(fechaTrabajada[0])  // dia
+        );
+        /* Como los indices del array son una cadena, y el constructor de fecha usa enteros, debo hacer la conversión, también tener en cuenta que como los meses empiezan por 0 (enero = 0) debo restar 1 ( - 1) para poder acceder al mes que necesito*/
+
+        /* getDay() nos devuelve el numero del dia de la semana va de 0 a 6 
+        siendo 0 lunes y 6 domingo*/
+        if (fecha.getDay() == 5 || fecha.getDay() == 6) {
+            totalCobrar = horasTrabajadas * TARIFA_FIN_SEMANA;
+        } else {
+            totalCobrar = horasTrabajadas * TARIFA_SEMANA;
+        }
+
+        document.write("El total a cobrar es: " + totalCobrar);
+    </script>
 </body>
+
 </html>

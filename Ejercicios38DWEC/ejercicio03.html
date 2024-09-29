@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 03</title>
-    <!--Santiago Calderon Castaño-->
-  </head>
-  <body>
-    <h1>Ejercicio 03</h1>
-    <!--
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 03</title>
+  <!--Santiago Calderon Castaño-->
+</head>
+
+<body>
+  <h1>Ejercicio 03</h1>
+  <!--
     Suma 10 años, 4 meses y 5 días a la fecha actual. 
     -->
-    <script>
-      let fecha = new Date();  //Fecha actual
+  <script>
+    let fecha = new Date();  //Fecha actual
 
-      //  Aumentar los años, meses y días
-      fecha.setFullYear(fecha.getFullYear() + 10);
-      fecha.setMonth(fecha.getMonth() + 4);
-      fecha.setDate(fecha.getDate() + 5);
+    //  Obtener la fecha
+    let dia = fecha.getDate();
+    let mes = fecha.getMonth() + 1;
+    let año = fecha.getFullYear();
 
-      //  Obtener la fecha
-      let dia = fecha.getDate();
-      let mes = fecha.getMonth() + 1;
-      let año = fecha.getFullYear();
+    //  Mostrar la fecha
+    document.write(
+      "<p>La fecha (dd/mm/aaaa) es: " +
+      (dia < 10 ? "0" + dia : dia) +
+      "/" +
+      (mes < 10 ? "0" + mes : mes) +
+      "/" +
+      año + "</p>"
+    );
 
-      //  Mostrar la fecha
-      document.write(
-        "La nueva fecha (dd/mm/aaaa) es: " +
-          (dia < 10 ? "0" + dia : dia) +
-          "/" +
-          (mes < 10 ? "0" + mes : mes) +
-          "/" +
-          año
-      );
+    //  Aumentar los años, meses y días
+    fecha.setFullYear(fecha.getFullYear() + 10);
+    fecha.setMonth(fecha.getMonth() + 4);
+    fecha.setDate(fecha.getDate() + 5);
 
-    </script>
-  </body>
+    //  Obtener la fecha
+    dia = fecha.getDate();
+    mes = fecha.getMonth() + 1;
+    año = fecha.getFullYear();
+
+    //  Mostrar la fecha
+    document.write(
+      "<p>La nueva fecha (dd/mm/aaaa) es: " +
+      (dia < 10 ? "0" + dia : dia) +
+      "/" +
+      (mes < 10 ? "0" + mes : mes) +
+      "/" +
+      año + "</p>"
+    );
+
+  </script>
+</body>
+
 </html>

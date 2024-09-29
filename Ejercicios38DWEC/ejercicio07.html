@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 07</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 07</h1>
+    <!--Introducir la fecha inicial y final de una nómina y calcular lo que debe 
+    cobrar el empleado sabiendo que cada día trabajado recibe 55 € y tiene una 
+    retención del 12% sobre el sueldo.-->
+    <script>
+        const PRECIO_DIA = 55; //euros
+        const RETENCION = 0.12 ; // 12%
+        let fechaInicial = prompt("Introduce la fecha (dd/mm/aaaa) inicial de la nómina: ").split('/');
+        let fechafinal = prompt("Introduce la fecha (dd/mm/aaaa) final de la nómina: ").split('/');
+        let sueldo = 0;
+
+        let fechaIni = new Date(
+            parseInt(fechaInicial[2]),
+            parseInt(fechaInicial[1] - 1),
+            parseInt(fechaInicial[0])
+        );
+
+        let fechaFin = new Date(
+            parseInt(fechafinal[2]),
+            parseInt(fechafinal[1] - 1),
+            parseInt(fechafinal[0])
+        );
+        // aqui nos da la difencia en milisegundos y la dividimos en los milisegundos que tiene un dia
+        let totalDias = parseFloat(((fechaFin - fechaIni) / 86400000).toFixed(2));
+
+        //calculamos el sueldo
+        /*(1 - 0.12): Representa el porcentaje que te quedas después de descontar el 12%. 
+        Restar 0.12 a 1 es lo mismo que calcular el 88% (100% - 12%).*/
+        sueldo = (totalDias * PRECIO_DIA) * (1 - RETENCION);
+        
+        document.write("El sueldo es: " + sueldo);
+
+    </script>
 </body>
+
 </html>

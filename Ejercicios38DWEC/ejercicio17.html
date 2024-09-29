@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 17</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 17</h1>
+    <p>Te ha tocado la carta: <span id="cartaEspañola"></span></p>
+    <script>
+        /*
+        Como no conocia la baraja Española lo investigué
+        La baraja española tiene 40 cartas distribuidas en 4 palos (oros, copas, espadas, bastos). 
+        Cada palo tiene las cartas del 1 al 7, y las figuras (Sota, Caballo, Rey), que son el 10, 11, y 12.
+        */
+        let barajaEspañola = [
+            "1 de oros", "2 de oros", "3 de oros", "4 de oros", "5 de oros", "6 de oros", "7 de oros", "10 de oros", "11 de oros", "12 de oros",
+            "1 de copas", "2 de copas", "3 de copas", "4 de copas", "5 de copas", "6 de copas", "7 de copas", "10 de copas", "11 de copas", "12 de copas",
+            "1 de espadas", "2 de espadas", "3 de espadas", "4 de espadas", "5 de espadas", "6 de espadas", "7 de espadas", "10 de espadas", "11 de espadas", "12 de espadas",
+            "1 de bastos", "2 de bastos", "3 de bastos", "4 de bastos", "5 de bastos", "6 de bastos", "7 de bastos", "10 de bastos", "11 de bastos", "12 de bastos"
+        ];
+
+        //Generamos un numero random de 1 a 40, ambos incluidos
+        let numRandom = Math.floor(Math.random() * 40) + 1;
+        //Obtenemos la carta correspondiente al numero random
+        let carta = barajaEspañola[numRandom];
+        //Mostramos la carta
+        document.getElementById("cartaEspañola").innerHTML = carta;
+
+
+    </script>
 </body>
+
 </html>

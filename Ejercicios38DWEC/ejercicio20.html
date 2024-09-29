@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 20</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 20</h1>
+    <p>El total de bolas rojas es: <span id="bolas-rojas"></span></p>
+    <p>el procentaje de bolas rojas es: <span id="porcentaje-rojas"></span></p>
+    <p>El total de bolas negras es: <span id="bolas-negras"></span></p>
+    <p>el procentaje de bolas negras es: <span id="porcentaje-negras"></span></p>
+    <script>
+        //Declarar variables
+        let bolas = ['roja', 'negra']; // Colores de las bolas
+        let conteoRojas = 0;
+        let conteoNegras = 0; 
+
+        // Realizamos las 15 extracciones
+        for (let i = 0; i < 15; i++) {
+            let extraccion = bolas[Math.floor(Math.random() * 2)]; // Extraer aleatoriamente
+            if (extraccion === 'roja') {
+                conteoRojas++;
+            } else {
+                conteoNegras++;
+            }
+        }
+
+        // Calculamos porcentajes
+        let porcentajeRojas = (conteoRojas / 15 * 100).toFixed(2);
+        let porcentajeNegras = (conteoNegras / 15 * 100).toFixed(2);
+
+        // Mostramos resultados
+        document.getElementById("bolas-rojas").innerHTML = conteoRojas;
+        document.getElementById("porcentaje-rojas").innerHTML = porcentajeRojas;
+
+        document.getElementById("bolas-negras").innerHTML = conteoNegras;
+        document.getElementById("porcentaje-negras").innerHTML = porcentajeNegras;
+    </script>
 </body>
+
 </html>

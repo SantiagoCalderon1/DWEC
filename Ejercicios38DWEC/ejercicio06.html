@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 06</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 6</h1>
+    <!--Crear un reloj que muestre la hora actualizándose por pantalla y podamos
+    parar con un botón.-->
+
+    <h3 id="reloj">Hora actual: 00:00:00</h3>
+    <button id="Iniciar" onclick="IniciarReloj()">Iniciar Reloj</button>
+    <button id="Parar" onclick="pararReloj()">Parar Reloj</button>
+    <script>
+        let miInterval = 0;
+
+        function IniciarReloj() {
+            miInterval = setInterval(refrescaReloj, 1000);
+        }
+
+        function refrescaReloj() {
+            let reloj = new Date();
+            let hora = "Hora actual: " + reloj.getHours() + ":"
+                + reloj.getMinutes() + ":" + reloj.getSeconds();
+
+            document.getElementById("reloj").innerHTML = hora;
+        }
+
+        function pararReloj() {
+            clearInterval(miInterval);
+            alert("Reloj parado.")
+        }
+
+    </script>
 </body>
+
 </html>

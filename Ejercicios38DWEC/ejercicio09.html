@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 09</title>
     <!--Santiago Calderon Castaño-->
 </head>
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 09</h1>
+    <p >La fecha limite para entregar el documento es: <span id="fechaLimite"></span></p>
+    <p id="anuncio"></p>
+    <script>
+        const FECHA_LIMITE = new Date();
+        let fechaAuxDocumento = prompt("Introduce la fecha del documento (dd/mm/aaaa): ").split('/');
+
+        let fechaDocumento = new Date(
+            parseInt(fechaAuxDocumento[2]), //año
+            parseInt(fechaAuxDocumento[1] - 1), // mes 
+            parseInt(fechaAuxDocumento[0])); // dia
+
+        document.getElementById("fechaLimite").innerHTML = FECHA_LIMITE.getDate() + "/" + (FECHA_LIMITE.getMonth() + 1) + "/" + FECHA_LIMITE.getFullYear();
+
+        if (fechaDocumento > FECHA_LIMITE) {
+            document.getElementById("anuncio").innerHTML = "Estas fuera del plazo. :( ";
+        } else {
+            document.getElementById("anuncio").innerHTML = "Aún estas en el plazo. :) ";
+        }
+    </script>
 </body>
 </html>

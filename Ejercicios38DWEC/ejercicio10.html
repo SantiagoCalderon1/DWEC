@@ -1,13 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 10</title>
     <!--Santiago Calderon Castaño-->
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            width: 14.28%;
+            padding: 10px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr:nth-child(even) th,
+        tr:nth-child(even) td {
+            background-color: #b5f0b6;
+            /* Color alternado para filas */
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 10</h1>
+    <!--Aqui añadir algunas cosas, ya sé que el ejercicio no me lo pedía pero quería practicar alginas cosas.-->
+    <table border="1">
+        <tr>
+            <th colspan="7">Trabajadores</th>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Sueldo Bruto</th>
+            <th>Fecha Alta</th>
+            <th>Porcentaje Retención</th>
+            <th>Retención</th>
+            <th>Sueldo neto</th>
+        </tr>
+    </table>
+
+    <script>
+        const RETENCION_ANTERIOR_1980 = 0.20; // DEL 20%
+        const RETENCION_ENTRE_1980_2000 = 0.15; // DEL 20%
+        const RETENCION_POSTERIOR_2000 = 0.5; // DEL 20%
+
+        let trabajadores = [
+            {
+                nombre: "Juan",
+                apellidos: "Pérez",
+                sueldo: 3000,
+                fechaAlta: new Date(1975, 5, 20) // 20 de junio de 1975
+            },
+            {
+                nombre: "Ana",
+                apellidos: "Gómez",
+                sueldo: 2500,
+                fechaAlta: new Date(1985, 8, 15) // 15 de septiembre de 1985
+            },
+            {
+                nombre: "Luis",
+                apellidos: "Martínez",
+                sueldo: 3500,
+                fechaAlta: new Date(2001, 2, 10) // 10 de marzo de 2001
+            },
+            {
+                nombre: "María",
+                apellidos: "Lopez",
+                sueldo: 4000,
+                fechaAlta: new Date(1995, 11, 30) // 30 de diciembre de 1995
+            },
+            {
+                nombre: "Pedro",
+                apellidos: "Sánchez",
+                sueldo: 2800,
+                fechaAlta: new Date(1979, 6, 5) // 5 de julio de 1979
+            }
+        ];
+
+        function mostrarDatos() {
+            let fecha1980 = new Date(1980, 0, 1);
+            let fecha2000 = new Date(2000, 0, 1);
+
+            trabajadores.forEach(trabajador => {
+                let porcentajeRetencion = 0;
+                let retencion = 0;
+                let sueldoNeto = 0;
+
+                if (trabajador.fechaAlta < fecha1980) {
+                    porcentajeRetencion = RETENCION_ANTERIOR_1980;
+                    retencion = trabajador.sueldo * RETENCION_ANTERIOR_1980;
+                    sueldoNeto = trabajador.sueldo - retencion;
+                } else if (trabajador.fechaAlta >= fecha1980 && trabajador.fechaAlta < fecha2000) {
+                    porcentajeRetencion = RETENCION_ENTRE_1980_2000;
+                    retencion = trabajador.sueldo * RETENCION_ENTRE_1980_2000;
+                    sueldoNeto = trabajador.sueldo - retencion;
+                } else {
+                    porcentajeRetencion = RETENCION_POSTERIOR_2000;
+                    retencion = trabajador.sueldo * RETENCION_POSTERIOR_2000;
+                    sueldoNeto = trabajador.sueldo - retencion;
+                }
+                /*
+                Aquí estoy añadiendo el nuevo atributo retencion con el valor de la operación a el objeto trabajador 
+                que está en el array.
+
+                Esto no lo pedía pero insisto, quería practicar.
+                */
+                trabajador.retencion = retencion;
+
+                /*
+                Seleccionamos el elemento table. el primero [0] y único que tenemos
+                let table = document.getElementsByTagName("table")[0];
+
+                creamos una nueva fila <tr></tr> y la guardamos en una variable para usarla ahora.
+                let newRow = table.insertRow();
+
+                Se usa insertRow() para añadir una nueva fila a una tabla.
+                Se usa insertCell() para añadir una nueva celda a una fila específica
+                */
+
+                //Nos ahorramos código así: 
+                let newRow = document.getElementsByTagName("table")[0].insertRow();
+
+                //Crea una nueva celda <td></td>, y añadimos el datos
+                newRow.insertCell().innerHTML = trabajador.nombre;
+                newRow.insertCell().innerHTML = trabajador.apellidos;
+                newRow.insertCell().innerHTML = trabajador.sueldo + " €";
+                /*
+                Así no tenía pero no me gustaba el formato, no me gusta que no salga el 0 en los dias o meses menores a 10   
+                newRow.insertCell().innerHTML = trabajador.fechaAlta.toLocaleDateString();
+                */
+                newRow.insertCell().innerHTML = getFechaFormateada(trabajador);
+                newRow.insertCell().innerHTML = (porcentajeRetencion * 100) + " %";
+                newRow.insertCell().innerHTML = trabajador.retencion;
+                newRow.insertCell().innerHTML = sueldoNeto + " €";
+            });
+        }
+
+        //Con esta función le damos formato a la fecha cuando la imprimimos
+        function getFechaFormateada(trabajador) {
+            return ((trabajador.fechaAlta.getDate() < 10 ? "0" : "") + trabajador.fechaAlta.getDate() + "/" +
+                ((trabajador.fechaAlta.getMonth() + 1) < 10 ? "0" : "") + (trabajador.fechaAlta.getMonth() + 1) + "/" +
+                trabajador.fechaAlta.getFullYear());
+        }
+        window.onload = mostrarDatos();
+
+    </script>
 </body>
+
 </html>

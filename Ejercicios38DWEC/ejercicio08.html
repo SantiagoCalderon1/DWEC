@@ -1,13 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 08</title>
     <!--Santiago Calderon Castaño-->
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            width: 50%;
+            padding: 10px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr:nth-child(even) th,
+        tr:nth-child(even) td {
+            background-color: #b5e1f0;
+            /* Color alternado para filas */
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 08</h1>
+    <table border="1">
+        <tr>
+            <th colspan="2">Datos del alumno</th>
+        </tr>
+        <tr>
+            <th>Cídigo: </th>
+            <td id="codigo-alumno"></td>
+        </tr>
+        <tr>
+            <th>Nombre: </th>
+            <td id="nombre-alumno"></td>
+        </tr>
+        <tr>
+            <th>Apellidos: </th>
+            <td id="apellidos-alumno"></td>
+        </tr>
+        <tr>
+            <th>Edad: </th>
+            <td id="edad-alumno"></td>
+        </tr>
+        <tr>
+            <th>Fecha de nacimiento: </th>
+            <td id="fecha-nacimiento-alumno"></td>
+        </tr>
+        <tr>
+            <th>Calificación: </th>
+            <td id="calificacion-alumno"></td>
+        </tr>
+    </table>
+
+    <script>
+        let alumnos = [{
+            codigo: 1,
+            nombre: "Luis",
+            apellidos: "Mas Ros",
+            fechaNacimiento: new Date(1990, 9, 5), // 05/10/1990 = 1990, 9, 5.  Nueve porque los meses empiezan en 0
+            getEdad: function () { //Creamos un método de objeto que nos calcule la edad, cada que se necesite. Así la edad siempre estará actualizada
+                return parseInt((new Date() - this.fechaNacimiento) / (365.25 * 24 * 60 * 60 * 1000)) + " años"
+            },
+            calificacion: 7.5
+        }];
+
+        //Función para imprimir los datos, que se ejecuta cuando la página se termina de cargar
+        function mostrarDatos() {
+            alumnos.forEach(alumno => {
+                document.getElementById("codigo-alumno").innerHTML = alumno.codigo;
+            document.getElementById("nombre-alumno").innerHTML = alumno.nombre;
+            document.getElementById("apellidos-alumno").innerHTML = alumno.apellidos;
+            document.getElementById("edad-alumno").innerHTML = alumno.getEdad();
+            document.getElementById("fecha-nacimiento-alumno").innerHTML = getFechaFormateada(alumno);
+            document.getElementById("calificacion-alumno").innerHTML = alumno.calificacion;
+            });
+            
+        }
+
+        //Con esta función le damos formato a la fecha cuando la imprimimos
+        function getFechaFormateada(alumno) {
+            return ((alumno.fechaNacimiento.getDate() < 10 ? "0" : "") + alumno.fechaNacimiento.getDate() + "/" +
+                ((alumno.fechaNacimiento.getMonth() + 1) < 10 ? "0" : "") + (alumno.fechaNacimiento.getMonth() + 1) + "/" +
+                alumno.fechaNacimiento.getFullYear());
+        }
+
+        Window.onload = mostrarDatos();
+    </script>
 </body>
+
 </html>
