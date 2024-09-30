@@ -1,13 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 37</title>
     <!--Santiago Calderon Castaño-->
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .frame-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .frame {
+            flex: 1;
+            border: 1px solid #ccc;
+        }
+    </style>
+
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 37</h1>
+    <!--Creamos el contenedor-->
+    <div class="frame-container">
+        <iframe class="frame" src="" id="frame1" title="Frame 1"></iframe>
+        <iframe class="frame" src="" id="frame2" title="Frame 2"></iframe>
+    </div>
+    <script>
+        // Lista de páginas para cargar aleatoriamente
+        const paginas = [
+            "https://www.example.com",
+            "https://www.github.io",
+            "https://www.wikipedia.org"
+        ];
+
+        // Función para seleccionar una página aleatoria
+        function cargarPaginaAleatoria() {
+            const paginaAleatoria = paginas[Math.floor(Math.random() * paginas.length)];
+            return paginaAleatoria;
+        }
+
+        // Cargar páginas aleatorias en los dos marcos
+        document.getElementById('frame1').src = cargarPaginaAleatoria();
+        document.getElementById('frame2').src = cargarPaginaAleatoria();
+    </script>
 </body>
+
 </html>

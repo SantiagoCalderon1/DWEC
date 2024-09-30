@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 35</title>
     <!--Santiago Calderon Castaño-->
 </head>
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 35</h1>
+    <script>
+        // Obtenemos la altura y ancho de la pantalla
+        let anchoPantalla = screen.width;
+        let alturaPantalla = screen.height;
+
+        // Obtenemos la altura de la barra de tareas, es un dato inventado 
+        let alturaBarraTareas = 40; // Puede variar según el sistema operativo
+
+        // Calculamos el área que usaremos de la pantalla
+        let areaUtil = alturaPantalla - alturaBarraTareas;
+
+        // Mostramos la información sobre la pantalla
+        document.write("Resolución de pantalla: " + anchoPantalla + "x" + alturaPantalla + " px<br>");
+        document.write("Altura estimada de la barra de tareas: " + alturaBarraTareas + " px<br>");
+        document.write("Área útil de la pantalla: " + anchoPantalla + "x" + areaUtil + " px<br>");
+
+        // Miramos si la resolución de pantalla es superior a 1024x768 px
+        if (anchoPantalla > 1024 && alturaPantalla > 768) {
+            document.write("La resolución de pantalla es superior a 1024x768 px.");
+        } else {
+            document.write("La resolución de pantalla NO es superior a 1024x768 px.");
+        }
+    </script>
 </body>
 </html>

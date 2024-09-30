@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3</title>
+    <title>Ejercicio 30</title>
     <!--Santiago Calderon Castaño-->
 </head>
 <body>
-    <h1>Ejercicio 3</h1>
-    <script></script>
+    <h1>Ejercicio 30</h1>
+    <script>
+        let miNombre = "Santiago Calderon Castaño";
+
+        let conteoPalabras = miNombre.split(' ').filter(palabra => palabra.length > 0).length;
+
+        document.write("Mi nombre: " + miNombre + " Tiene : " +  conteoPalabras + " palabras");
+
+    </script>
 </body>
 </html>

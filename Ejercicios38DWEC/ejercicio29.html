@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+    <title>Ejercicio 29</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 2</h1>
-    <script></script>
+    <h1>Ejercicio 29</h1>
+    <script>
+        // Creamos una variable con el contenido "Fecha: 23-12-2012 Hora: 19,45,00"
+        let cadena = "Fecha: 23-12-2012 Hora: 19,45,00";
+
+        // Sustituimos los guiones "-" por barras "/"
+        let nuevaCadena = cadena.replace(/-/g, "/");
+
+        // Sustituimos las comas "," por dos puntos ":"
+        nuevaCadena = nuevaCadena.replace(/,/g, ":");
+        //                  (/,/g) es una expreción regular
+
+        // Mostramos la nueva cadena
+        document.write("La nueva cadena es: " + nuevaCadena);
+    </script>
 </body>
+
 </html>

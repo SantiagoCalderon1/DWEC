@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 3</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 3</h1>
+
+    <h3>Bienvenido a la página de redirección</h3>
+    <p>Has visitado esta página <span id="contador"></span> veces.</p>
+    <button onclick="redirigir()">Ir a la página correspondiente</button>
+
+    <script>
+        // Inicializamos el contador de páginas visitadas
+        if (!localStorage.getItem('paginasVisitadas')) {
+            localStorage.setItem('paginasVisitadas', 0);
+        }
+
+        // Incrementamos el contador de visitas
+        let paginasVisitadas = parseInt(localStorage.getItem('paginasVisitadas'));
+        paginasVisitadas++;
+        localStorage.setItem('paginasVisitadas', paginasVisitadas);
+
+        // Función para redirigir a la página adecuada
+        function redirigir() {
+            if (paginasVisitadas > 5) {
+                window.location.href = "http://www.elcorteingles.es";
+            } else {
+                window.location.href = "http://www.yahoo.es";
+            }
+        }
+        // Mostramos el contador de páginas visitadas
+        document.getElementById('contador').textContent = localStorage.getItem('paginasVisitadas');
+
+    </script>
+
 </body>
+
 </html>

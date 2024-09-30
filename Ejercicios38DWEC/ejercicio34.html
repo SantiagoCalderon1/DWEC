@@ -1,13 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 34</title>
     <!--Santiago Calderon Castaño-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 50px;
+            /* Ajusta el tamaño de las imágenes */
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 3</h1>
+    <h2>Detector de Navegador</h2>
+    <button onclick="detectarNavegador()">Detectar Navegador</button>
+    <div id="info"></div>
+
+    <script>
+        //Creamos la función principal
+        function detectarNavegador() {
+            //Obtenemos la información del navegador
+            const infoDiv = document.getElementById('info');
+            const userAgent = navigator.userAgent;
+            let navegador = "";
+            let logo = "";
+            let descripcion = "";
+
+            //Hacemos la comprobaciones y damos valor a las variables
+            if (userAgent.includes("Chrome") && !userAgent.includes("Edge")) {
+                navegador = "Google Chrome";
+                logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/96px-Google_Chrome_icon_%28February_2022%29.svg.png";
+                descripcion = "Google Chrome es de los principales navegadores, el más joven y el más popular actualmente.";
+            } else if (userAgent.includes("Firefox")) {
+                navegador = "Mozilla Firefox";
+                logo = "https://es.m.wikipedia.org/wiki/Archivo:Firefox_logo,_2019.svg";
+                descripcion = "Mozilla Firefox, o simplemente Firefox, es un navegador web libre y de código abierto desarrollado por Mozilla.";
+            } else if (userAgent.includes("MSIE") || userAgent.includes("Trident")) {
+                navegador = "Internet Explorer";
+                logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Internet_Explorer_10%2B11_logo.svg/300px-Internet_Explorer_10%2B11_logo.svg.png";
+                descripcion = "El navegador más utilizado tradicionalmente en internet, complemento indispensable de Windows.";
+            } else if (userAgent.includes("Edg")) {
+                navegador = "Microsoft Edge";
+                logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/200px-Microsoft_Edge_logo_%282019%29.svg.png";
+                descripcion = "Microsoft Edge es un navegador web desarrollado por Microsoft, incluido en Windows 11.";
+            } else if (userAgent.includes("OPR")) {
+                navegador = "Opera";
+                logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Opera_2015_icon.svg/200px-Opera_2015_icon.svg.png";
+                descripcion = "Opera es reconocido por su velocidad, seguridad y constante innovación.";
+            } else if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) {
+                navegador = "Safari";
+                logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/200px-Safari_browser_logo.svg.png";
+                descripcion = "Safari es el complemento indispensable para los usuarios de Mac OS X.";
+            } else {
+                navegador = "Navegador desconocido";
+                descripcion = "No se pudo detectar el navegador o este no está en la lista.";
+            }
+            // los links los saqué de wikipedia
+
+            //Insertamos el HTML
+            infoDiv.innerHTML = `
+                <h2>${navegador}</h2>
+                <img src="${logo}" alt="${navegador} Logo">
+                <p>${descripcion}</p>
+            `;
+        }
+    </script>
 </body>
+
 </html>

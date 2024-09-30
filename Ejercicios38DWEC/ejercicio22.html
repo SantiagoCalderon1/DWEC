@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+    <title>Ejercicio 22</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 2</h1>
-    <script></script>
+    <h1>Ejercicio 22</h1>
+    <script>
+        //Aquí guardaremos los números
+        let numeros = [];
+
+        for (let i = 0; i < 5; i++) {
+            let numero = parseFloat(prompt("Introduce un número par positivo:"));
+            if (numero > 0) {
+                numeros.push(numero); // Solo añadir si es positivo
+            }
+        }
+
+        // usamos Math.max para encontrar el número máximo
+        if (numeros.length > 0 && (numeros % 2 == 0)) {
+            let maximo = Math.max(...numeros); // Usar el operador spread (...) para pasar el array
+
+            document.write("EL número máximo es: " + maximo);
+        } else {
+            alert("No se introdujeron números positivos.");
+        }
+    </script>
 </body>
+
 </html>

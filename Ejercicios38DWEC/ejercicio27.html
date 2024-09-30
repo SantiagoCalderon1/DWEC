@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+    <title>Ejercicio 27</title>
     <!--Santiago Calderon Castaño-->
 </head>
+
 <body>
-    <h1>Ejercicio 2</h1>
-    <script></script>
+    <h1>Ejercicio 27</h1>
+    <script>
+        // Creamos una variable con la cadena "Centro de Estudios IES el Grao"
+        let cadena = "Centro de Estudios IES el Grao";
+
+        // Encontramos la posición de la palabra "de"
+        let posicionDe = cadena.indexOf("de");
+
+        // Sacamos 11 caracteres a partir de la posición de "de"
+        let subcadena = cadena.substring(posicionDe, posicionDe + 11);
+
+        // Mostramos la subcadena
+        document.write("La subcadena extraída es: " + subcadena);
+
+    </script>
 </body>
+
 </html>

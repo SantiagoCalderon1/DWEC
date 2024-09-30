@@ -1,13 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
+    <title>Ejercicio 33</title>
     <!--Santiago Calderon Castaño-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Ejercicio 01</h1>
-    <script></script>
+    <h1>Ejercicio 33</h1>
+    <h2>Encriptar y Desencriptar Mensaje</h2>
+    <textarea id="texto" placeholder="Ingrese su texto aquí..."></textarea><br>
+    <button onclick="encriptar()">Encriptar</button>
+    <button onclick="desencriptar()">Desencriptar</button>
+
+    <p id="resultado"></p>
+    <p id="resultadoDesencriptado"></p>
+
+    <script>
+        function encriptar() {
+            const texto = document.getElementById('texto').value;
+            let textoEncriptado = '';
+
+            // Encriptamos sumando 5 al código ASCII de cada carácter
+            for (let i = 0; i < texto.length; i++) {
+                textoEncriptado += String.fromCharCode(texto.charCodeAt(i) + 5);
+            }
+
+            // Mostramos el resultado encriptado
+            document.getElementById('resultado').textContent = 'Mensaje Encriptado: ' + textoEncriptado;
+            document.getElementById('resultadoDesencriptado').textContent = ''; // Limpiar el mensaje desencriptado
+        }
+
+        function desencriptar() {
+            const texto = document.getElementById('resultado').textContent.replace('Mensaje Encriptado: ', '');
+            let textoDesencriptado = '';
+
+            // Desencriptamos restando 5 al código ASCII de cada carácter
+            for (let i = 0; i < texto.length; i++) {
+                textoDesencriptado += String.fromCharCode(texto.charCodeAt(i) - 5);
+            }
+
+            // Mostramos el resultado desencriptado
+            document.getElementById('resultadoDesencriptado').textContent = 'Mensaje Desencriptado: ' + textoDesencriptado;
+        }
+    </script>
 </body>
+
 </html>
