@@ -152,6 +152,12 @@ function datosNuevaVentana(doc) {
             background-color: white;
             /* Color de fondo del contenedor */
         }
+
+        iframe{
+            width: 800px;
+            height: 600px:
+        }
+
     </style>
         </head>
         <body>
@@ -189,6 +195,10 @@ function obtenerNavegador() {
     } else {
         return "Navegador desconocido";
     }
+
+    /**
+     * return navigator.userAgent; así sería si no importase como venga el código del navegador
+     */
 }
 
 //Pruebas que estuve haciendo, pero no me hizo falta.
