@@ -18,8 +18,10 @@
 
 // Funciones para la ventana principal
 function escribirPantallaPrincipal() {
-    let nombre = obtenerNombre().trim(); // Uso trim para borrar posibles espacios en blanco del inicio o final
     document.getElementById("titulo").innerText = "TAREA DWEC03";
+    let nombre = obtenerNombre().trim(); // Uso trim para borrar posibles espacios en blanco del inicio o final
+    if (nombre !== "") {
+        
     document.getElementById("texto2").innerText = "Buenos días " + nombre;
     document.getElementById("texto3").innerText = "Tu nombre tiene " + nombre.length + " caracteres, incluidos espacios.";
 
@@ -44,6 +46,10 @@ function escribirPantallaPrincipal() {
     let mes = fechaNacimiento.toLocaleString("es-ES", { month: "long" });
 
     document.getElementById("texto9").innerText = "Naciste un feliz " + diaSemana + ", " + fechaNacimiento.getDate() + " de " + mes + " del año " + fechaNacimiento.getFullYear();
+    
+    }else{
+        alert("Los datos estan vacios, solo se enseñará los que no requiren datos de entrada.");
+    }
     
     document.getElementById("texto10").innerText = "El coseno de 180 es: " + calcularCoseno(180);
 
@@ -118,11 +124,40 @@ function datosNuevaVentana(doc) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Actividad 1</title>
+                <style>
+        body {
+            display: flex;
+            /* Activar Flexbox */
+            flex-direction: column;
+            /* Disponer elementos en columna */
+            justify-content: center;
+            /* Centrar verticalmente */
+            align-items: center;
+            /* Centrar horizontalmente */
+            height: 100vh;
+            /* Ocupa toda la altura de la ventana */
+            margin: 0;
+            /* Eliminar márgenes por defecto */
+            background-color: #f0f0f0;
+            /* Color de fondo (opcional) */
+        }
+
+        .contenedor {
+            margin-top: 30px;
+            /* Eliminar márgenes por defecto */
+            text-align: center;
+            /* Centrar texto dentro del contenedor */
+            padding: 50px 20px;
+            /* Espaciado interno */
+            background-color: white;
+            /* Color de fondo del contenedor */
+        }
+    </style>
         </head>
         <body>
             <h3>Ejemplo de Ventana Nueva</h3>
             <div id="contenedor">
-                <p>URL Completa: <span id="url-completa">${doc.URL}</span></p>
+                <p style="margin-top: 150px;">URL Completa: <span id="url-completa">${doc.URL}</span></p>
                 <p>Protocolo utilizado: <span id="protocolo">${doc.location.protocol}</span></p>
                 <p>Nombre del código del navegador: <span id="codigo-navegador">${obtenerNavegador()}</span></p>
                 <p>Java <span id="java-disponible">${navigator.javaEnabled() ? "SI" : "NO"}</span> disponible en esta ventana.</p>
