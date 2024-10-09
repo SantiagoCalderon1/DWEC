@@ -1,118 +1,90 @@
 <!DOCTYPE html>
 <!--Santiago Calderon Castaño-->
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 02</title>
-  </head>
-  <body>
-    <h1>Ejercicio 02 Datos del Ciudadano</h1>
-    <div id="contenedor">
-      <div id="contenedor-inputs">
-        <input
-          type="text"
-          name="input-nombre"
-          id="input-nombre"
-          placeholder="Nombre y apellidos"
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-edad"
-          id="input-edad"
-          placeholder="Edad"
-          required
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-calle"
-          id="input-calle"
-          placeholder="Calle"
-          required
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-patio"
-          id="input-patio"
-          placeholder="Patio (opcional)"
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-puerta"
-          id="input-puerta"
-          placeholder="Puerta"
-          required
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-codigo-postal"
-          id="input-codigo-postal"
-          placeholder="Código Postal"
-          required
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-poblacion"
-          id="input-poblacion"
-          placeholder="Poblacion"
-          required
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-idioma1"
-          id="input-idioma1"
-          placeholder="1er idioma"
-          required
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-idioma2"
-          id="input-idioma2"
-          placeholder="2do idioma (opcional)"
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-idioma3"
-          id="input-idioma3"
-          placeholder="3er idioma (opcional)"
-        />
-        <br /><br />
-        <input
-          type="text"
-          name="input-numero-hijos"
-          id="input-numero-hijos"
-          placeholder="Número de hijos"
-          required
-        />
-        <br /><br />
-      </div>
-      <button type="submit" onclick="mostrarDatos()">Enviar Formulario</button>
-      <br /><br />
-    </div>
 
-    <table border="1">
-      <tr id="row1"></tr>
-      <tr id="row2"></tr>
-      <tr id="row3"></tr>
-      <tr id="row4"></tr>
-      <tr id="row5"></tr>
-      <tr id="row6"></tr>
-      <tr id="row7"></tr>
-      <tr id="row8"></tr>
-      <tr id="row9"></tr>
-      <tr id="row10"></tr>
-      <tr id="row11"></tr>
-      <tr id="row12"></tr>
-    </table>
-    <script src="ejercicio02.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 02</title>
+  <style>
+    #contenedor,
+    h1 {
+      text-align: center;
+      /* Centrar texto dentro del contenedor */
+      padding: 20px;
+      /* Espaciado interno */
+      background-color: white;
+      /* Color de fondo del contenedor */
+      border-radius: 8px;
+      /* Bordes redondeados (opcional) */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Sombra (opcional) */
+    }
+
+    table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      /* Puedes ajustar según necesites para centrar verticalmente  */
+      border-collapse: collapse;
+    } 
+
+
+    td {
+      padding: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ejercicio 02 Datos del Ciudadano</h1>
+  <!--El ejercicio no decía explitamente de que forma obtendríamos los datos,
+  así que yo me tomé la libertar de usar un formulario, para ir practicando -->
+  <div id="contenedor">
+    <form id="formularioDatosCiudadanos">
+      <label for="input-nombre">Nombre: </label>
+      <br />
+      <input type="text" name="input-nombre" id="input-nombre" placeholder="Nombre y apellidos" required />
+      <br />
+      <br /><br />
+      <label for="input-fecha-nacimiento">Fecha Nacimiento: </label>
+      <br />
+      <input type="date" name="input-fecha-nacimiento" id="input-fecha-nacimiento" placeholder="Edad" required />
+      <br /><br />
+      <label for="input-direccion">Calle: </label>
+      <br />
+      <input type="text" name="input-direccion" id="input-direccion"
+        placeholder="Calle xxx nº xxx Pta xxx (Patio xxx opcional)" required />
+      <br /><br />
+      <label for="input-codigo-postal">Código Postal - Poblacion: </label>
+      <br />
+      <input type="text" name="input-codigo-postal" id="input-codigo-postal"
+        placeholder="Código Postal xxx - Poblacion xxx" required />
+      <br /><br />
+      <label for="input-idiomas">Idiomas: </label>
+      <br />
+      <input type="text" name="input-idiomas" id="input-idiomas" placeholder="Idioma separados por '-'" required />
+      <br /><br />
+      <label for="input-nombre-hijos">Nombre de hijos: </label>
+      <br />
+      <input type="text" name="input-nombre-hijos" id="input-nombre-hijos"
+        placeholder="Nombre de hijos se parados por '-'" />
+      <br /><br />
+      <button type="submit" id="enviar-formulario">Enviar Formulario</button>
+      <br /><br />
+      <button type="button" id="limpiar-datos">Limpiar datos</button>
+    </form>
+  </div>
+
+  <table border="1">
+    <thead></thead>
+    <tbody></tbody>
+    <tbody>
+
+    </tbody>
+  </table>
+  <script src="ejercicio02.js"></script>
+</body>
+
 </html>
