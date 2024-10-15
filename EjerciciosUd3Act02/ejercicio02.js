@@ -172,7 +172,7 @@ function obtenerPoblacion() {
 
 //Funcion para obtener el listado de idiomas, los almacenamos en un array en minúsculas
 function obtenerIdiomas() {
-    let idiomas = document.getElementById("input-idiomas").value.toLowerCase().split("-");
+    let idiomas = document.getElementById("input-idiomas").value.toLowerCase().split(' ');
     return (idiomas.length > 0 ? idiomas : []);
 }
 
@@ -187,4 +187,3 @@ function obtenerNombreHijos() {
     let nombreHijos = document.getElementById("input-nombre-hijos").value;
     return (nombreHijos.length > 0 ? nombreHijos.split("-") : "N/A");
 }
-
