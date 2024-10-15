@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 01</title>
+  </head>
+  <body>
+    <h1>Ejercicio 01 sobre Hospital</h1>
+    <script>
+      // Declarar variables
+      let Hospital1 = new Hospital();
+      Hospital1.crearHospital(
+        "H001",
+        "Hospital General del Norte",
+        "Av. Libertad 456, Sector San Martín",
+        "555-7890",
+        "Ciudad del Norte",
+        "67890"
+      );
+
+      
+      let Medico1 = new Medico();
+      Medico1.crearMedico(
+        "M123",
+        "Carlos",
+        "Pérez Gómez",
+        "12345678X",
+        "Calle Los Robles 123, Piso 2",
+        "555-4321",
+        "Ciudad del Este",
+        "54321",
+        "1980-05-15",
+        "Cardiología",
+        "50000",
+        Hospital1
+      );
+
+      document.write(Medico.mostrarDatos());
+    </script>
+    <script src="js01.js"></script>
+  </body>
+</html>
