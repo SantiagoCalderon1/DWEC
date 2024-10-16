@@ -78,6 +78,6 @@ const Medico = {
   },
 
   mostrarDatos : function(){
-    return  `Nombre: ${this.nombre} Apellidos: ${this.apellidos} DNI: ${this.dni}  Direccion: ${this.direccion} Telefono: ${this.telefono} Poblacion:  ${this.poblacion} Cod Postal: ${this.codPostal} Fecha Nacimiento: ${this.fechaNacimiento}  Especialidad: ${this.especialidad} Sueldo: ${this.sueldo} Hospital: ${this.Hospital}`;     
+    return  `<p>Nombre: ${this.nombre} Apellidos: ${this.apellidos} DNI: ${this.dni}  Direccion: ${this.direccion} Telefono: ${this.telefono} Poblacion:  ${this.poblacion} Cod Postal: ${this.codPostal} Fecha Nacimiento: ${this.fechaNacimiento}  Especialidad: ${this.especialidad} Sueldo: ${this.sueldo} Hospital: ${this.Hospital}</p>`;     
   }
 };
