@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 03</title>
+  </head>
+  <body>
+    <h1>Citas Médicas</h1>
+    <div id="contenedor">
+      <!--Citarse-->
+      <h2>Sección Citarse</h2>
+      <form action="">
+        <label for="nombrePaciente">Nombre:</label>
+        <input
+          type="text"
+          name="nombrePaciente"
+          id="nombrePaciente"
+          placeholder="Nombre y apellidos"
+          required
+        />
+        <br /><br />
+        <label for="numeroConsulta">Número de Consulta: </label>
+        <input
+          type="number"
+          name="numeroConsulta"
+          id="numeroConsulta"
+          required
+        />
+        <br><br>
+        <button type="submit">Aceptar</button>
+
+        <br /><br />
+        <button type="submit">Citarse</button>
+      </form>
+      <!--Siguiente a consulta-->
+      <h2>Sección Siguiente Consulta</h2>
+      <button>Siguiente consulta</button>
+
+      <!--Lista de pacientes-->
+      <h2>Sección Lista de Pacientes</h2>
+      <table id="listaPacientes" border="1">
+        <tr>
+          <th>Número Consulta</th>
+          <th>Nombre Paciente</th>
+        </tr>
+        <tr id="listNumConsulta"></tr>
+      </table>
+    </div>
+
+    <script>
+      //Esctrutura de datos
+      //Array con el nombre de los doctores
+      const consultas = ["Dr. Ándres Rojas", "Dr. Camila Díaz", "Dr.  Paula Martinez", "Dr Antonio Montabes", "Dr. Manuel Valero"];
+
+      //Array con el nombre de los pacientes
+      let pacientes = [];
+
+
+      //Array un fila por consulta y una columna por paciente citado
+      let citas = [[], []];
+
+      
+
+    </script>
+  </body>
+</html>
