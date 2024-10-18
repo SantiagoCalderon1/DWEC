@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+  </head>
+
+  <body>
+    <h1>Ejercicio 04</h1>
+    <script src="ejercicio04.js"></script>
+
+    <script>
+      const detalleFactura = [
+        { descripcion: "Producto 1", precio: 100, cantidad: 2 },
+        { descripcion: "Producto 2", precio: 50, cantidad: 3 },
+      ];
+
+      const empresa = {
+        nombre: "Empresa Ejemplo",
+        direccion: "Calle Falsa 123",
+        telefono: "555-1234",
+        NIF: "A12345678",
+      };
+
+      const cliente = {
+        nombre: "Cliente Ejemplo",
+        direccion: "Avenida Real 456",
+        telefono: "555-9876",
+        NIF: "B98765432",
+      };
+
+      //Caso de prueba 1
+      // Crear la factura
+      const factura = new Factura(
+        empresa,
+        cliente,
+        detalleFactura,
+        21,
+        "Tarjeta"
+      );
+
+      // Calcular el total de la factura
+      factura.calcularTotal();
+
+      // Verificar los totales
+      console.log("Base imponible esperada: 350"); // (100*2 + 50*3)
+      console.log(
+        "Base imponible obtenida: " + factura.TotalesFactura.baseImponible
+      );
+
+      console.log("Importe total esperado: 423.5"); // Base imponible + 21% de IVA
+      console.log(
+        "Importe total obtenido: " + factura.TotalesFactura.importeTotal
+      );
+
+      //caso de prueba 2
+      // Mostrar los totales en consola
+      factura.muestraTotal();
+
+      //caso de prueba 3
+      // Imprimir la factura
+      const facturaImprimible = factura.imprimirFactura();
+      console.log(facturaImprimible);
+
+      //caso de prueba 4
+      // Intentar crear una factura con IVA negativo (debería arrojar un error)
+      try {
+        const facturaInvalidaIVA = new Factura(
+          empresa,
+          cliente,
+          detalleFactura,
+          -5,
+          "Efectivo"
+        );
+      } catch (e) {
+        console.log("Error capturado: " + e.message); // Esperado: "El tipo de IVA debe ser un número positivo."
+      }
+
+      // Intentar crear una factura sin productos (debería arrojar un error)
+      try {
+        const facturaSinProductos = new Factura(
+          empresa,
+          cliente,
+          [],
+          21,
+          "Efectivo"
+        );
+      } catch (e) {
+        console.log("Error capturado: " + e.message); // Esperado: "Debe haber al menos un producto en los detalles."
+      }
+
+      //Caso de prueba 5
+      // Crear una factura con una forma de pago diferente
+      const facturaEfectivo = new Factura(
+        empresa,
+        cliente,
+        detalleFactura,
+        21,
+        "Efectivo"
+      );
+      facturaEfectivo.calcularTotal();
+      facturaEfectivo.muestraTotal();
+    </script>
+  </body>
+</html>
