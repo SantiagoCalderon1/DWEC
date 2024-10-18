@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+button {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
+
+#inputs {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: #ffffff; /* Fondo blanco para los inputs */
+    border: 1px solid #ddd; /* Borde gris */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    display: inline-block; /* Para centrar */w
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin: 5px 0; /* Margen superior e inferior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #4CAF50; /* Color del borde al enfocar */
+    outline: none; /* Eliminar el contorno */
+}
+
+#listaPacientes {
+    margin-top: 20px;
+}
+
+table {
+    width: 80%; /* Ancho de la tabla */
+    margin: 20px auto; /* Margen automático para centrar */
+    border-collapse: collapse; /* Colapsar bordes */
+}
+
+th, td {
+    padding: 10px;
+    text-align: center; /* Alinear el texto al centro */
+}
+
+th {
+    background-color: #4CAF50; /* Fondo verde para encabezados */
+    color: white; /* Texto blanco */
+}
+
+td {
+    background-color: #f9f9f9; /* Fondo gris claro */
+    border: 1px solid #ddd; /* Borde gris claro */
+}
+
+td:hover {
+    background-color: #f1f1f1; /* Color al pasar el mouse sobre celdas */
+}
