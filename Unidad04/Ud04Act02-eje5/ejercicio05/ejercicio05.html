@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--SANTIAGO CALDERON CASTAÑO-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 05</title>
 </head>
+
 <body>
-    
+    <script src="ejercicio05.JS">
+    </script>
+    <Script>
+        // Instanciamos 3 edificios
+        let edificioA = new Edificio("Edificio A", "Garcia Prieto", "58", "15706");
+        let edificioB = new Edificio("Edificio B", "Camino Caneiro", "29", "32004");
+        let edificioC = new Edificio("Edificio C", "San Clemente", "s/n", "15705");
+
+        // Mostramos información del edificio A
+        alert("El código postal del edificio A es: " + edificioA.codigoPostal + ".");
+        alert("La calle del edificio C es: " + edificioC.calle + ".");
+        alert("El edificio B está situado en la calle " + edificioB.calle + " número " + edificioB.numero + ".");
+
+        // Agregamos 2 plantas y 3 puertas por planta al edificio A
+        alert("Agregamos 2 plantas y 3 puertas por planta al edificio A...");
+        edificioA.agregarPlantasYPuertas(2, 3);
+
+        // Agregamos 4 propietarios al edificio A
+        alert("Agregamos 4 propietarios al edificio A...");
+        edificioA.agregarPropietario("Jose Antonio Lopez", 1, 1);
+        edificioA.agregarPropietario("Luisa Martinez", 1, 2);
+        edificioA.agregarPropietario("Marta Castellón", 1, 3);
+        edificioA.agregarPropietario("Antonio Pereira", 2, 2);
+
+        // Imprimos propietarios
+        edificioA.imprimePlantas();
+
+        // Agregamos 1 planta más al edificio A
+        alert("Agregamos 1 planta más al edificio A...");
+        edificioA.agregarPlantasYPuertas(1, 3); // 1 planta y 3 puertas
+
+        // Agregamos 1 propietario más al edificio A en planta 3, puerta 2
+        alert("Agregamos 1 propietario más al edificio A planta 3, puerta 2...");
+        edificioA.agregarPropietario("Pedro Meijide", 3, 2);
+
+        // Imprimimos propietarios de nuevo
+        edificioA.imprimePlantas();
+    </Script>
 </body>
+
 </html>

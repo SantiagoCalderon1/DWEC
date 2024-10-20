@@ -1,4 +1,15 @@
+//Santiago Calderon Castaño
+
+//Declaración de objetos
 const Hospital = {
+  /** Defino una función que crea un hospital.
+   * El metodo se llama para crear y devolver una nueva instancia de un hospital
+   * 
+   * Las propiedades se inician con los valores pasados como argumentos a crearHospital function( codHospital ....)
+   * y todo por la sintaxis de propiedad abreviada.
+   * 
+   * por ejemplo: codHospital se que convierte una propiedad del objeto con el mismo nombre y valor
+   */
   crearHospital: function (
     codHospital,
     nombreHospital,
@@ -15,19 +26,27 @@ const Hospital = {
       poblacion,
       codPostal,
 
+      /**
+       * Este método está integrada en crearHospital por lo tanto cuando se cuando se cree el objeto 
+       * también será una propiedad del objeto.
+       * 
+       * Este método devuelve una cadena con un formato de parrafo
+       */
       mostrarDatos: function () {
         return `<p>Datos Hospital <br> 
-          codHospital: ${this.codHospital} 
-          nombreHospital: ${this.nombreHospital} 
-          Direccion: ${this.direccion} 
-          Telefono: ${this.telefono} 
-          Poblacion:  ${this.poblacion} 
-          Codigo Postal: ${this.codPostal}</p>`;
-      },
+              codHospital: ${this.codHospital} 
+              nombreHospital: ${this.nombreHospital} 
+              Direccion: ${this.direccion} 
+              Telefono: ${this.telefono} 
+              Poblacion:  ${this.poblacion} 
+              Codigo Postal: ${this.codPostal}</p>`;
+        //Usamos this. para acceder a las propiedades del mismop objeto que está invocando el método
+      }
     };
   },
 };
 
+//Lo mismo que Hospital pero para Medico
 const Medico = {
   crearMedico: function (
     codMedico,
@@ -57,102 +76,31 @@ const Medico = {
       sueldo,
       hospital,
 
+      //Función que modifica la propiedad sueldo, tambien viene integrada al objeto, y usamos también this. para referirnos a si mismo
       cambiarSueldo: function (newSueldo) {
-        sueldo = newSueldo;
+        this.sueldo = newSueldo;
       },
 
+      //Función que calcula la retención de un Medico
       retencionMedico: function (sueldo, porcentajeRetencion) {
         return sueldo * (porcentajeRetencion / 100);
       },
 
+      //Este método devuelve una cadena en formato parrafo, también está integrado en el objeto
       mostrarDatos: function () {
         return `<p> Datos Médico <br> 
-          Nombre: ${this.nombre} 
-          Apellidos: ${this.apellidos} 
-          DNI: ${this.dni}  
-          Direccion: ${this.direccion} 
-          Telefono: ${this.telefono} 
-          Poblacion:  ${this.poblacion} 
-          Cod Postal: ${this.codPostal} 
-          Fecha Nacimiento: ${this.fechaNacimiento}  
-          Especialidad: ${this.especialidad} 
-          Sueldo: ${this.sueldo} 
-          Hospital: ${this.hospital.mostrarDatos()}</p>`;
+              Nombre: ${this.nombre} 
+              Apellidos: ${this.apellidos} 
+              DNI: ${this.dni}  
+              Direccion: ${this.direccion} 
+              Telefono: ${this.telefono} 
+              Poblacion:  ${this.poblacion} 
+              Cod Postal: ${this.codPostal} 
+              Fecha Nacimiento: ${this.fechaNacimiento}  
+              Especialidad: ${this.especialidad} 
+              Sueldo: ${this.sueldo} 
+              Hospital: ${this.hospital.mostrarDatos()}</p>`;
       },
     };
   },
 };
-
-// Declarar variables
-let HospitalRibera = Hospital.crearHospital(
-  "H001",
-  "Hospital General del Norte",
-  "Av. Libertad 456, Sector San Martín",
-  "555-7890",
-  "Ciudad del Norte",
-  "67890"
-);
-
-let MedicoDigestivo = Medico.crearMedico(
-  "M123",
-  "Carlos",
-  "Pérez Gómez",
-  "12345678X",
-  "Calle Los Robles 123, Piso 2",
-  "555-4321",
-  "Ciudad del Este",
-  "54321",
-  "1980-05-15",
-  "Cardiología",
-  "50000",
-  HospitalRibera
-);
-
-let MedicoTraumatologo = Medico.crearMedico(
-  "M456",
-  "Ana",
-  "Martínez Sánchez",
-  "98765432Y",
-  "Avenida del Libertador 456, Oficina 3",
-  "555-9876",
-  "Asunción",
-  "12345",
-  "1975-08-22",
-  "Digestivo",
-  "60000",
-  HospitalRibera
-);
-
-function mostrarDatos() {
-  document.write("<h2>Datos de Médicos</h2>");
-  document.write(
-    MedicoDigestivo.mostrarDatos() + "<br>" + MedicoTraumatologo.mostrarDatos()
-  );
-
-  document.write("<h2>Sueldo de Médico Traumatologo cambiado</h2><br>");
-  MedicoTraumatologo.cambiarSueldo(2.3);
-
-  document.write("<h2>Datos del Hospital Ribera</h2>");
-  document.write(HospitalRibera.mostrarDatos());
-
-  document.write(
-    "<h2>Calculo de la retencion de las dos instancias del objeto Médico</h2>"
-  );
-  document.write(
-    "Retención Medico Digstivo: " +
-      MedicoDigestivo.retencionMedico(50000, 21) +
-      "<br>" +
-      "Retención Medico Traumatologo: " +
-      MedicoTraumatologo.retencionMedico(60000, 10)
-  );
-
-  MedicoDigestivo.cambiarSueldo(MedicoDigestivo.retencionMedico(21));
-  MedicoTraumatologo.cambiarSueldo(MedicoTraumatologo.retencionMedico(10));
-
-  document.write("<h2>Datos de actualizados</h2>");
-  document.write(
-    MedicoDigestivo.mostrarDatos() + "<br>" + MedicoTraumatologo.mostrarDatos()
-  );
-}
-
-window.onload = mostrarDatos;
