@@ -31,7 +31,7 @@ button:hover {
     border: 1px solid #ddd; /* Borde gris */
     padding: 20px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
-    display: inline-block; /* Para centrar */w
+    display: inline-block; /* Para centrar */
 }
 
 input[type="text"],

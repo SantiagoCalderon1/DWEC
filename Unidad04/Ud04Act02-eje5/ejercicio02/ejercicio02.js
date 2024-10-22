@@ -22,7 +22,7 @@ function mostrarDatos() {
     let numeros = pedirDatos();
 
     //Definimos una variable para almacenar los datos
-    let datos;
+    let datos = " ";
 
     datos += "La longitud del array es: " + numeros.length + "<br>";
 
