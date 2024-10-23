@@ -8,22 +8,27 @@
   <body>
     <form action="" method="post">
       <div id="div-inmueble">
-        <label for="inmueble">Seleccione un inmueble:</label>
-        <select name="" id="select-inmueble" >
+        <label for="select-inmueble">Seleccione un inmueble:</label>
+        <select name="select-inmueble" id="select-inmueble">
           <option value="value1">Piso</option>
           <option value="value2">Adosado</option>
           <option value="value3">Parcela</option>
           <option value="value4">Casa</option>
           <option value="value5">Chalet</option>
           <option value="value6">Local</option>
-          <option value="value6">Nave</option>
+          <option value="value7">Nave</option>
         </select>
       </div>
 
-      <div id="datalist">
+      <div id="div-datalist">
         <label for="datalist-provincia">Provincia</label>
-        <input type="text" list="datalist-provincia" />
-        <datalist name="seleccion" id="datalist-provincia">
+        <input
+          type="text"
+          list="datalist-provincia"
+          name="datalist-provincia"
+          id="datalist-provincia"
+        />
+        <datalist name="seleccion" id="option-datalist-provincia">
           <option value="Madrid"></option>
           <option value="Valencia"></option>
           <option value="Barcelona"></option>
@@ -32,7 +37,7 @@
       </div>
 
       <div id="div-ubicacion">
-        <label for="select-ubicacion" >Seleccione una ubicación:</label>
+        <label for="select-ubicacion">Seleccione una ubicación:</label>
         <select name="" id="select-ubicacion" size="4" multiple>
           <option value="value1">Centro</option>
           <option value="value2">Sur</option>
@@ -44,19 +49,199 @@
       </div>
 
       <div id="div-precio-max">
-        <label for="precio-max">Precio máximo:</label>
-        <input type="range" name="precio-max" min="0" max="500.000" step="10.000" value="0"> <!--Llamar a una función para que mueste el dato-->
+        <label for="input-precio-max">Precio máximo:</label>
+        <input
+          type="number"
+          id="input-precio-max"
+          name="input-precio-max"
+          min="0"
+          max="500000"
+          step="10000"
+        />
+        <!--Llamar a una función para que mueste el dato-->
       </div>
 
       <div id="div-metros-min">
-        <label for="metros-min">Precio máximo:</label>
-        <input type="range" name=" metros-min" min="0" max="5.000" step="50" value="0"> <!--Llamar a una función para que mueste el dato-->
+        <label for="input-metros-min">Metros minimos:</label>
+        <input
+          type="number"
+          id="input-metros-min"
+          name="input-metros-min"
+          min="0"
+          max="5000"
+          step="50"
+        />
+        <!--Llamar a una función para que mueste el dato-->
       </div>
 
-      #alturaminima*1label[for="div-altura-minima"]
+      <div id="div-altura-minima">
+        <label for="input-altura-min">Altura minima:</label>
+        <input
+          type="number"
+          id="input-altura-min"
+          name="input-altura-min"
+          min="0"
+          max="40"
+        />
+      </div>
 
+      <div id="div-min-habitaciones">
+        <label for="input-min-habitaciones">Minimo de habitaciones:</label>
+        <input
+          type="number"
+          id="input-min-habitaciones"
+          name="input-min-habitaciones"
+          min="1"
+          max="10"
+        />
+      </div>
 
+      <div id="div-min-baños">
+        <label for="input-min-baños">Minimo de baños:</label>
+        <input
+          type="number"
+          id="input-min-baños"
+          name="input-min-baños"
+          min="1"
+          max="5"
+        />
+      </div>
 
+      <div id="div-caracteristicas">
+        <p>Caracteristicas</p>
+        <label for="input-calefaccion">Calefaccion</label>
+        <input
+          type="checkbox"
+          name="input-calefaccion"
+          id="input-calefaccion"
+        />
+        <label for="input-aireAcondicionado">Aire acondicionado</label>
+        <input
+          type="checkbox"
+          name="input-aireAcondicionado"
+          id="input-aireAcondicionado"
+        />
+        <label for="input-garaje">Garaje</label>
+        <input type="checkbox" name="input-garaje" id="input-garaje" />
+        <label for="input-trastero">Trastero</label>
+        <input type="checkbox" name="input-trastero" id="input-trastero" />
+        <label for="input-piscina">Piscina</label>
+        <input type="checkbox" name="input-piscina" id="input-piscina" />
+        <label for="input-exterior">Exterior</label>
+        <input type="checkbox" name="input-exterior" id="input-exterior" />
+        <label for="input-terraza">Terraza</label>
+        <input type="checkbox" name="input-terraza" id="input-terraza" />
+        <label for="input-amueblado">Amueblado</label>
+        <input type="checkbox" name="input-amueblado" id="input-amueblado" />
+      </div>
+
+      <div id="div-prox-playa">
+        <label for="input-prox-playa">Proximidad a playa:</label>
+        <input type="range" name="input-prox-playa" id="input-prox-playa" />
+      </div>
+
+      <div id="div-boton-radio">
+        <input
+          type="radio"
+          name="input-btn-indiferente"
+          id="input-btn-indiferente"
+          checked
+        />
+        <label for="input-btn-indiferente">Indiferente</label>
+
+        <input 
+        type="radio" 
+        name="input-btn-nuevo" 
+        id="input-btn-nuevo" />
+        <label for="input-btn-nuevo">Nuevo</label>
+
+        <input
+          type="radio"
+          name="input-btn-buen-estado"
+          id="input-btn-buen-estado"
+        />
+        <label for="input-btn-buen-estado">Buen Estado</label>
+
+        <input
+          type="radio"
+          name="input-btn-para-reformar"
+          id="input-btn-para-reformar"
+        />
+        <label for="input-btn-para-reformar">Para Reformar</label>
+      </div>
+
+      <div id="div-nombre">
+        <label for="input-nombre">Nombre:</label>
+        <input
+          type="text"
+          name="input-nombre"
+          id="input-nombre"
+          maxlength="35"
+        />
+      </div>
+
+      <div id="div-apellido">
+        <label for="input-apellido">Apellido:</label>
+        <input
+          type="text"
+          name="input-apellido"
+          id="input-apellido"
+          maxlength="75"
+        />
+      </div>
+
+      <div id="div-correo">
+        <label for="input-correo">Correo:</label>
+        <input type="email" name="input-correo" id="input-correo" />
+      </div>
+
+      <div id="div-fecha-nacimiento">
+        <label for="input-fecha-nacimiento">Fecha de Nacimiento:</label>
+        <input
+          type="date"
+          name="input-fecha-nacimiento"
+          id="input-fecha-nacimiento"
+        />
+      </div>
+
+      <div id="div-dni">
+        <label for="input-dni">DNI:</label>
+        <input type="password" name="input-dni" id="input-dni" />
+      </div>
+
+      <div id="div-comentario">
+        <label for="textarea-comentario">Comentario:</label>
+        <textarea
+          name="textarea-comentario"
+          id="textarea-comentario"
+          cols="60"
+          rows="6"
+        ></textarea>
+      </div>
+
+      <div id="div-campo-oculto">
+        <input
+          type="hidden"
+          name="campo-oculto"
+          id="campo-oculto"
+          value="23/10/2024"
+        />
+      </div>
+
+      <div id="div-btn-enviar">
+        <button type="submit">
+          <img
+            src="ruta-de-tu-imagen.png"
+            alt="Enviar"
+            style="width: 20px; height: 20px"
+          />
+          Enviar
+        </button>
+      </div>
+
+      <div id="div-restablecer-form">
+        <button type="reset">Restablecer</button>
+      </div>
     </form>
   </body>
 </html>
