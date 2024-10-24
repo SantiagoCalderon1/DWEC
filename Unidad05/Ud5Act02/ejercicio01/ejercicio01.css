@@ -1,0 +1,124 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+select[multiple],
+input[type="range"] {
+    height: auto;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+}
+
+button[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+#divBtnEnviar img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Agrupar divs para inputs */
+#divInmueble, #divDatalist, #divUbicacion, #divPrecioMax, #divMetrosMin,
+#divAlturaMinima, #divMinHabitaciones, #divMinBaños, #divCaracteristicas,
+#divProxPlaya, #divBotonRadio, #divNombre, #divApellido, #divCorreo,
+#divFechaNacimiento, #divDni, #divComentario, #divBtnEnviar, #divRestablecerForm {
+    margin-bottom: 20px;
+}
+
+/* Mejorar la apariencia de select y datalist */
+select {
+    appearance: none;
+    background-color: #f9f9f9;
+}
+
+select[multiple] {
+    height: auto;
+}
+
+datalist option {
+    padding: 5px;
+}
+
+/* Estilos para el rango de proximidad */
+input[type="range"] {
+    width: 100%;
+}
+
+/* Estilos específicos para el campo oculto */
+#divCampoOculto {
+    display: none;
+}
+
+/* Respuesta adaptable para móviles */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    textarea {
+        cols: 40;
+        rows: 4;
+    }
+}
