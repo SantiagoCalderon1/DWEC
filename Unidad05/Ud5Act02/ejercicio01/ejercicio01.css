@@ -15,6 +15,27 @@ form {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+#divResultados {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    border-collapse: collapse; /* Colapsa los bordes para que no haya espacio entre ellos */
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+td, th { /* Para las celdas de la tabla */
+    border: 1px solid #dddddd; /* Color del borde */
+    text-align: left; /* Alineación del texto */
+    padding: 8px; /* Espaciado interno */
+}
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -55,6 +76,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    
 }
 
 button:hover {
@@ -106,19 +128,3 @@ input[type="range"] {
     display: none;
 }
 
-/* Respuesta adaptable para móviles */
-@media (max-width: 600px) {
-    form {
-        padding: 15px;
-    }
-
-    button {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    textarea {
-        cols: 40;
-        rows: 4;
-    }
-}

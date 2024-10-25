@@ -1,247 +1,179 @@
 <!DOCTYPE html>
 <!--Santiago Calderon Castaño-->
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 01</title>
-    <link rel="stylesheet" href="ejercicio01.css">
-  </head>
-  <body>
 
-    <form action=""  method="POST" id="formInmobiliaria">
-      <div id="divInmueble">
-        <label for="selectInmueble">Seleccione un inmueble:</label>
-        <select name="selectInmueble" id="selectInmueble">
-          <option value="Piso" selected>Piso</option>
-          <option value="Adosado">Adosado</option>
-          <option value="Parcela">Parcela</option>
-          <option value="Casa">Casa</option>
-          <option value="Chalet">Chalet</option>
-          <option value="Local">Local</option>
-          <option value="Nave">Nave</option>
-        </select>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 01</title>
+  <link rel="stylesheet" href="ejercicio01.css">
+</head>
 
-      <div id="divDatalist">
-        <label for="datalistProvincia">Provincia</label>
-        <input
-          type="text"
-          list="optionDatalistProvincia"
-          name="datalistProvincia"
-          id="datalistProvincia"
-        />
-        <datalist name="seleccion" id="optionDatalistProvincia">
-          <option value="Madrid"></option>
-          <option value="Valencia"></option>
-          <option value="Barcelona"></option>
-          <option value="Murcia"></option>
-        </datalist>
-      </div>
+<body>
 
-      <div id="divUbicacion">
-        <label for="selectUbicacion">Seleccione una ubicación:</label>
-        <select name="" id="selectUbicacion" size="4" multiple>
-          <option value="Centro">Centro</option>
-          <option value="Sur">Sur</option>
-          <option value="Este">Este</option>
-          <option value="Oeste">Oeste</option>
-          <option value="Ronda">Ronda</option>
-          <option value="Periferia">Periferia</option>
-        </select>
-      </div>
+  <form action="" method="POST" id="formInmobiliaria">
+    <div id="divInmueble">
+      <label for="selectInmueble">Seleccione un inmueble:</label>
+      <select name="selectInmueble" id="selectInmueble">
+        <option value="Piso" selected>Piso</option>
+        <option value="Adosado">Adosado</option>
+        <option value="Parcela">Parcela</option>
+        <option value="Casa">Casa</option>
+        <option value="Chalet">Chalet</option>
+        <option value="Local">Local</option>
+        <option value="Nave">Nave</option>
+      </select>
+    </div>
 
-      <div id="divPrecioMax">
-        <label for="inputPrecioMax">Precio máximo:</label>
-        <input
-          type="number"
-          id="inputPrecioMax"
-          name="inputPrecioMax"
-          min="0"
-          max="500000"
-          step="10000"
-        />
-      </div>
+    <div id="divDatalist">
+      <label for="datalistProvincia">Provincia</label>
+      <input type="text" list="optionDatalistProvincia" name="datalistProvincia" id="datalistProvincia" />
+      <datalist name="seleccion" id="optionDatalistProvincia">
+        <option value="Madrid"></option>
+        <option value="Valencia"></option>
+        <option value="Barcelona"></option>
+        <option value="Murcia"></option>
+      </datalist>
+    </div>
 
-      <div id="divMetrosMin">
-        <label for="inputMetrosMin">Metros minimos:</label>
-        <input
-          type="number"
-          id="inputMetrosMin"
-          name="inputMetrosMin"
-          min="0"
-          max="5000"
-          step="50"
-        />
-      </div>
+    <div id="divUbicacion">
+      <label for="selectUbicacion">Seleccione una ubicación:</label>
+      <select name="" id="selectUbicacion" size="4" multiple>
+        <option value="Centro">Centro</option>
+        <option value="Sur">Sur</option>
+        <option value="Este">Este</option>
+        <option value="Oeste">Oeste</option>
+        <option value="Ronda">Ronda</option>
+        <option value="Periferia">Periferia</option>
+      </select>
+    </div>
 
-      <div id="divAlturaMinima">
-        <label for="inputAlturaMin">Altura minima:</label>
-        <input
-          type="number"
-          id="inputAlturaMin"
-          name="inputAlturaMin"
-          min="0"
-          max="40"
-        />
-      </div>
+    <div id="divPrecioMax">
+      <label for="inputPrecioMax">Precio máximo:</label>
+      <input type="number" id="inputPrecioMax" name="inputPrecioMax" min="0" max="500000" step="10000" />
+    </div>
 
-      <div id="divMinHabitaciones">
-        <label for="inputMinHabitaciones">Minimo de habitaciones:</label>
-        <input
-          type="number"
-          id="inputMinHabitaciones"
-          name="inputMinHabitaciones"
-          min="1"
-          max="10"
-        />
-      </div>
+    <div id="divMetrosMin">
+      <label for="inputMetrosMin">Metros minimos:</label>
+      <input type="number" id="inputMetrosMin" name="inputMetrosMin" min="0" max="5000" step="50" />
+    </div>
 
-      <div id="divMinBaños">
-        <label for="inputMinBaños">Minimo de baños:</label>
-        <input
-          type="number"
-          id="inputMinBaños"
-          name="inputMinBaños"
-          min="1"
-          max="5"
-        />
-      </div>
+    <div id="divAlturaMinima">
+      <label for="inputAlturaMin">Altura minima:</label>
+      <input type="number" id="inputAlturaMin" name="inputAlturaMin" min="0" max="40" />
+    </div>
 
-      <div id="divCaracteristicas">
-        <p>Caracteristicas</p>
-        <label for="inputCalefaccion">Calefaccion</label>
-        <input
-          type="checkbox"
-          name="inputCalefaccion"
-          id="inputCalefaccion"
-        />
-        <label for="inputAireAcondicionado">Aire acondicionado</label>
-        <input
-          type="checkbox"
-          name="inputAireAcondicionado"
-          id="inputAireAcondicionado"
-        />
-        <label for="inputGaraje">Garaje</label>
-        <input type="checkbox" name="inputGaraje" id="inputGaraje" />
-        <label for="inputTrastero">Trastero</label>
-        <input type="checkbox" name="inputTrastero" id="inputTrastero" />
-        <label for="inputPiscina">Piscina</label>
-        <input type="checkbox" name="inputPiscina" id="inputPiscina" />
-        <label for="inputExterior">Exterior</label>
-        <input type="checkbox" name="inputExterior" id="inputExterior" />
-        <label for="inputTerraza">Terraza</label>
-        <input type="checkbox" name="inputTerraza" id="inputTerraza" />
-        <label for="inputAmueblado">Amueblado</label>
-        <input type="checkbox" name="inputAmueblado" id="inputAmueblado" />
-      </div>
+    <div id="divMinHabitaciones">
+      <label for="inputMinHabitaciones">Minimo de habitaciones:</label>
+      <input type="number" id="inputMinHabitaciones" name="inputMinHabitaciones" min="1" max="10" />
+    </div>
 
-      <div id="divProxPlaya">
-        <label for="inputProxPlaya">Proximidad a playa:</label>
-        <input type="range" name="inputProxPlaya" id="inputProxPlaya" min="0" max="1000"/>
-        <p><span id="indicacionMetros">   </span> metros de la playa</p>
-      </div>
+    <div id="divMinBaños">
+      <label for="inputMinBaños">Minimo de baños:</label>
+      <input type="number" id="inputMinBaños" name="inputMinBaños" min="1" max="5" />
+    </div>
 
-      <div id="divBotonRadio">
-        <input
-          type="radio"
-          name="inputBtnIndiferente"
-          id="inputBtnIndiferente"
-          checked
-        />
-        <label for="inputBtnIndiferente">Indiferente</label>
+    <div id="divCaracteristicas">
+      <p>Caracteristicas</p>
+      <label for="inputCalefaccion">Calefacción</label>
+      <input type="checkbox" name="inputCalefaccion" id="inputCalefaccion" value="Calefacción" />
+      
+      <label for="inputAireAcondicionado">Aire acondicionado</label>
+      <input type="checkbox" name="inputAireAcondicionado" id="inputAireAcondicionado" value="Aire Acondicionado" />
+      
+      <label for="inputGaraje">Garaje</label>
+      <input type="checkbox" name="inputGaraje" id="inputGaraje" value="Garaje" />
+      
+      <label for="inputTrastero">Trastero</label>
+      <input type="checkbox" name="inputTrastero" id="inputTrastero" value="Trastero" />
+      
+      <label for="inputPiscina">Piscina</label>
+      <input type="checkbox" name="inputPiscina" id="inputPiscina" value="Piscina" />
+      
+      <label for="inputExterior">Exterior</label>
+      <input type="checkbox" name="inputExterior" id="inputExterior" value="Exterior" />
+      
+      <label for="inputTerraza">Terraza</label>
+      <input type="checkbox" name="inputTerraza" id="inputTerraza" value="Terraza" />
+      
+      <label for="inputAmueblado">Amueblado</label>
+      <input type="checkbox" name="inputAmueblado" id="inputAmueblado" value="Amueblado" />
+  </div>
+  
 
-        <input type="radio" name="inputBtnNuevo" id="inputBtnNuevo" />
-        <label for="inputBtnNuevo">Nuevo</label>
+    <div id="divProxPlaya">
+      <label for="inputProxPlaya">Proximidad a playa:</label>
+      <input type="range" name="inputProxPlaya" id="inputProxPlaya" min="0" max="1000" />
+      <p><span id="indicacionMetros"> </span> metros de la playa</p>
+    </div>
 
-        <input
-          type="radio"
-          name="inputBtnBuenEstado"
-          id="inputBtnBuenEstado"
-        />
-        <label for="inputBtnBuenEstado">Buen Estado</label>
+    <div id="divBotonRadio">
+      <input type="radio" name="inputBtnIndiferente" id="inputBtnIndiferente" checked value="Indiferente"/>
+      <label for="inputBtnIndiferente">Indiferente</label>
 
-        <input
-          type="radio"
-          name="inputBtnParaReformar"
-          id="inputBtnParaReformar"
-        />
-        <label for="inputBtnParaReformar">Para Reformar</label>
-      </div>
+      <input type="radio" name="inputBtnNuevo" id="inputBtnNuevo" value="Nuevo"/>
+      <label for="inputBtnNuevo">Nuevo</label>
 
-      <div id="divNombre">
-        <label for="inputNombre">Nombre:</label>
-        <input
-          type="text"
-          name="inputNombre"
-          id="inputNombre"
-          maxlength="35"
-        />
-      </div>
+      <input type="radio" name="inputBtnBuenEstado" id="inputBtnBuenEstado" value="Buen Estado"/>
+      <label for="inputBtnBuenEstado">Buen Estado</label>
 
-      <div id="divApellido">
-        <label for="inputApellido">Apellido:</label>
-        <input
-          type="text"
-          name="inputApellido"
-          id="inputApellido"
-          maxlength="75"
-        />
-      </div>
+      <input type="radio" name="inputBtnParaReformar" id="inputBtnParaReformar" value="Para Reformar"/>
+      <label for="inputBtnParaReformar">Para Reformar</label>
+    </div>
 
-      <div id="divCorreo">
-        <label for="inputCorreo">Correo:</label>
-        <input type="email" name="inputCorreo" id="inputCorreo" />
-      </div>
+    <div id="divNombre">
+      <label for="inputNombre">Nombre:</label>
+      <input type="text" name="inputNombre" id="inputNombre" maxlength="35" />
+    </div>
 
-      <div id="divFechaNacimiento">
-        <label for="inputFechaNacimiento">Fecha de Nacimiento:</label>
-        <input
-          type="date"
-          name="inputFechaNacimiento"
-          id="inputFechaNacimiento"
-        />
-      </div>
+    <div id="divApellido">
+      <label for="inputApellido">Apellido:</label>
+      <input type="text" name="inputApellido" id="inputApellido" maxlength="75" />
+    </div>
 
-      <div id="divDni">
-        <label for="inputDni">DNI:</label>
-        <input type="password" name="inputDni" id="inputDni" />
-      </div>
+    <div id="divCorreo">
+      <label for="inputCorreo">Correo:</label>
+      <input type="email" name="inputCorreo" id="inputCorreo" />
+    </div>
 
-      <div id="divComentario">
-        <label for="textareaComentario">Comentario:</label>
-        <textarea
-          name="textareaComentario"
-          id="textareaComentario"
-          cols="60"
-          rows="6"
-        ></textarea>
-      </div>
+    <div id="divFechaNacimiento">
+      <label for="inputFechaNacimiento">Fecha de Nacimiento:</label>
+      <input type="date" name="inputFechaNacimiento" id="inputFechaNacimiento" />
+    </div>
 
-      <div id="divCampoOculto">
-        <input
-          type="hidden"
-          name="campoOculto"
-          id="campoOculto"
-          value="23/10/2024"
-        />
-      </div>
+    <div id="divDni">
+      <label for="inputDni">DNI:</label>
+      <input type="password" name="inputDni" id="inputDni" />
+    </div>
 
-      <div id="divBtnEnviar">
-        <button type="submit">
-          <img
-            src="https://w7.pngwing.com/pngs/841/271/png-transparent-computer-icons-send-miscellaneous-angle-triangle-thumbnail.png"
-            alt="Enviar"
-            style="width: 20px; height: 20px"
-          />
-          Enviar
-        </button>
-      </div>
+    <div id="divComentario">
+      <label for="textareaComentario">Comentario:</label>
+      <textarea name="textareaComentario" id="textareaComentario" cols="60" rows="6"></textarea>
+    </div>
 
-      <div id="divRestablecerForm">
-        <button type="reset">Restablecer</button>
-      </div>
-    </form>
-    <script src="ejercicio01.js"></script>
-  </body>
+    <div id="divCampoOculto">
+      <input type="hidden" name="campoOculto" id="campoOculto" value="23/10/2024" />
+    </div>
+
+    <div id="divBtnEnviar">
+      <button type="submit" id="btnEnviar">
+        <img
+          src="https://w7.pngwing.com/pngs/841/271/png-transparent-computer-icons-send-miscellaneous-angle-triangle-thumbnail.png"
+          alt="Enviar" style="width: 20px; height: 20px" />
+        Enviar
+      </button>
+    </div>
+
+    <div id="divRestablecerForm">
+      <button type="reset">Restablecer</button>
+    </div>
+  </form>
+
+  <div id="divResultados">
+    <h2>Resultados</h2>
+    <p id="resultados"></p>
+  </div>
+
+  <script src="ejercicio01.js"></script>
+</body>
 </html>
