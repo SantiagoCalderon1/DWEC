@@ -1,0 +1,65 @@
+/* estilos básicos para el formulario */
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  form > p {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    width: 105px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  input, select, textarea {
+    width: 200px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .requerido {
+    background-color: #fffae6; /* Amarillo claro para campos requeridos */
+  }
+  
+  .error {
+    background-color: #ffcc80; /* Naranja claro para campos con error */
+  }
+  
+  #btnEnviar {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #btnEnviar:hover {
+    background-color: #45a049;
+  }
+  

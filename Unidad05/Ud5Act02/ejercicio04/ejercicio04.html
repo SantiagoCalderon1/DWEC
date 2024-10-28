@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alta de Personas</title>
+  <link rel="stylesheet" href="ejercicio04.css" />
+</head>
+<body>
+  <div id="container">
+    <header><h1>Alta de Personas</h1></header>
+    <main>
+      <section>
+        <form action="" method="post">
+          <p>Rellene los siguientes datos y envíelos para insertar nueva persona:</p>
+
+          <label for="dni">DNI</label>
+          <input type="text" name="dni" id="dni" class="requerido" required /><br>
+
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="requerido" required /><br>
+
+          <label for="Foto">Foto</label>
+          <input type="text" id="Foto" name="Foto" class="requerido" required /><br>
+
+          <label for="edad">Edad</label>
+          <input type="number" id="edad" name="edad" class="requerido" required /><br>
+
+          <label for="poblacion">Población:</label>
+          <select id="poblacion" class="requerido">
+            <option value="">Seleccione Población...</option>
+            <option value="poblacion1">Población 1</option>
+            <option value="poblacion2">Población 2</option>
+          </select><br>
+
+          <label for="observacion">Observación</label>
+          <textarea id="observacion"></textarea><br />
+
+          <input type="submit" value="Enviar" class="requerido" id="btnEnviar"/>
+        </form>
+      </section>
+    </main>
+    <script src="ejercicio04.js"></script>
+  </div>
+</body>
+</html>
