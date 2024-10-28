@@ -1,65 +1,74 @@
-/* estilos básicos para el formulario */
+/* Estilos básicos para el formulario */
 
+/* Reset básico para márgenes y rellenos en todos los elementos */
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  form {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  form > p {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    width: 105px;
-    display: inline-block;
-    margin-bottom: 10px;
-  }
-  
-  input, select, textarea {
-    width: 200px;
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .requerido {
-    background-color: #fffae6; /* Amarillo claro para campos requeridos */
-  }
-  
-  .error {
-    background-color: #ffcc80; /* Naranja claro para campos con error */
-  }
-  
-  #btnEnviar {
-    width: 100px;
-    height: 30px;
-    margin-top: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  #btnEnviar:hover {
-    background-color: #45a049;
-  }
-  
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
+}
+
+/* Estilo del encabezado de la página */
+header {
+  width: 100%; /* Ancho completo del contenedor */
+  height: 60px; /* Altura del encabezado */
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 24px; /* Tamaño de fuente del encabezado */
+  margin-bottom: 10px; /* Espacio debajo del encabezado */
+}
+
+/* Estilo del formulario */
+form {
+  width: 400px; /* Ancho fijo del formulario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 20px; /* Espaciado interno del formulario */
+  border: 1px solid #ccc; /* Borde gris claro alrededor del formulario */
+  border-radius: 8px; /* Esquinas redondeadas del formulario */
+}
+
+/* Estilo para el párrafo dentro del formulario */
+form > p {
+  width: 100%; /* Ancho completo del párrafo */
+  margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+/* Estilo para las etiquetas del formulario */
+label {
+  width: 105px; /* Ancho fijo para las etiquetas */
+  display: inline-block; /* Hace que las etiquetas se comporten como bloques en línea */
+  margin-bottom: 10px; /* Espacio debajo de cada etiqueta */
+}
+
+/* Estilo para los elementos de entrada, selección y texto */
+input, select, textarea {
+  width: 200px; /* Ancho fijo para todos los elementos de entrada */
+  margin-bottom: 10px; /* Espacio debajo de cada elemento */
+  padding: 5px; /* Espaciado interno en los elementos */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 4px; /* Esquinas redondeadas de los elementos */
+}
+
+/* Estilo específico para campos requeridos */
+.requerido {
+  background-color: #fffae6; /* Amarillo claro para resaltar campos requeridos */
+}
+
+/* Estilo específico para campos que tienen un error */
+.error {
+  background-color: #ffcc80; /* Naranja claro para campos con error */
+}
+
+/* Estilo para el botón de envío */
+#btnEnviar {
+  width: 100px; /* Ancho fijo para el botón */
+  height: 30px; /* Altura fija para el botón */
+  margin-top: 10px; /* Espacio encima del botón */
+  background-color: #4CAF50; /* Color de fondo verde para el botón */
+  color: white; /* Color del texto en el botón */
+  border: none; /* Sin borde para el botón */
+  border-radius: 4px; /* Esquinas redondeadas del botón */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+}
+
+/* Estilo para el botón de envío al pasar el mouse */
+#btnEnviar:hover {
+  background-color: #45a049; /* Color de fondo más oscuro cuando se pasa el mouse sobre el botón */
+}

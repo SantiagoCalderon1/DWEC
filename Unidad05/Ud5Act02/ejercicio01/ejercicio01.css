@@ -1,47 +1,53 @@
 /* Estilos generales */
+/*Santiago Calderon Castaño*/
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif; /* Define la fuente del cuerpo del documento */
+    background-color: #f0f0f0; /* Color de fondo del cuerpo */
+    margin: 0; /* Elimina el margen por defecto del navegador */
+    padding: 20px; /* Espacio interno alrededor del contenido */
 }
 
+/* Estilos para el formulario */
 form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Color de fondo del formulario */
+    padding: 20px; /* Espacio interno dentro del formulario */
+    border-radius: 10px; /* Esquinas redondeadas */
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario en la página */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del formulario */
 }
 
+/* Estilos para el div que muestra los resultados */
 #divResultados {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Color de fondo del div de resultados */
+    padding: 20px; /* Espacio interno dentro del div de resultados */
+    border-radius: 10px; /* Esquinas redondeadas */
+    max-width: 600px; /* Ancho máximo del div de resultados */
+    margin: 20px auto; /* Margen superior e inferior de 20px, centrado horizontalmente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del div */
 }
 
+/* Estilos para las tablas */
 table {
-    border-collapse: collapse; /* Colapsa los bordes para que no haya espacio entre ellos */
-    width: 100%; /* Ancho completo */
-    margin-top: 20px; /* Espaciado superior */
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+    width: 100%; /* Ancho completo de la tabla */
+    margin-top: 20px; /* Espaciado superior para separar la tabla del contenido anterior */
 }
 
-td, th { /* Para las celdas de la tabla */
-    border: 1px solid #dddddd; /* Color del borde */
-    text-align: left; /* Alineación del texto */
-    padding: 8px; /* Espaciado interno */
+td, th { /* Estilos para celdas y encabezados de la tabla */
+    border: 1px solid #dddddd; /* Color del borde de las celdas */
+    text-align: left; /* Alineación del texto a la izquierda */
+    padding: 8px; /* Espacio interno dentro de las celdas */
 }
 
+/* Estilos para etiquetas */
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    display: block; /* Muestra cada etiqueta como un bloque para que ocupe toda la línea */
+    margin-bottom: 5px; /* Espaciado inferior para separar la etiqueta del input */
+    font-weight: bold; /* Hace que el texto de la etiqueta sea negrita */
 }
 
+/* Estilos para los inputs de texto, número, email, etc. */
 input[type="text"],
 input[type="number"],
 input[type="email"],
@@ -49,51 +55,55 @@ input[type="date"],
 input[type="password"],
 textarea,
 select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 14px;
+    width: 100%; /* Ancho completo de los campos de entrada */
+    padding: 10px; /* Espacio interno */
+    margin-bottom: 15px; /* Espaciado inferior entre los campos */
+    border: 1px solid #ccc; /* Color del borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho */
+    font-size: 14px; /* Tamaño de la fuente dentro de los campos */
 }
 
+/* Estilos para selectores múltiples y rangos */
 select[multiple],
 input[type="range"] {
-    height: auto;
+    height: auto; /* Ajusta la altura automáticamente */
 }
 
+/* Estilos para checkboxes y radio buttons */
 input[type="checkbox"],
 input[type="radio"] {
-    margin-right: 10px;
+    margin-right: 10px; /* Espacio a la derecha para separar del texto */
 }
 
+/* Estilos para botones */
 button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    
+    background-color: #28a745; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px 15px; /* Espacio interno en el botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente en el botón */
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #218838; /* Color de fondo al pasar el ratón sobre el botón */
 }
 
+/* Estilos específicos para el botón de restablecer */
 button[type="reset"] {
-    background-color: #dc3545;
+    background-color: #dc3545; /* Color de fondo del botón de restablecer */
 }
 
 button[type="reset"]:hover {
-    background-color: #c82333;
+    background-color: #c82333; /* Color al pasar el ratón sobre el botón de restablecer */
 }
 
+/* Estilo para imágenes en botones */
 #divBtnEnviar img {
-    vertical-align: middle;
-    margin-right: 5px;
+    vertical-align: middle; /* Alinea la imagen verticalmente en el medio */
+    margin-right: 5px; /* Espacio a la derecha de la imagen */
 }
 
 /* Agrupar divs para inputs */
@@ -101,30 +111,30 @@ button[type="reset"]:hover {
 #divAlturaMinima, #divMinHabitaciones, #divMinBaños, #divCaracteristicas,
 #divProxPlaya, #divBotonRadio, #divNombre, #divApellido, #divCorreo,
 #divFechaNacimiento, #divDni, #divComentario, #divBtnEnviar, #divRestablecerForm {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espaciado inferior entre los divs */
 }
 
 /* Mejorar la apariencia de select y datalist */
 select {
-    appearance: none;
-    background-color: #f9f9f9;
+    appearance: none; /* Elimina la apariencia nativa del selector */
+    background-color: #f9f9f9; /* Color de fondo para un mejor contraste */
 }
 
 select[multiple] {
-    height: auto;
+    height: auto; /* Ajuste automático de la altura para selectores múltiples */
 }
 
+/* Estilos para las opciones de datalist */
 datalist option {
-    padding: 5px;
+    padding: 5px; /* Espacio interno en las opciones del datalist */
 }
 
-/* Estilos para el rango de proximidad */
+/* Estilos para los rangos de entrada */
 input[type="range"] {
-    width: 100%;
+    width: 100%; /* Ancho completo para el control deslizante */
 }
 
-/* Estilos específicos para el campo oculto */
+/* Estilos para el campo oculto */
 #divCampoOculto {
-    display: none;
+    display: none; /* Oculta el div correspondiente */
 }
-

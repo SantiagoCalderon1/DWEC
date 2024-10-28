@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Logueo</title>
+
+    <!-- Enlace al archivo CSS externo para estilos personalizados -->
     <link rel="stylesheet" href="ejercicio05.css">
 </head>
 <body>
+    <!-- Contenedor principal para el formulario de inicio de sesión -->
     <div class="login-container">
+        
+        <!-- Formulario de inicio de sesión con un identificador único "loginForm" -->
         <form id="loginForm">
-            <h2>Iniciar Sesión</h2>
+            <h2>Iniciar Sesión</h2> <!-- Título del formulario -->
+
+            <!-- Campo para el nombre de usuario con etiqueta y entrada de texto -->
             <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" required> <!-- "required" obliga al usuario a completar este campo -->
 
+            <!-- Campo para la contraseña con etiqueta y entrada de texto seguro (oculta la contraseña) -->
             <label for="password">Clave:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required> <!-- Campo obligatorio -->
 
+            <!-- Campo para seleccionar un color de fondo personalizado, con formato hexadecimal -->
             <label for="bgColor">Color de fondo:</label>
-            <input type="text" id="bgColor" name="bgColor" placeholder="ej. #FFFFFF" required>
+            <input type="text" id="bgColor" name="bgColor" placeholder="ej. #FFFFFF" required> <!-- Campo obligatorio y con sugerencia de formato -->
 
+            <!-- Checkbox para seleccionar si se deben recordar los datos en futuras visitas -->
             <label>
                 <input type="checkbox" id="rememberMe" name="rememberMe"> Recordar mis datos
             </label>
 
+            <!-- Botón de envío del formulario -->
             <button type="submit">Enviar</button>
         </form>
     </div>
 
+    <!-- Enlace al archivo JavaScript externo que controla el manejo de cookies y envío de datos -->
     <script src="ejercicio05.js"></script>
 </body>
 </html>

@@ -1,53 +1,61 @@
+/* Estilos generales para el cuerpo de la página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif; /* Tipografía principal */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+    display: flex; /* Utiliza flexbox para centrar contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Establece la altura del cuerpo para ocupar toda la pantalla */
+    background-color: #f4f4f4; /* Color de fondo de la página */
 }
 
+/* Contenedor principal del formulario de inicio de sesión */
 .login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    background-color: #fff; /* Fondo blanco para el formulario */
+    padding: 20px; /* Espaciado interno alrededor del contenido */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+    width: 300px; /* Ancho fijo del formulario */
 }
 
+/* Estilo para el título del formulario */
 h2 {
-    text-align: center;
+    text-align: center; /* Centra el título */
 }
 
+/* Estilo para las etiquetas de los campos */
 label {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* Hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px; /* Espacio debajo de cada etiqueta */
 }
 
+/* Estilos para los campos de entrada de texto y contraseña */
 input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 100%; /* Hace que el campo ocupe todo el ancho disponible */
+    padding: 8px; /* Espaciado interno para comodidad del usuario */
+    margin-bottom: 10px; /* Espacio debajo de cada campo */
+    border: 1px solid #ccc; /* Borde de color gris claro */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
 }
 
+/* Estilo para el checkbox de "Recordar mis datos" */
 input[type="checkbox"] {
-    margin-right: 5px;
+    margin-right: 5px; /* Espacio a la derecha del checkbox */
 }
 
+/* Estilo para el botón de envío */
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+    padding: 10px; /* Espaciado interno para comodidad del usuario */
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar interactividad */
 }
 
+/* Efecto al pasar el mouse sobre el botón */
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Oscurece el color del botón al pasar el mouse */
 }

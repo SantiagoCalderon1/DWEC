@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<!--Santiago Calderon Castaño-->
+<!-- Santiago Calderon Castaño -->
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ejercicio 01</title>
-  <link rel="stylesheet" href="ejercicio01.css">
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <title>Ejercicio 01</title> 
+  <link rel="stylesheet" href="ejercicio01.css"> <!-- Enlace a la hoja de estilos CSS -->
 </head>
 
 <body>
-
-  <form action="" method="POST" id="formInmobiliaria">
-    <div id="divInmueble">
+  <form action="" method="POST" id="formInmobiliaria"> <!-- Comienzo del formulario, método POST -->
+    <div id="divInmueble"> <!-- Sección para seleccionar el tipo de inmueble -->
       <label for="selectInmueble">Seleccione un inmueble:</label>
-      <select name="selectInmueble" id="selectInmueble">
+      <select name="selectInmueble" id="selectInmueble"> <!-- Selector de inmueble -->
         <option value="Piso" selected>Piso</option>
         <option value="Adosado">Adosado</option>
         <option value="Parcela">Parcela</option>
@@ -25,10 +24,10 @@
       </select>
     </div>
 
-    <div id="divDatalist">
+    <div id="divDatalist"> <!-- Sección para seleccionar la provincia -->
       <label for="datalistProvincia">Provincia</label>
       <input type="text" list="optionDatalistProvincia" name="datalistProvincia" id="datalistProvincia" />
-      <datalist id="optionDatalistProvincia">
+      <datalist id="optionDatalistProvincia"> <!-- Lista de provincias sugeridas -->
         <option value="Madrid"></option>
         <option value="Valencia"></option>
         <option value="Barcelona"></option>
@@ -36,9 +35,9 @@
       </datalist>
     </div>
 
-    <div id="divUbicacion">
+    <div id="divUbicacion"> <!-- Sección para seleccionar la ubicación -->
       <label for="selectUbicacion">Seleccione una ubicación:</label>
-      <select id="selectUbicacion" size="4" multiple>
+      <select id="selectUbicacion" size="4" multiple> <!-- Selector múltiple de ubicaciones -->
         <option value="Centro">Centro</option>
         <option value="Sur">Sur</option>
         <option value="Este">Este</option>
@@ -48,33 +47,33 @@
       </select>
     </div>
 
-    <div id="divPrecioMax">
+    <div id="divPrecioMax"> <!-- Sección para ingresar el precio máximo -->
       <label for="inputPrecioMax">Precio máximo:</label>
       <input type="number" id="inputPrecioMax" name="inputPrecioMax" min="0" max="500000" step="10000" />
     </div>
 
-    <div id="divMetrosMin">
-      <label for="inputMetrosMin">Metros minimos:</label>
+    <div id="divMetrosMin"> <!-- Sección para ingresar los metros mínimos -->
+      <label for="inputMetrosMin">Metros mínimos:</label>
       <input type="number" id="inputMetrosMin" name="inputMetrosMin" min="0" max="5000" step="50" />
     </div>
 
-    <div id="divAlturaMinima">
-      <label for="inputAlturaMin">Altura minima:</label>
+    <div id="divAlturaMinima"> <!-- Sección para ingresar la altura mínima -->
+      <label for="inputAlturaMin">Altura mínima:</label>
       <input type="number" id="inputAlturaMin" name="inputAlturaMin" min="0" max="40" />
     </div>
 
-    <div id="divMinHabitaciones">
-      <label for="inputMinHabitaciones">Minimo de habitaciones:</label>
+    <div id="divMinHabitaciones"> <!-- Sección para ingresar el mínimo de habitaciones -->
+      <label for="inputMinHabitaciones">Mínimo de habitaciones:</label>
       <input type="number" id="inputMinHabitaciones" name="inputMinHabitaciones" min="1" max="10" />
     </div>
 
-    <div id="divMinBaños">
-      <label for="inputMinBaños">Minimo de baños:</label>
+    <div id="divMinBaños"> <!-- Sección para ingresar el mínimo de baños -->
+      <label for="inputMinBaños">Mínimo de baños:</label>
       <input type="number" id="inputMinBaños" name="inputMinBaños" min="1" max="5" />
     </div>
 
-    <div id="divCaracteristicas">
-      <p>Caracteristicas</p>
+    <div id="divCaracteristicas"> <!-- Sección para características adicionales -->
+      <p>Características</p>
       <label for="inputCalefaccion">Calefacción</label>
       <input type="checkbox" name="inputCalefaccion" id="inputCalefaccion" value="Calefacción" />
       
@@ -98,16 +97,15 @@
       
       <label for="inputAmueblado">Amueblado</label>
       <input type="checkbox" name="inputAmueblado" id="inputAmueblado" value="Amueblado" />
-  </div>
-  
-
-    <div id="divProxPlaya">
-      <label for="inputProxPlaya">Proximidad a playa:</label>
-      <input type="range" name="inputProxPlaya" id="inputProxPlaya" min="0" max="1000" />
-      <p><span id="indicacionMetros"> </span> metros de la playa</p>
     </div>
 
-    <div id="divBotonRadio">
+    <div id="divProxPlaya"> <!-- Sección para proximidad a la playa -->
+      <label for="inputProxPlaya">Proximidad a playa:</label>
+      <input type="range" name="inputProxPlaya" id="inputProxPlaya" min="0" max="1000" /> <!-- Control deslizante para distancia a la playa -->
+      <p><span id="indicacionMetros"> </span> metros de la playa</p> <!-- Indicador de distancia -->
+    </div>
+
+    <div id="divBotonRadio"> <!-- Sección para seleccionar el estado del inmueble -->
       <input type="radio" name="inputBtnIndiferente" id="inputBtnIndiferente" checked value="Indiferente"/>
       <label for="inputBtnIndiferente">Indiferente</label>
 
@@ -121,41 +119,41 @@
       <label for="inputBtnParaReformar">Para Reformar</label>
     </div>
 
-    <div id="divNombre">
+    <div id="divNombre"> <!-- Sección para el nombre -->
       <label for="inputNombre">Nombre:</label>
       <input type="text" name="inputNombre" id="inputNombre" maxlength="35" />
     </div>
 
-    <div id="divApellido">
+    <div id="divApellido"> <!-- Sección para el apellido -->
       <label for="inputApellido">Apellido:</label>
       <input type="text" name="inputApellido" id="inputApellido" maxlength="75" />
     </div>
 
-    <div id="divCorreo">
+    <div id="divCorreo"> <!-- Sección para el correo -->
       <label for="inputCorreo">Correo:</label>
       <input type="email" name="inputCorreo" id="inputCorreo" />
     </div>
 
-    <div id="divFechaNacimiento">
+    <div id="divFechaNacimiento"> <!-- Sección para la fecha de nacimiento -->
       <label for="inputFechaNacimiento">Fecha de Nacimiento:</label>
       <input type="date" name="inputFechaNacimiento" id="inputFechaNacimiento" />
     </div>
 
-    <div id="divDni">
+    <div id="divDni"> <!-- Sección para el DNI -->
       <label for="inputDni">DNI:</label>
-      <input type="password" name="inputDni" id="inputDni" />
+      <input type="password" name="inputDni" id="inputDni" /> <!-- Campo para ingresar el DNI como contraseña -->
     </div>
 
-    <div id="divComentario">
+    <div id="divComentario"> <!-- Sección para comentarios adicionales -->
       <label for="textareaComentario">Comentario:</label>
       <textarea name="textareaComentario" id="textareaComentario" cols="60" rows="6"></textarea>
     </div>
 
-    <div id="divCampoOculto">
+    <div id="divCampoOculto"> <!-- Campo oculto para datos no visibles -->
       <input type="hidden" name="campoOculto" id="campoOculto" value="23/10/2024" />
     </div>
 
-    <div id="divBtnEnviar">
+    <div id="divBtnEnviar"> <!-- Sección para el botón de enviar -->
       <button type="submit" id="btnEnviar">
         <img
           src="https://w7.pngwing.com/pngs/841/271/png-transparent-computer-icons-send-miscellaneous-angle-triangle-thumbnail.png"
@@ -164,16 +162,16 @@
       </button>
     </div>
 
-    <div id="divRestablecerForm">
+    <div id="divRestablecerForm"> <!-- Sección para el botón de restablecer -->
       <button type="reset">Restablecer</button>
     </div>
   </form>
 
-  <div id="divResultados">
+  <div id="divResultados"> <!-- Sección para mostrar resultados -->
     <h2>Resultados</h2>
-    <p id="resultados"></p>
+    <p id="resultados"></p> <!-- Espacio para los resultados que se generarán -->
   </div>
 
-  <script src="ejercicio01.js"></script>
+  <script src="ejercicio01.js"></script> <!-- Enlace a un archivo JavaScript externo -->
 </body>
 </html>

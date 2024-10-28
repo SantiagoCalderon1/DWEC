@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración de la codificación de caracteres y la vista para dispositivos móviles -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alta de Personas</title>
+  <title>Alta de Personas</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+  
+  <!-- Enlace al archivo CSS externo para estilos personalizados -->
   <link rel="stylesheet" href="ejercicio04.css" />
 </head>
 <body>
+  <!-- Contenedor principal de la página -->
   <div id="container">
-    <header><h1>Alta de Personas</h1></header>
+    <header>
+      <!-- Título principal de la sección de alta de personas -->
+      <h1>Alta de Personas</h1>
+    </header>
     <main>
       <section>
-        <form action="" method="post">
-          <p>Rellene los siguientes datos y envíelos para insertar nueva persona:</p>
+        <!-- Formulario para ingresar datos de una nueva persona -->
+        <form action="" method="post"> 
+          <p>Rellene los siguientes datos y envíelos para insertar nueva persona:</p> <!-- Instrucciones para el usuario -->
 
+          <!-- Campo para ingresar el DNI -->
           <label for="dni">DNI</label>
-          <input type="text" name="dni" id="dni" class="requerido" required /><br>
+          <input type="text" name="dni" id="dni" class="requerido" required /><br> <!-- Campo obligatorio con la clase 'requerido' -->
 
+          <!-- Campo para ingresar el nombre -->
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" class="requerido" required /><br>
+          <input type="text" id="nombre" name="nombre" class="requerido" required /><br> <!-- Campo obligatorio con la clase 'requerido' -->
 
+          <!-- Campo para ingresar la foto -->
           <label for="Foto">Foto</label>
-          <input type="text" id="Foto" name="Foto" class="requerido" required /><br>
+          <input type="text" id="Foto" name="Foto" class="requerido" required /><br> <!-- Campo obligatorio con la clase 'requerido' -->
 
+          <!-- Campo para ingresar la edad -->
           <label for="edad">Edad</label>
-          <input type="number" id="edad" name="edad" class="requerido" required /><br>
+          <input type="number" id="edad" name="edad" class="requerido" required /><br> <!-- Campo obligatorio con la clase 'requerido' -->
 
+          <!-- Selector para elegir la población -->
           <label for="poblacion">Población:</label>
-          <select id="poblacion" class="requerido">
-            <option value="">Seleccione Población...</option>
-            <option value="poblacion1">Población 1</option>
-            <option value="poblacion2">Población 2</option>
+          <select id="poblacion" class="requerido"> <!-- Campo obligatorio con la clase 'requerido' -->
+            <option value="">Seleccione Población...</option> <!-- Opción por defecto -->
+            <option value="poblacion1">Población 1</option> <!-- Opción 1 -->
+            <option value="poblacion2">Población 2</option> <!-- Opción 2 -->
           </select><br>
 
+          <!-- Campo para observaciones -->
           <label for="observacion">Observación</label>
-          <textarea id="observacion"></textarea><br />
+          <textarea id="observacion"></textarea><br /> <!-- Área de texto para observaciones -->
 
-          <input type="submit" value="Enviar" class="requerido" id="btnEnviar"/>
+          <!-- Botón para enviar el formulario -->
+          <input type="submit" value="Enviar" class="requerido" id="btnEnviar"/> <!-- Botón de envío con la clase 'requerido' -->
         </form>
       </section>
     </main>
+    <!-- Enlace al archivo JavaScript externo que manejará la lógica del formulario -->
     <script src="ejercicio04.js"></script>
   </div>
 </body>
