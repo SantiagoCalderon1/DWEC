@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">\
+<!-- Santiago Calderon Castaño -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 03</title>
+    <!-- Link a la hoja de estilos -->
+    <link rel="stylesheet" href="ejercicio03.css">
+</head>
+<body>
+    <!-- Titulo -->
+    <h1>TABLERO DE DIBUJO EN JAVASCRIPT</h1>
+    <!--  Contenedor para la paleta de colores -->
+    <div id="zonaColores">
+        <p>Haga CLICK en un color para comenzar a pintar</p>
+        <!-- Tabla que sirve de paleta de colores -->
+        <table id="paletaColores">
+            <tr>
+                <td id="color1" class="color"></td>
+                <td id="color2" class="color"></td>
+                <td id="color3" class="color"></td>
+                <td id="color4" class="color"></td>
+                <td id="color5" class="color"></td>
+                <td id="color6" class="color"></td>
+            </tr>
+            <tr>
+                <!-- Estado del pincel -->
+                <td colspan="6">PINCEL <span id="estadoPincel"></span></td>
+            </tr>
+        </table>
+    </div>
+    <!-- Contenedor para la zona de dibujo -->
+    <div id="zonaDibujo">
+        <p>Haga CLICK en cualquier celda para activar/desactivar el Pincel</p>
+    </div>
+    <!-- script con todo el código lógico -->
+    <script src="ejercicio03.js"></script>
+</body>
+
+</html>

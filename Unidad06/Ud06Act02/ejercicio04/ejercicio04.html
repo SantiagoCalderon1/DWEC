@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Santiago Calderon Castaño -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04</title>
+    <!-- Link a la hoja de estilos -->
+    <link rel="stylesheet" href="ejercicio04.css">
+</head>
+
+<body>
+    <!-- Contenedor Principal -->
+    <div id="container">
+        <header>
+            <!-- Cointenedor del titulo -->
+            <div id="titulo">
+                <h1>Juego Buscaminas</h1>
+            </div>
+            <!-- Contenedor de la configuración del juego -->
+            <div id="config">
+                <!-- input de tipo selección para elegir la dificultad del juego -->
+                <label for="dificultad">Dificultad:</label>
+                <select name="dificultad" id="dificultad">
+                    <option value="sencillo">Sencillo</option>
+                    <option value="normal">Normal</option>
+                    <option value="avanzado">Avanzado</option>
+                    <option value="experto">Experto</option>
+                </select>
+                <!-- Texto que nos indica el número de minas que tenemos -->
+                <p>Minas: <span id="minas"></span></p>
+                <!-- Texto que no indica el tiempo transcurrido desde que dimos play -->
+                <p>Temporizador: <span id="temporizador">0</span> segundos</p>
+                <!-- Boton para iniciar el juego -->
+                <button id="boton">Iniciar juego</button>
+            </div>
+        </header>
+        <main>
+            <!-- Tablero de juego -->
+            <section>
+                <div id="zonaTablero"></div>
+            </section>
+        </main>
+        <footer>
+            
+            <p>Desarrollado por: <span id="autor">Santiago Calderon</span></p>
+        </footer>
+    </div>
+    <script src="ejercicio04.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<!-- Santiago Calderon Castaño -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,13 @@
 </head>
 
 <body>
+    <!-- Contenedor Principal -->
     <div id="container">
+        <!-- Cabecera -->
         <header>
             <h1>Dar de Alta un Libro</h1>
         </header>
-
+        <!-- Formulario para dar el alta a un libro -->
         <form action="" method="post" id="bookForm">
             <label for="tiutlo">Título:</label>
             <input type="text" id="titulo" required>
@@ -21,6 +23,7 @@
             <label for="autor">Autor:</label>
             <input type="text" id="autor" required>
 
+            <!-- Input de tipo numero obligatorio, va de centimo en centimo, también se puede introducir manualmente -->
             <label for="precio">Precio:</label>
             <input type="number" id="precio" required min="0" step="0.01">
 
@@ -30,15 +33,17 @@
                 <option value="Editorial B">Editorial B</option>
             </select>
 
+            <!--  Botón que ejecuta la función agregarEditorial que está en el script -->
             <button type="button" onclick="agregarEditorial()" class="btn">Añadir Editorial</button>
             <input type="text" id="nuevaEditorial">
-
-            <input type="submit" value="Guardar Libro" class="btn" id="btnEnviar"/> <!-- Botón de envío con la clase 'requerido' -->
+            <!-- Input de tipo submit para guardar el libro -->
+            <input type="submit" value="Guardar Libro" class="btn" id="btnEnviar"/> <!-- En el script se previene el envio del formulario, así que no hya problema -->
 
             <h3>Ubicaciones de Librerías</h3>
             <ul id="ubicacionesLibrerias">
                 <!-- Las ubicaciones iniciales se muestran aquí -->
             </ul>
+            <!-- Botones para mostrar más o menos ubicaciones -->
             <div>
                 <button type="button" onclick="agregarUbicacion()" class="btn">Mostrar Más</button>
                 <button type="button" onclick="quitarUbicacion()" class="btn">Mostrar Menos</button>

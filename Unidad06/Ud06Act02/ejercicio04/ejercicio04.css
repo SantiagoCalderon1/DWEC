@@ -1,0 +1,178 @@
+/* Santiago Calderon Castaño */
+/* Reinicia el margen y el relleno en todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos básicos para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f5f5f5;
+    /* Color de fondo opcional */
+    display: flex;
+    /* Flexbox para organizar los elementos horizontalmente */
+    justify-content: space-between;
+    /* Espacio entre los elementos del header */
+    height: 10vh;
+    /* Altura relativa a la ventana para ajustar con distintos tamaños de pantalla */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    padding: 10px;
+    /* Espaciado interno */
+}
+
+#titulo h1 {
+    margin: 0;
+    /* Elimina el margen del título */
+}
+
+#config {
+    display: flex;
+    /* Organiza los elementos de configuración en línea */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    gap: 5px;
+    /* Espacio entre los elementos */
+}
+
+#config label,
+#config p,
+#config button {
+    margin: 0 0 0 30px;
+    /* Añade un margen izquierdo de 30px a cada uno */
+
+}
+
+#config select,
+#config button {
+    border-radius: 10px;
+    /* Bordes redondeados para los selectores y botones */
+    padding: 5px;
+    /* Relleno interno */
+}
+
+/* Configuración principal de la sección main, donde está el contenido */
+main {
+    width: 100%;
+    /* Toma el 100% del ancho disponible */
+    height: 81vh;
+    /* Toma el 80% de la altura del viewport */
+}
+
+/* Estilos para el pie de página */
+footer {
+    clear: both;
+    text-align: center;
+    /* Centra el texto */
+    background-color: #f5f5f5;
+    /* Color de fondo gris claro */
+    width: 100%;
+    /* Toma el 100% del ancho */
+    height: 60px;
+    /* Toma el 20% de la altura del viewport */
+    line-height: 60px;
+    /* Alinea el texto verticalmente */
+}
+
+#autor {
+    font-weight: bold;
+    /* Texto en negrita */
+}
+
+/* Ajustes generales para el contenedor del tablero */
+#zonaTablero {
+    margin: 0 auto;
+    /* Centra el tablero horizontalmente */
+    width: 100%;
+    /* Ajusta el ancho del tablero según su contenido */
+    height: 80vh;
+    /* Permite que el tablero tome el 80% de la altura disponible */
+    background-color: #e0e0e0;
+    /* Color de fondo del tablero */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interno */
+
+}
+
+/* Celdas del tablero */
+.cell {
+    float: left;
+    width: 30px;
+    /* Ancho fijo de cada celda */
+    height: 30px;
+    /* Alto fijo de cada celda */
+
+    text-align: center;
+    font-size: 18px;
+    /* Tamaño de fuente */
+    font-weight: bold;
+    /* Fuente en negrita */
+    cursor: pointer;
+    /* Cambia el cursor a mano al pasar sobre la celda */
+    border: 1px solid #999;
+    /* Borde gris */
+    background-color: #b0c4de;
+    /* Fondo azul claro de las celdas no reveladas */
+    color: #333;
+    /* Color del texto */
+    transition: background-color 0.2s ease;
+    /* Transición de color para efectos */
+    user-select: none;
+    /* Previene la selección de texto en las celdas */
+    margin: -1px 0 0 -1px;
+    /* Ajusta el margen para evitar espacios visibles entre celdas */
+}
+
+/* Efecto hover en las celdas */
+.cell:hover {
+    background-color: #a0b8d3;
+    /* Color al pasar el ratón */
+}
+
+/* Celdas reveladas */
+.cell.revelada {
+    background-color: #d9d9d9;
+    /* Color de fondo de celdas reveladas */
+    color: #555;
+    /* Color del texto */
+    cursor: default;
+    /* Cambiar cursor al estado no clickeable */
+}
+
+/* Colores para las minas y banderas */
+.cell.mina {
+    background-color: #ff4c4c;
+    /* Color para las celdas de minas */
+}
+
+.cell.bandera::before {
+    content: "🚩";
+    /* Indicador de bandera */
+}
+
+.cell.interrogacion::before {
+    content: "❓";
+    /* Indicador de interrogación */
+}
+
+/* Colores de los números según la cantidad de minas adyacentes */
+.cell.number-1 {
+    color: blue;
+    /* Azul para celdas con 1 mina cercana */
+}
+
+.cell.number-2 {
+    color: green;
+    /* Verde para celdas con 2 minas cercanas */
+}
+
+.cell.number-3 {
+    color: red;
+    /* Rojo para celdas con 3 minas cercanas */
+}
