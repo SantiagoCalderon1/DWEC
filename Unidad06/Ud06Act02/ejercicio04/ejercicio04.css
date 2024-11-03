@@ -149,6 +149,12 @@ footer {
 .cell.mina {
     background-color: #ff4c4c;
     /* Color para las celdas de minas */
+
+}
+
+.cell.mina::before {
+    content: "💣";
+    /* Indicador de mina */
 }
 
 .cell.bandera::before {
