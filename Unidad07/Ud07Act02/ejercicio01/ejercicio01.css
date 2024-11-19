@@ -19,21 +19,33 @@ body {
     display: none !important;
 }
 
-
-
-
 /* Estilos para el header */
 header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: #333;
-    text-align: center;
     width: 100%;
     height: 10vh;
     line-height: 10vh;
 }
 
 header a {
+    width: 70%;
     color: #fff;
     text-decoration: none;
+}
+
+header .btn-header{
+    display: flex;
+    justify-content:flex-end;
+    width: 30%;
+}
+
+
+header button{
+    height: 5vh;
+    margin-left: 25px;
 }
 
 /* Estilos para el main */
@@ -141,4 +153,66 @@ footer {
     line-height: 5vh;
 }
 
-/* Estilos para el login */
+/* Estilos para el añadir un empleado */
+
+
+/* Estilos para el login-box */
+.addEmployeeForm-box {
+    background-color: #b7b7b7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+    font-size: 25px;
+    border-radius: 25px;
+}
+
+/* Estilos para el grupo de inputs */
+.addEmployeeForm-box .input-group {
+    display: flex;
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    justify-content: space-between;
+    /* Deja espacio entre label e input */
+    gap: 50px;
+
+    width: 100%;
+    margin: 15px 0;
+}
+
+/* Estilo de las etiquetas */
+.input-group label {
+    width: 30%;
+    /* Ancho del label */
+}
+
+/* Estilo de los inputs */
+.input-group input {
+    padding: 10px;
+    font-size: 16px;
+    width: 60%;
+    /* El input ocupa el 60% del espacio disponible */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para el botón de submit */
+.addEmployeeForm-box input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    width: 100%;
+    /* El botón ocupa todo el ancho disponible */
+    margin-top: 20px;
+    /* Espacio entre los inputs y el botón */
+}
+
+.addEmployeeForm-box input[type="submit"]:hover {
+    background-color: #444;
+}

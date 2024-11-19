@@ -14,6 +14,10 @@
     <div id="container">
         <header>
             <h1><a href="#">Aplicación CRUD</a></h1>
+            <div class="btn-header">
+                <button class="btn-añadirEmpleado ocultar">Añadir Empleado</button>
+                <button class="btn-cerrarSesion ocultar">Cerrar Sesion</button>
+            </div>
         </header>
         <main>
             <div class="login-box">
@@ -30,18 +34,35 @@
                 </form>
             </div>
 
-            <div class="contendorTablaEmpleados">
+            <div class="tableEmployee-box ocultar">
             </div>
 
-            <div class="contenedorAgregarEmpleado">
+            <div class="addEmployeeForm-box ocultar">
+                <form action="" method="post" id="addEmployeeForm">
+                    <div class="input-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+                    <div class="input-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" name="edad" id="edad" min="1" max="150">
+                    </div>
+                    <div class="input-group">
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" name="cargo" id="cargo">
+                    </div>
+                        <input type="checkbox" name="contratado" id="contratado" value="true">
+                        <label for="contratado">Empleado contratado</label>
+                    <input type="submit" value="Aceptar">
+                    <input type="submit" value="Cancelar">
+                </form>
+            </div>
+
+            <div class="contenedorBorrarEmpleado ocultar">
 
             </div>
 
-            <div class="contenedorBorrarEmpleado">
-
-            </div>
-
-            <div class="contenedorModificarEmpleado">
+            <div class="contenedorModificarEmpleado ocultar">
 
             </div>
 
