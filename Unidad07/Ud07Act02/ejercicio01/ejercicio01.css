@@ -141,6 +141,13 @@ tr:hover{
     background-color: #ffffffee;
 }
 
+/* Scroll de la tabla */
+.tableEmployee-box {
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+
 
 /* Estilos para el footer */
 footer {

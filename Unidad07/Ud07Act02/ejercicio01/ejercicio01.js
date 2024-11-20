@@ -16,6 +16,12 @@ const password1 = "admin";
 // Variables globales
 const peticion = new XMLHttpRequest(); // Creamos el objeto para la petición
 
+const btnCerrarSesion = document.getElementsByClassName("btn-cerrarSesion")[0];
+const btnAñadirEmpleado =
+  document.getElementsByClassName("btn-añadirEmpleado")[0];
+
+const 
+
 // Funcionamiento del formulario y la autenticación ficticia
 document
   .getElementById("loginForm")
@@ -37,10 +43,6 @@ document
             document.getElementsByClassName("tableEmployee-box")[0]
           );
 
-          let btnCerrarSesion =
-            document.getElementsByClassName("btn-cerrarSesion")[0];
-          let btnAñadirEmpleado =
-            document.getElementsByClassName("btn-añadirEmpleado")[0];
           //Mostramos los botones
           eliminarClaseOcultar(btnAñadirEmpleado);
           eliminarClaseOcultar(btnCerrarSesion);
@@ -56,9 +58,6 @@ document
               document.getElementsByClassName("addEmployeeForm-box")[0]
             );
           });
-
-          //Creamos el evento para el cerrar sesión
-          btnCerrarSesion.addEventListener("click", function () {});
         }
       };
 
@@ -69,6 +68,12 @@ document
       alert("Usuario o contraseña incorrectos.");
     }
   });
+
+//Creamos el evento para el cerrar sesión
+btnCerrarSesion.addEventListener("click", function () {
+  // Eliminamos la clase que oculta todo y solo mostrar el iniciar sesion
+  añadirClaseOcultar();
+});
 
 document
   .getElementById("addEmployeeForm")
@@ -90,15 +95,18 @@ document
 
         añadirEmpleado(datosEmpleado);
         break;
+
       case "Cancelar":
         console.log("Formulario añadir empleado cancelado"); // Verifica si el evento se capturó
         eliminarClaseOcultar(
           document.getElementsByClassName("tableEmployee-box")[0]
         );
         añadirClaseOcultar(
-            document.getElementsByClassName("addEmployeeForm-box")[0]
-          );
+          document.getElementsByClassName("addEmployeeForm-box")[0]
+        );
 
+        btnAñadirEmpleado.removeAttribute("disabled");
+        console.log("Boton añadir empleado activado");
         break;
 
       default:
