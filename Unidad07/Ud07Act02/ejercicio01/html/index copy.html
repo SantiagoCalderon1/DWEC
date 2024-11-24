@@ -16,9 +16,9 @@
     <div id="container">
         <header>
             <h1><a href="#">Aplicación CRUD</a></h1>
-            <div class="iconsHeader">
-                <i id="iconAddEmployee" class="fa-solid fa-user-plus" onclick="formAddEmployee()" title="Añadir Empleado"></i>
-                <i class="fa-solid fa-right-from-bracket" onclick="logout()" title="Cerrar Sesión=]"></i>
+            <div class="btn-header">
+                <button id="btnAñadirEmpleado" onclick="formularioEmployee('insertar')">Añadir Empleado</button>
+                <button id="btnCerrarSesion" onclick="logout()">Cerrar Sesion</button>
             </div>
         </header>
         <main>
@@ -27,7 +27,6 @@
 
             <div id="EmployeeFormBox" class="ocultar">
                 <form action="" method="post" id="EmployeeForm">
-                    <h2><span id="subtitle"></span></h2>
                     <div id="sectionEmployeeFormId" class="input-group">
                         <label for="id">ID:</label>
                         <input type="text" name="id" id="id">

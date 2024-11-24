@@ -8,13 +8,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('backgroud.jpg');
+    background-image: url('../style/background.jpg');
     background-position: center;
     background-size: cover;
 }
 
 /* Estilos para clases especificas */
-
 .ocultar {
     display: none !important;
 }
@@ -36,16 +35,30 @@ header a {
     text-decoration: none;
 }
 
-header .btn-header{
+header .btn-header {
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     width: 30%;
 }
 
 
-header button{
+header button {
     height: 5vh;
     margin-left: 25px;
+}
+
+.iconsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 175px;
+    font-size: 40px;
+    color: #fff;
+}
+
+i {
+    cursor: pointer;
 }
 
 /* Estilos para el main */
@@ -55,67 +68,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Estilos para el login-box */
-.login-box {
-    background-color: #b7b7b7;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 25px;
-    font-size: 25px;
-    border-radius: 25px;
-}
-
-/* Estilos para el grupo de inputs */
-.login-box .input-group {
-    display: flex;
-    align-items: center;
-    /* Centra los elementos verticalmente */
-    justify-content: space-between;
-    /* Deja espacio entre label e input */
-    gap: 50px;
-
-    width: 100%;
-    margin: 15px 0;
-}
-
-/* Estilo de las etiquetas */
-.input-group label {
-    width: 30%;
-    /* Ancho del label */
-}
-
-/* Estilo de los inputs */
-.input-group input {
-    padding: 10px;
-    font-size: 16px;
-    width: 60%;
-    /* El input ocupa el 60% del espacio disponible */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* Estilo para el botón de submit */
-.login-box input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 10px;
-    border-style: none;
-    cursor: pointer;
-    width: 100%;
-    /* El botón ocupa todo el ancho disponible */
-    margin-top: 20px;
-    /* Espacio entre los inputs y el botón */
-}
-
-.login-box input[type="submit"]:hover {
-    background-color: #444;
 }
 
 /* Estilos para la tabla */
@@ -129,25 +81,25 @@ th {
     background-color: #333;
     color: #fff;
     padding: 10px 30px;
+    position: sticky;  /* Fija los elementos th al contenedor cunado se desplazan*/
+    top: 0; /* Fija la cabecera en la parte superior */
+    z-index: 1; /* Asegura que quede por encima del contenido */
 }
 
-
-td{
+td {
     padding: 10px 30px;
     background-color: #b8b8b88a;
 }
 
-tr:hover{
+tr:hover {
     background-color: #ffffffee;
 }
 
 /* Scroll de la tabla */
-.tableEmployee-box {
+#tableEmployeeBox {
     overflow-y: auto;
     max-height: 80vh;
 }
-
-
 
 /* Estilos para el footer */
 footer {
@@ -160,11 +112,8 @@ footer {
     line-height: 5vh;
 }
 
-/* Estilos para el añadir un empleado */
-
-
 /* Estilos para el login-box */
-.addEmployeeForm-box {
+#EmployeeFormBox {
     background-color: #b7b7b7;
     display: flex;
     flex-direction: column;
@@ -176,8 +125,13 @@ footer {
     border-radius: 25px;
 }
 
+h2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
 /* Estilos para el grupo de inputs */
-.addEmployeeForm-box .input-group {
+#EmployeeFormBox .input-group {
     display: flex;
     align-items: center;
     /* Centra los elementos verticalmente */
@@ -206,7 +160,7 @@ footer {
 }
 
 /* Estilo para el botón de submit */
-.addEmployeeForm-box input[type="submit"] {
+#EmployeeFormBox input[type="submit"] {
     background-color: #333;
     color: #fff;
     font-size: 18px;
@@ -220,6 +174,6 @@ footer {
     /* Espacio entre los inputs y el botón */
 }
 
-.addEmployeeForm-box input[type="submit"]:hover {
+#EmployeeFormBox input[type="submit"]:hover {
     background-color: #444;
 }

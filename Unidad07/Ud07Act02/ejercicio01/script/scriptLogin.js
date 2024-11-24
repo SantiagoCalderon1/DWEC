@@ -1,6 +1,6 @@
 // Santiago Calderon Castaño
 
-// Usuarios
+// Credenciales del admin
 const usernameAdmin = "admin";
 const passwordAdmin = "admin";
 
