@@ -49,6 +49,8 @@ const id = document.getElementById('id');
 const nombre = document.getElementById('nombre');
 const edad = document.getElementById('edad');
 const cargo = document.getElementById('cargo');
+const contratado = document.getElementById('contratado');
+
 
 // =======================================================================================
 // Funciones para el formulario
@@ -59,6 +61,7 @@ function desactivarFormulario() {
   nombre.setAttribute('disabled', true);
   edad.setAttribute('disabled', true);
   cargo.setAttribute('disabled', true);
+  contratado.setAttribute('disabled', true);
 }
 
 function refrescarLista() {
