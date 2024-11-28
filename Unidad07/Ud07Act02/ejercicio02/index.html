@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Santiago Calderon Castaño -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02</title>
+</head>
+
+<body>
+    <h1>Asistencias A Consulta Médica.</h1>
+    <form action="" method="post" id="formRegister">
+        <fieldset>
+            <legend>Registro de Asistencia</legend>
+            <div class="input">
+                <label for="id">ID:</label>
+                <input type="text" name="id" required>
+            </div>
+            <div class="input">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" required>
+            </div>
+            <div class="input">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" required>
+            </div>
+            <div class="input">
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" required>
+            </div>
+            <div class="input">
+                <label for="hora">Hora:</label>
+                <input type="time" name="hora" required>
+            </div>
+            <div class="input">
+                <input type="submit" value="Registrar Asistencia">
+            </div>
+        </fieldset>
+    </form>
+
+    <form action="" method="post" id="formConsult">
+        <fieldset>
+            <legend>Consulta de Datos</legend>
+            <div class="input">
+                <label for="id">ID:</label>
+                <input type="text" name="id" required>
+            </div>
+            <div class="input">
+                <input type="submit" value="Consultar">
+            </div>
+            <div class="input">
+                <input type="submit" value="Borrar">
+            </div>
+        </fieldset>
+    </form>
+
+    <div id="datosBox">
+        <ul></ul>
+    </div>
+
+    <form action="" method="post" id="formDelete">
+        <fieldset>
+            <legend>Borrar Todos Los Datos</legend>
+            <div class="input">
+                <label for="verificacion">Escribe:</label>
+                <input type="text" name="verificacion" placeholder="Si Estoy Seguro" required>
+                <input type="submit" value="Borrar Todo">
+            </div>
+        </fieldset>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
