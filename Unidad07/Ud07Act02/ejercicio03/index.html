@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03</title>
+</head>
+
+<body>
+    <h1>Concesionario De Vehiculos</h1>
+    <form action="" method="post" id="formVehicle">
+        <fieldset>
+            <legend>Registar Vehiculos</legend>
+            <div class="input">
+                <label for="matricula">matricula:</label>
+                <input type="text" name="matricula" >
+            </div>
+            <div class="input">
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca" >
+            </div>
+            <div class="input">
+                <label for="modelo">Modelo:</label>
+                <input type="text" name="modelo" >
+            </div>
+            <div class="input">
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" >
+            </div>
+            <div class="input">
+                <label for="color">Color:</label>
+                <input type="color" name="color" >
+            </div>
+            <div class="input">
+                <input type="submit" value="Registrar">
+                <input type="submit" value="Consultar Datos">
+                <input type="submit" value="Eliminar Datos">
+                <input type="submit" value="Eliminar Todos Los Datos">
+            </div>
+        </fieldset>
+    </form>
+
+    <div id="printData">
+        <ul></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
