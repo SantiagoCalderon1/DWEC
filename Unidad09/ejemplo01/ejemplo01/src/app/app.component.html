@@ -1,0 +1,77 @@
+<h1>Aplicación {{ title }}</h1>
+<hr>
+<!-- <app-contador> </app-contador> -->
+<!-- <app-empleados-empleado></app-empleados-empleado> -->
+<h3>Gestión del empleado-{{ seleccionado }}</h3>
+<label>Nombre: </label>
+<input type="text" [(ngModel)]="empleados[seleccionado].nombre"><br>
+<label>Edad: </label>
+<input type="number" [(ngModel)]="empleados[seleccionado].edad"><br>
+<label>Contratado: </label>
+<input type="number" [(ngModel)]="empleados[seleccionado].contratado"
+min="0" max="1"><br><br>
+<label>Cambiar al empleado: </label>
+<input type="number" [(ngModel)]="seleccionado" min="0" max="3"><br>
+<hr>
+<app-empleados-lista [empleados]="empleados"
+(empleadosActualizados)="actualizarEmpleados($event)"></app-empleados-lista>
+
+<!-- <h3>Gestión del empleado-0</h3>
+<label>Nombre: </label>
+<input type="text" [(ngModel)]="empleados[0].nombre"><br>
+<label>Edad: </label>
+<input type="number" [(ngModel)]="empleados[0].edad"><br>
+<label>Contratado: </label>
+<input type="number" [(ngModel)]="empleados[0].contratado" min="0" max="1"><br>
+<h4>El nombre del empleado-0 es ahora: {{ empleados[0].nombre }}</h4>
+<h4>{{ empleados[0].nombre }} está ahora contratado: {{
+    empleados[0].contratado }}</h4>
+<hr>
+<app-empleados-lista [empleados]="empleados"
+    (empleadosActualizados)="actualizarEmpleados($event)"></app-empleados-lista> -->
+
+
+<!-- <h1>Aplicación {{ title }}</h1> -->
+<!-- <hr> -->
+<!-- <app-contador> </app-contador> -->
+<!-- <app-empleados-empleado></app-empleados-empleado> -->
+<!-- <input type="text" [(ngModel)]="empleados[0].nombre">
+<h4>El nombre del empleado-0 es ahora: {{ empleados[0].nombre }}</h4>
+<h4>{{ empleados[0].nombre }} está ahora contratado: {{
+empleados[0].contratado }}</h4>
+<hr>
+<app-empleados-lista [empleados]="empleados"
+(empleadosActualizados)="actualizarEmpleados($event)"></app-empleados-lista> -->
+
+
+<!-- <h1>Aplicación {{ title }}</h1>
+<hr>
+<app-contador> </app-contador> 
+<app-empleados-empleado></app-empleados-empleado>
+<input type="text" [(ngModel)]="empleados[0].nombre">
+<h4>El nombre del empleado-0 es ahora: {{ empleados[0].nombre }}</h4>
+<h4>{{ empleados[0].nombre }} está ahora contratado: {{
+    empleados[0].contratado }}</h4>
+<hr>
+<app-empleados-lista [empleados]="empleados"
+    (empleadosActualizados)="actualizarEmpleados($event)"></app-empleados-lista> -->
+
+<!-- <app-contador> </app-contador> -->
+<!-- <app-empleados-empleado></app-empleados-empleado> -->
+<!-- <app-empleados-lista></app-empleados-lista> -->
+<!-- 
+<h4>Mostrando el método: {{ getContador() }}</h4>
+<h4>Mostrando una expresión: {{ getContador()+1 }}</h4>
+
+<hr>
+
+<input type="text" [placeholder]="textoInput">
+
+<hr>
+
+<button (click)="incrementaEn(1)">+1</button>
+<button (click)="reseteaContador()">Reset</button>
+<button (click)="incrementaEn(-1)">-1</button>
+
+<label>Cambia el contador por: </label>
+<input type="text" (input)="modificarContador($event)"> -->
