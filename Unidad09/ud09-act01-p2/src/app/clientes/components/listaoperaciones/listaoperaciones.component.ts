@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Operacion } from '../../Operacion';
+import { Operacion } from '../../operacion';
 
 @Component({
   selector: 'app-listaoperaciones',
