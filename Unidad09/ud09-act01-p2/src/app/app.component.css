@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.saldo-banco{
+    text-align: center;
+}
+
+.ocultar{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+}
+
+.notificacion-quiebra{
+    color: white;
+    background-color: red;
+}

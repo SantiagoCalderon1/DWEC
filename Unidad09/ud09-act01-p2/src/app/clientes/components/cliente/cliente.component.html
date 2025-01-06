@@ -1,0 +1,27 @@
+<form action="">
+    <div class="subtitle-form">
+        <h2>Gestión del cliente-{{ clienteSelected }}</h2>
+    </div>
+    <div class="content-form">
+        <label for="ncliente">Número Cliente: </label>
+        <input type="text" name="ncliente" pattern="^\d" title="Por favor, ingrese solo números."  [(ngModel)]="clientes[clienteSelected].ncliente" disabled>
+        <br>
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" [(ngModel)]="clientes[clienteSelected].nombre">
+        <br>
+        <label for="activo">Activo: </label>
+        <input type="text" name="activo" [(ngModel)]="clientes[clienteSelected].activo" disabled>
+        <br>
+        <label for="saldo">Saldo: </label>
+        <input type="text" name="saldo" [(ngModel)]="clientes[clienteSelected].saldo" disabled>
+    </div>
+    <br>
+    <div class="change-client">
+        <label for="change-nclient">Cambiar al cliente: </label>
+        <input type="number" name="change-nclient" id="change-nclient" pattern="^\d" title="Por favor, ingrese solo números."  [(ngModel)]="clienteSelected" min="0" max="{{
+            clientes.length-1 }}">
+    </div>
+    <div class="buttons-form">
+        <button (click)="nuevoEmpleado()">Nuevo empleado</button>
+    </div>
+</form>

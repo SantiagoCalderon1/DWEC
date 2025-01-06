@@ -1,0 +1,32 @@
+<h2>Listado de Operaciones</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Posición</th>
+            <th>Núm Op</th>
+            <th>Núm Cli</th>
+            <th>Descripción</th>
+            <th>Importe</th>
+            <th>Estado Operacion</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let operacion of operaciones; let i = index">
+        <tr>
+            <td>{{ i }}</td>
+            <td>{{operacion.noperacion}}</td>
+            <td>{{operacion.ncliente}}</td>
+            <td *ngIf="operacion.tipoOperacion == 'IngresoCreacion'">Ingreso por creación del cliente
+                {{operacion.ncliente}}
+                ({{operacion.nombreCliente}})</td>
+            <td *ngIf="operacion.tipoOperacion == 'Ingreso'">Ingreso realizado por el cliente {{operacion.ncliente}}
+                ({{operacion.nombreCliente}})</td>
+
+            <td *ngIf="operacion.tipoOperacion == 'Pago'">Pago realizado por el cliente {{operacion.ncliente}}
+                ({{operacion.nombreCliente}})</td>
+            <td [ngClass]="{'saldo-negativo': operacion.importe < 0, 'saldo-positivo': operacion.importe >= 0}">{{
+                operacion.importe }} &euro;</td>
+            <td  [ngClass]="{'operacion-rechazada': operacion.estadoOperacion == 'Rechazada', 'operacion-aceptada': operacion.estadoOperacion == 'Aceptada'}">{{
+                operacion.estadoOperacion }} </td>
+        </tr>
+    </tbody>
+</table>
