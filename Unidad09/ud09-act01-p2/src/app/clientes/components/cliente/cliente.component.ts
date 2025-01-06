@@ -14,10 +14,26 @@ export class ClienteComponent {
   operaciones: Operacion[] = [];
 
   clienteSelected: number = 0;
+  // clienteSeleccionadoRealizado: boolean = false;
+  // nombreEsVacio: boolean = false;
 
   public nuevoCliente() {
-    this.clientes.push(new Cliente(this.clientes.length + 1, ''));
+    // this.clienteSeleccionadoRealizado = true; // Marca que el usuario intentó enviar el formulario
+
+    // // Verificar si el campo nombre está vacío
+    // if (!this.clientes[this.clienteSelected]?.nombre) {
+    //   this.nombreEsVacio = true;
+    //   alert('Debe asignar un nombre al cliente antes de añadirlo.');
+    //   return;  // No se continúa si el nombre está vacío
+    // }
+
+    // Si el nombre no está vacío, se agrega el cliente
+    // this.nombreEsVacio = false; // Se resetea el error
+    
+    this.clientes.push(new Cliente(this.clientes.length + 1, 'Asignar Nombre'));
     this.clienteSelected = this.clientes.length - 1;
+    let cliente = this.clientes[this.clienteSelected];
+    this.operaciones.push(new Operacion(this.operaciones.length + 1, cliente.ncliente, cliente.nombre, cliente.saldo, 'IngresoCreacion', 'Aceptada'));
   }
 
   public hacerOperacion(tipoOperacion: number): number {
@@ -27,7 +43,7 @@ export class ClienteComponent {
     switch (tipoOperacion) {
       case 1: // Ingreso
         importe = cliente.ingresarDinero();
-        this.operaciones.push(new Operacion(this.operaciones.length + 1, cliente.ncliente, cliente.nombre, importe, 'Ingreso', 'Aceptada'));
+        this.operaciones.push(new Operacion(this.operaciones.length + 1, cliente.ncliente, cliente.nombre, importe, 'IngresoCreacion', 'Aceptada'));
         break;
   
       case 2: // Pago

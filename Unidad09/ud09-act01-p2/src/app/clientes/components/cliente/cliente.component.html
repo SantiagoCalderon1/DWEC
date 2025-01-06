@@ -11,7 +11,8 @@
             </div>
             <div class="form-row">
                 <label for="nombre">Nombre: </label>
-                <input type="text" name="nombre" [(ngModel)]="clientes[clienteSelected].nombre">
+                <input type="text" name="nombre" [(ngModel)]="clientes[clienteSelected].nombre" required>
+                
             </div>
             <div class="form-row">
                 <label for="activo">Activo: </label>

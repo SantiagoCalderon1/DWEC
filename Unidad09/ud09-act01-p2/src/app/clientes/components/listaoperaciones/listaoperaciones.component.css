@@ -45,7 +45,7 @@ th {
 
 /* Celdas */
 td {
-    width: 520px;
+    padding: 20px;
     border-bottom: 1px solid #ccc;
 }
 

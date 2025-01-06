@@ -1,7 +1,7 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { ClienteComponent } from './clientes/components/cliente/cliente.component';
 import { Cliente } from './clientes/cliente';
-import { Operacion } from './clientes/Operacion';
+import { Operacion } from './clientes/operacion';
 
 @Component({
   selector: 'app-root',
