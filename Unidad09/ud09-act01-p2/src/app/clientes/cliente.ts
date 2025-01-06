@@ -11,12 +11,11 @@ export class Cliente {
     }
 
     private generarSueldo(): number {
-
-        return Math.floor(Math.random() * 50001);
+        return parseFloat((Math.random() * 50001).toFixed(2));
     }
 
     private generarImporteOperacion(): number {
-        return Math.floor(Math.random() * 100001) - 50000;
+        return parseFloat(((Math.random() * 100001) - 50000).toFixed(2));
     }
 
     public ingresarDinero(): number {
@@ -50,9 +49,12 @@ export class Cliente {
         return importe;
     }
 
+    public getSaldo(): string {
+        return this.saldo.toFixed(2);
+    }
 
     public setActivo(): void {
-        if (this.saldo < (-10000)) {
+        if (this.saldo < -10000) {
             this.activo = false
         } else {
             this.activo = true

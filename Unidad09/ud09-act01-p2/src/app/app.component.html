@@ -6,7 +6,7 @@
     <hr>
     <main>
         <div class="saldo-banco">    
-            <h2>Saldo actual del banco {{ saldoBanco}} &euro;</h2>
+            <h2>Saldo actual del banco {{ getSaldo() }} &euro;</h2>
             <div  [ngClass]="{'ocultar' : quiebra == true, 'mostrar' : quiebra == false }" class="btns-saldoBanco">
                 <button (click)="generarOperaciones(1)">Generar una operación</button>
                 <button (click)="generarOperaciones(5)">Generar 5 operaciones</button>

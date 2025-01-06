@@ -24,7 +24,7 @@
             <td *ngIf="operacion.tipoOperacion == 'Pago'">Pago realizado por el cliente {{operacion.ncliente}}
                 ({{operacion.nombreCliente}})</td>
             <td [ngClass]="{'saldo-negativo': operacion.importe < 0, 'saldo-positivo': operacion.importe >= 0}">{{
-                operacion.importe }} &euro;</td>
+                operacion.getImporte() }} &euro;</td>
             <td  [ngClass]="{'operacion-rechazada': operacion.estadoOperacion == 'Rechazada', 'operacion-aceptada': operacion.estadoOperacion == 'Aceptada'}">{{
                 operacion.estadoOperacion }} </td>
         </tr>

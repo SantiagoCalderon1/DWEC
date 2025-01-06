@@ -67,4 +67,7 @@ export class AppComponent {
 
   saldoBanco: number = 0;
   quiebra: boolean = false;
+  getSaldo() : string{
+    return this.saldoBanco.toFixed(2);
+  }
 }

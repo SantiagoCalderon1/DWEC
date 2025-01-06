@@ -10,7 +10,7 @@
         <input type="text" name="nombre" [(ngModel)]="clientes[clienteSelected].nombre">
         <br>
         <label for="activo">Activo: </label>
-        <input type="text" name="activo" [(ngModel)]="clientes[clienteSelected].activo" disabled>
+        <input type="text" name="activo" [value]="clientes[clienteSelected]?.activo ? 'ACTIVO' : 'INACTIVO'" disabled>
         <br>
         <label for="saldo">Saldo: </label>
         <input type="text" name="saldo" [(ngModel)]="clientes[clienteSelected].saldo" disabled>

@@ -14,9 +14,10 @@
             <td>{{ i }}</td>
             <td>{{cliente.ncliente}}</td>
             <td>{{cliente.nombre}}</td>
-            <td>ACTIVO</td>
+            <td *ngIf="cliente.activo == true ">ACTIVO</td>
+            <td *ngIf="cliente.activo == false ">INACTIVO</td>
             <td [ngClass]="{'saldo-negativo': cliente.saldo < 0, 'saldo-positivo': cliente.saldo >= 0}">
-                {{ cliente.saldo }}
+                {{ cliente.getSaldo() }}
             </td>
         </tr>
     </tbody>
