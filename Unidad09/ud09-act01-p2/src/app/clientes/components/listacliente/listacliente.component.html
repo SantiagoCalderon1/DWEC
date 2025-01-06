@@ -1,6 +1,6 @@
-<h2>Listado de Clientes</h2>
-<table border="1">
-    <thead>
+<div id="container-listacliente" >
+    <h2>Lista de Clientes</h2>
+    <table id="table-listacliente">
         <tr>
             <th>Posición</th>
             <th>Número</th>
@@ -8,17 +8,16 @@
             <th>Estado</th>
             <th>Saldo</th>
         </tr>
-    </thead>
-    <tbody *ngFor="let cliente of clientes; let i = index">
-        <tr [ngClass]="{'cliente-activo': cliente.activo, 'cliente-inactivo': !cliente.activo}">
+        <tr *ngFor="let cliente of clientes; let i = index"
+            [ngClass]="{'cliente-activo': cliente.activo, 'cliente-inactivo': !cliente.activo}">
             <td>{{ i }}</td>
             <td>{{cliente.ncliente}}</td>
-            <td>{{cliente.nombre}}</td>
+            <td> {{cliente.nombre}}</td>
             <td *ngIf="cliente.activo == true ">ACTIVO</td>
             <td *ngIf="cliente.activo == false ">INACTIVO</td>
             <td [ngClass]="{'saldo-negativo': cliente.saldo < 0, 'saldo-positivo': cliente.saldo >= 0}">
                 {{ cliente.getSaldo() }}
             </td>
         </tr>
-    </tbody>
-</table>
+    </table>
+</div>

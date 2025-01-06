@@ -3,24 +3,22 @@
         <h1>{{title}}</h1>
         <app-reloj></app-reloj>
     </header>
-    <hr>
     <main>
-        <div class="saldo-banco">    
+        <div class="saldo-banco">
             <h2>Saldo actual del banco {{ getSaldo() }} &euro;</h2>
-            <div  [ngClass]="{'ocultar' : quiebra == true, 'mostrar' : quiebra == false }" class="btns-saldoBanco">
+            <div [ngClass]="{'ocultar' : quiebra == true, 'mostrar' : quiebra == false }" id="btns-saldoBanco">
                 <button (click)="generarOperaciones(1)">Generar una operación</button>
                 <button (click)="generarOperaciones(5)">Generar 5 operaciones</button>
                 <button (click)="generarOperaciones(100)">Generar 100 operaciones</button>
             </div>
-            <div [ngClass]="{'ocultar' : quiebra == false, 'mostrar' : quiebra == true }"  class="notificacion-quiebra">
+            <div [ngClass]="{'ocultar' : quiebra == false, 'mostrar' : quiebra == true }" class="notificacion-quiebra">
                 <h2> EL BANCO SE ENCUENTRA EN QUIEBRA</h2>
             </div>
         </div>
         <div class="componente-cliente">
             <app-cliente></app-cliente>
         </div>
-        <hr>
-        <div class="componete-listacliente">
+        <div class="componente-listacliente">
             <app-listacliente [clientes]="clientes"></app-listacliente>
         </div>
         <div class="componente-listaoperaciones">
@@ -28,5 +26,5 @@
         </div>
     </main>
     <footer></footer>
-    
+
 </div>

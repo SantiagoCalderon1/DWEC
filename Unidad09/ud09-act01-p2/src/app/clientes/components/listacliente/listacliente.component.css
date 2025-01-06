@@ -1,14 +1,58 @@
-.cliente-activo{
-    color: black;
-    background-color: #8beb93;
-}
-/* color salmon #f2a3a1 */
-.cliente-inactivo{
-    color: white;
-    background-color: black;
+/* Contenedor principal */
+#container-listacliente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 20px 0;
+
 }
 
-.saldo-negativo{
-    color: white;
+#container-listacliente::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tabla */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+
+}
+
+/* Cabecera fija */
+th {
+    background-color: #272727;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 16px;
+}
+
+/* Celdas */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Filas */
+tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo para las filas según el estado */
+.cliente-activo {
+    background-color: #8beb93;
+}
+
+.cliente-inactivo {
+    background-color: #333;
+    color: #fff;
+}
+
+.saldo-negativo {
     background-color: #f2a3a1;
+    color: #fff;
 }

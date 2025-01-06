@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { ClienteComponent } from './clientes/components/cliente/cliente.component';
 import { Cliente } from './clientes/cliente';
 import { Operacion } from './clientes/Operacion';
@@ -11,8 +11,13 @@ import { Operacion } from './clientes/Operacion';
 })
 
 export class AppComponent {
-  @ViewChild(ClienteComponent) clienteComponent!: ClienteComponent;
+  title = 'GESTIÓN DEL BANCO';
 
+  saldoBanco: number = 0;
+  quiebra: boolean = false;
+
+  @ViewChild(ClienteComponent) clienteComponent!: ClienteComponent;
+  
   clientes: Cliente[] = [];
   operaciones: Operacion[] = [];
 
@@ -62,11 +67,6 @@ export class AppComponent {
     }
   }
   
-
-  title = 'GESTIÓN DEL BANCO';
-
-  saldoBanco: number = 0;
-  quiebra: boolean = false;
   getSaldo() : string{
     return this.saldoBanco.toFixed(2);
   }

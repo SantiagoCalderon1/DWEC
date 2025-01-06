@@ -15,7 +15,7 @@ export class ClienteComponent {
 
   clienteSelected: number = 0;
 
-  public nuevoEmpleado() {
+  public nuevoCliente() {
     this.clientes.push(new Cliente(this.clientes.length + 1, ''));
     this.clienteSelected = this.clientes.length - 1;
   }
