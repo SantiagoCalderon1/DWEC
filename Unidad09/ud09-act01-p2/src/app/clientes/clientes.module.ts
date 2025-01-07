@@ -8,18 +8,14 @@ import { ListaoperacionesComponent } from './components/listaoperaciones/listaop
 
 @NgModule({
     declarations: [
-        ClienteComponent, // Agrega el componente aquí
-        ListaclienteComponent,
-        ListaoperacionesComponent
+
     ],
     imports: [
         CommonModule,
         FormsModule
     ],
     exports: [
-        ClienteComponent, // Exporta el componente si debe usarse en otros módulos
-        ListaclienteComponent,
-        ListaoperacionesComponent
+
     ]
 })
 export class ClientesModule { }
