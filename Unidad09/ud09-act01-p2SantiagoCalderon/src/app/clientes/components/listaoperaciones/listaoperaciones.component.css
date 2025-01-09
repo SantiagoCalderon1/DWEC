@@ -1,0 +1,55 @@
+.saldo-negativo{
+    color: white;
+    background-color: #f2a3a1;
+}
+
+.operacion-aceptada{
+    color: black;
+    background-color: #8beb93;
+}
+
+.operacion-rechazada{
+    color: white;
+    background-color: red;
+}
+
+
+/* Contenedor principal */
+#container-listaoperaciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 20px 0;
+
+}
+
+/* Tabla */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+
+}
+
+/* Cabecera fija */
+th {
+    background-color: #272727;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 16px;
+}
+
+/* Celdas */
+td {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Filas */
+tr:hover {
+    background-color: #f0f0f0;
+}
