@@ -1,0 +1,9 @@
+<h3>{{ titulo }}</h3> 
+<label>Nombre: </label>
+<input type="text" [(ngModel)]="empleadoact.nombre" [readonly]="tipo == 2"><br>
+<label>Edad: </label>
+<input type="number" [(ngModel)]="empleadoact.edad" [readonly]="tipo == 2"><br>
+<label>Contratado: </label>
+<input type="number" [(ngModel)]="empleadoact.contratado" min="0" max="1" [readonly]="tipo == 2"><br><br>
+<button (click)="guardaEmpleado()">{{ txtBtn }}</button>
+<button [routerLink]="['/empleados']" class="ml-2">Cancelar</button>
