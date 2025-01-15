@@ -1,0 +1,38 @@
+<h2>Listado de Facturas</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Posición</th>
+            <th>Número</th>
+            <th>Fecha</th>
+            <th>IVA</th>
+            <th>Importe</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let factura of facturas; let i = index">
+            <td>{{ i }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{
+                factura.numero }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{
+                factura.fecha }}</td>
+            <div *ngIf="factura.iva then tConIva else tSinIva"></div>
+            <td [style.color]="factura.cantidad > 0 ? 'blue' : 'red'">{{
+                factura.cantidad }}</td>
+            <td>
+                <button *ngIf="factura.iva" (click)="sinIva(i)"
+                    [ngStyle]="{'background-color':colorC, 'color':'white'}">Sin IVA</button>
+                <button *ngIf="!factura.iva" (click)="conIva(i)" [ngStyle]="{'background-color':colorD}">Con
+                    IVA</button>
+                <button *ngIf="facturas.length > 1" (click)="borrar(i)" class="ml-2">Borrar factura</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<ng-template #tConIva>
+    <td>Con IVA</td>
+</ng-template>
+<ng-template #tSinIva>
+    <td>Sin IVA</td>
+</ng-template>

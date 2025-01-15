@@ -1,0 +1,49 @@
+<h2>Listado de Empleados</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Posición</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Contratado</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let empleado of empleados; let i = index">
+            <td [class.letraGrande]="i == 0">{{ i }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ empleado.nombre}}</td>
+            <td [style.color]="empleado.edad > 25 ? 'blue' : 'red'">{{ empleado.edad}}</td>
+            <div *ngIf="empleado.contratado then cont else desp"></div>
+            <td>
+                <div *ngIf="empleado.contratado then cont else desp"></div>
+            <td>
+                <button *ngIf="empleado.contratado" (click)="despedir(i)"
+                    [ngStyle]="{'background-color':colorC, 'color':'white'}">Despedir</button>
+                <button *ngIf="!empleado.contratado" (click)="contratar(i)"
+                    [ngStyle]="{'background-color':colorD}">Contratar</button>
+                <button *ngIf="empleados.length > 1" (click)="borrar(i)" class="ml2">Borrar empleado</button> <!-- <button *ngIf="empleado.contratado" (click)="despedir(i)"
+                    [ngStyle]="{'background-color':colorC, 'color':'white'}">Despedir</button>
+                <button *ngIf="!empleado.contratado" (click)="contratar(i)"
+                    [ngStyle]="{'background-color':colorD}">Contratar</button> -->
+                <!-- <div [ngSwitch]="empleado.contratado">
+                    <div *ngSwitchCase="true">
+                        <button (click)="despedir(i)" [ngStyle]="{'background-color':colorC, 'color':'white'}">Despedir</button>
+                    </div>
+                    <div *ngSwitchDefault>
+                        <button (click)="contratar(i)" [ngStyle]="{'background-color':colorD}">Contratar</button>
+                    </div>
+                </div> -->
+        </tr>
+    </tbody>
+</table>
+<ng-template #cont>
+    <td>Contratado</td>
+</ng-template>
+<ng-template #desp>
+    <td>Despedido</td>
+</ng-template>
+
+<!-- <ng-container *ngTemplateOutlet="miPlantilla; context:ctx"></ng-container>
+<ng-template #miPlantilla let-numempleados = "estimate"><div>Numero de
+empleados {{ numempleados }}</div></ng-template> -->

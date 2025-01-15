@@ -1,0 +1,15 @@
+<h3>Gestión de la nómina-{{ seleccionado }}</h3>
+<label>Número: </label>
+<input type="number" [(ngModel)]="nominas[seleccionado].numero"><br>
+<label>Fecha: </label>
+<input type="string" [(ngModel)]="nominas[seleccionado].fecha"><br>
+<label>Importe Bruto: </label>
+<input type="number" [(ngModel)]="nominas[seleccionado].bruto"><br>
+<label>Retención: </label>
+<input type="number" [(ngModel)]="nominas[seleccionado].retencion"><br><br>
+<label>Cambiar a la nómina (pos): </label>
+<input type="number" [(ngModel)]="seleccionado" min="0" max="{{
+nominas.length-1 }}"><br>
+<button (click)="nuevaNomina()">Nueva Nómina</button>
+<hr>
+<app-nominas-lista [nominas]="nominas" (nominasActualizadas)="actualizarNomina($event)"></app-nominas-lista>

@@ -1,0 +1,29 @@
+<h2>Listado de Nóminas</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Posición</th>
+            <th>Número</th>
+            <th>Fecha</th>
+            <th>Bruto</th>
+            <th>Retención</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nomina of nominas; let i = index">
+            <td>{{ i }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{
+                nomina.numero }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{
+                nomina.fecha }}</td>
+            <td [style.color]="nomina.bruto > 0 ? 'blue' : 'red'">{{
+                nomina.bruto }}</td>
+            <td [style.color]="nomina.retencion > 0 ? 'blue' : 'red'">{{
+                nomina.retencion }}</td>
+            <td>
+                <button *ngIf="nominas.length > 1" (click)="borrar(i)" class="ml-2">Borrar nómina</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
