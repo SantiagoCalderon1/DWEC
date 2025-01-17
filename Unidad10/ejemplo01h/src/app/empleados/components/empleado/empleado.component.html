@@ -12,13 +12,10 @@
     required
     #descModel="ngModel"
     [ngClass]="validClasses(descModel, 'is-valid', 'is-invalid')"
-  />
-
-  <br />
+  /><br />
   <div *ngIf="descModel.touched && descModel.invalid" class="errores">
-    Nombre requerido (entre 5 y 60 caracteres)
+    Nombre requerido (entre 5 y 60 caracteres)<br />
   </div>
-  <br />
   <label>Edad: </label>
   <input
     type="number"
@@ -27,7 +24,6 @@
     [readonly]="tipo == 2"
     (ngModelChange)="cambiado()"
   /><br />
-
   <label>Contratado: </label>
   <input
     type="checkbox"
@@ -37,25 +33,11 @@
     max="1"
     [disabled]="tipo == 2"
     (ngModelChange)="cambiado()"
-  />
-  <br /><br />
-  <div>Dirty: {{ descModel.dirty }}</div>
-  <div>Valid: {{ descModel.valid }}</div>
-  <div>Value: {{ descModel.value }}</div>
-  <div>Errors: {{ descModel.errors | json }}</div>
-  <br /><br />
-  <!-- <button name="guardar" (click)="guardaEmpleado()">{{ txtBtn }}</button> -->
-  <input
-    type="submit"
-    name="guardar"
-    value="{{ txtBtn }}"
-    [disabled]="empleadoForm.invalid"
-  />
-  <button name="cancelar" [routerLink]="['/empleados']" class="ml-2">
+  /><br /><br />
+  <input type="submit" name="guardar" value="{{ txtBtn }}" />
+  <!-- <input type="submit" name="guardar" value="{{ txtBtn }}"
+[disabled]="empleadoForm.invalid"> -->
+  <button name="cancelar" [routerLink]="['/empleados']" class="ml2">
     Cancelar
   </button>
 </form>
-<div>Form Touched: {{ empleadoForm.touched }}</div>
-<div>Form Valid: {{ empleadoForm.valid }}</div>
-<div>Form Value: {{ empleadoForm.value | json }}</div>
-<div>Nombre: {{ empleadoForm.control.get("nombre")!.value | json }}</div>
