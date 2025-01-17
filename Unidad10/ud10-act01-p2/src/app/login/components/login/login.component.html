@@ -1,10 +1,13 @@
-<h3>Inicia Sesión</h3> 
-<label>Usuario: </label>
-<input type="text" [(ngModel)]="username"><br>
-<label>Contraseña: </label>
-<input type="password" [(ngModel)]="password" ><br>
-
-<button (click)="verifyUser()">Aceptar</button>  
+<div class="container-login">
+  <div>
+    <h3>Inicia Sesión</h3>
+    <label>Usuario: </label>
+    <input type="text" [(ngModel)]="username" /><br />
+    <label>Contraseña: </label>
+    <input type="password" [(ngModel)]="password" /><br />
+    <button (click)="verifyUser()">Aceptar</button>
+  </div>
+</div>
 
 <!-- Creamos el formulario de inicio de sesión, que enlaza las variables username y password del
  componente para luego cuando se de click en aceptar, se haga la verificación 

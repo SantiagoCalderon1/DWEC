@@ -1,0 +1,13 @@
+.is-valid {
+  background-color: green;
+  color: white;
+}
+.is-invalid {
+  background-color: red;
+  color: white;
+}
+
+.errores {
+  color: red;
+  font-size: small;
+}

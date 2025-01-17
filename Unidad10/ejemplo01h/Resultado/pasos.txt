@@ -1,0 +1,34 @@
+
+T6.- Implementamos login.component.html con un formulario como el de empleados por ejemplo para pedir usuario y contraseña, y un botón de aceptar
+
+T7.- Implementamos una función compruebaUsuario en el servicio que recibe el usuario y la contraseña y devuelve true si son correctos
+
+T8.- Implementamos la clase del componente login.component.ts con una función compruebaUsuario que llamará a compruebaUsuario del servicio y si devuelve true enruta a /bienvenido
+
+y sino muestra un alert y vacía los inputs
+
+T9.- Añadir la nueva ruta "login" al array de rutas
+
+T10.- Probamos que funciona el login
+
+T11.- Creamos un nuevo guard "login/login" de tipo CanActivate
+
+T12.- Modificamos el servicio para que exista un método "estaIdentificado" que devolverá en todo momento si lo está
+
+T13.- Implementamos la función loginGuard creada en login.guard.ts para que el guard redireccione a /login si no está identificado o devuelva true si si lo está
+
+T14.- Modificamos todas las rutas con el nuevo Guard (excepto la de login que no lo necesita)
+
+T15.- Creamos un nuevo componente "login/components/logout"
+
+T16.- Añadimos la ruta al nuevo componente
+
+T17.- Añadimos nueva opción "Salir" en el menú principal
+
+T18.- Implementamos la vista logout.component.html
+
+T19.- Añadimos un método "salirAplicacion" en el servicio (solo tiene que ponet a false this.identificado
+
+T20.- Implementamos la clase de logout.component.ts que deberá llamar al método del servicio y permitir volver a entrar al pulsar el botón de volver
+
+T21.- En la pantalla de login y logout no debe salir el menú de opciones
