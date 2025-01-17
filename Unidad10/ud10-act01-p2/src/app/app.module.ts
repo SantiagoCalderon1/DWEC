@@ -7,6 +7,7 @@ import { EmpleadosModule } from './empleados/empleados.module';
 import { FacturasModule } from './facturas/facturas.module';
 import { NominasModule } from './nominas/nominas.module';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
+//Importamos el modulo login
 import { LoginModule } from './login/login.module';
 
 @NgModule({
@@ -21,7 +22,7 @@ import { LoginModule } from './login/login.module';
     EmpleadosModule,
     FacturasModule,
     NominasModule,
-    LoginModule,
+    LoginModule, // Añadimos el modulo aquí
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from './components/logout/logout.component';
+// IMportamos el RouterModule
 import { RouterModule } from '@angular/router';
 
 
@@ -15,7 +16,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule // Añadimos el router module.
   ]
 })
 export class LoginModule { }

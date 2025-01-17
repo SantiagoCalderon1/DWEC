@@ -14,13 +14,13 @@ import { LogoutComponent } from './login/components/logout/logout.component';
 import { abandonarPaginaGuard } from './empleados/abandonar-pagina.guard';
 
 const routes: Routes = [ 
+  // Añadimos las nuevas rutas y el canActivate a las demas rutas
   { path: 'logout', component: LogoutComponent },
   { path: 'login', component: LoginComponent}, 
+
   { path: 'bienvenido', component: BienvenidoComponent, canActivate: [loginGuard] }, 
   { path: 'empleados', component: ListaComponent, canActivate: [loginGuard] }, 
-
   { path: 'empleados/:tipo/:id', component: EmpleadoComponent, canActivate: [empleadoGuard, loginGuard], canDeactivate: [abandonarPaginaGuard], resolve: { empleadoact: empleadoGuard } }, 
-
   { path: 'facturas', component: ListaFacturas, canActivate: [loginGuard] }, 
   { path: 'facturas/:tipo/:id', component: FacturaComponent, canActivate: [loginGuard] }, 
   { path: 'nominas', component: ListaNominas, canActivate: [loginGuard] }, 

@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  // Cambiamos el título de la app
   public title: string = 'ud10-act01-p2';
 }
