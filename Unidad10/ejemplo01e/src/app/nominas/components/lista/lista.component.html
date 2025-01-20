@@ -6,6 +6,7 @@
             <th>Fecha</th>
             <th>Bruto</th>
             <th>Retención</th>
+            <th>Neto</th>
             <th>Acción</th>
         </tr>
     </thead>
@@ -19,6 +20,7 @@
                 nomina.bruto }}</td>
             <td [style.color]="nomina.retencion > 0 ? 'blue' : 'red'">{{
                 nomina.retencion }}</td>
+            <td>{{ nomina.bruto | sueldoNeto:nomina.retencion }}</td>
             <td>
                 <button (click)="modificar(nomina.numero)">Modificar</button>
                 <button *ngIf="nominas.length > 1" (click)="borrar(nomina.numero)" class="ml-2">Borrar nómina</button>

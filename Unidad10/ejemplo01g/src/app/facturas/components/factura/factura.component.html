@@ -1,0 +1,11 @@
+<h3>{{ titulo }}</h3> 
+<!-- <label>Número: </label>
+<input type="text" [(ngModel)]="facturaact.numero" [readonly]="tipo == 2"><br> -->
+<label>Fecha: </label>
+<input type="text" [(ngModel)]="facturaact.fecha" [readonly]="tipo == 2"><br>
+<label>Con/Sin IVA: </label>
+<input type="number" [(ngModel)]="facturaact.iva" min="0" max="1" [readonly]="tipo == 2"><br>
+<label>Importe: </label>
+<input type="number" [(ngModel)]="facturaact.cantidad" [readonly]="tipo == 2"><br><br>
+<button (click)="guardaFactura()">{{ txtBtn }}</button>
+<button [routerLink]="['/facturas']" class="ml-2">Cancelar</button>

@@ -1,4 +1,6 @@
 <h2>Listado de Empleados</h2>
+<label>Filtrar por: </label>
+<input type="text" [(ngModel)]="filterSearch"><br><br>
 <table>
     <thead>
         <tr>
@@ -10,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let empleado of empleados; let i = index">
+        <tr *ngFor="let empleado of empleados | filtroEmpleados:filterSearch; let i = index">
             <td>{{ empleado.id }}</td>
             <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{
                 empleado.nombre }}</td>

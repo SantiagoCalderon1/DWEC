@@ -1,0 +1,32 @@
+nav>ul {
+    list-style-type: none;
+}
+
+nav>ul>li {
+    display: inline-block;
+    width: 20%;
+    font-size: 1.5rem;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+}
+
+#contenedor {
+    display: flex;
+    /* flex-wrap: wrap;
+    justify-content:space-around */
+    justify-content: center;
+    align-items: center;
+    /* width: 70%; */
+}
+
+.componentes {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    min-height: 40vh;
+}

@@ -1,0 +1,12 @@
+<h3>{{ titulo }}</h3> 
+<!-- <label>Número: </label>
+<input type="text" [(ngModel)]="nominaact.numero" [readonly]="tipo == 2"><br> -->
+<label>Fecha: </label> 
+<input type="text" [(ngModel)]="nominaact.fecha" [readonly]="tipo == 2"><br>
+<label>Importe Bruto: </label>
+<input type="number" [(ngModel)]="nominaact.bruto" [readonly]="tipo == 2"><br>
+<label>Retención: </label>
+<input type="number" [(ngModel)]="nominaact.retencion" [readonly]="tipo == 2"><br><br>
+
+<button (click)="guardaNomina()">{{ txtBtn }}</button>
+<button [routerLink]="['/nominas']" class="ml-2">Cancelar</button>

@@ -1,5 +1,5 @@
-<h2>Listado de Empleados</h2> 
-<label>Filtrar por: </label> 
+<h2>Listado de Empleados</h2>
+<label>Filtrar por: </label>
 <input type="text" [(ngModel)]="filterSearch">
 <button [routerLink]="['/empleados', 0, 0]" class="ml-2">Nuevo Empleado</button><br><br>
 <table>
@@ -12,14 +12,14 @@
             <th>Acción</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="empleados">
         <tr *ngFor="let empleado of empleados | filtroEmpleados:filterSearch; let i = index">
             <td>{{ empleado.id }}</td>
             <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{empleado.nombre }}</td>
             <td [style.color]="empleado.edad > 25 ? 'blue' : 'red'">{{empleado.edad }}</td>
             <div *ngIf="empleado.contratado then cont else desp"></div>
             <td>
-                <button [routerLink]="['/empleados', 1, empleado.id]">Modificar</button> 
+                <button [routerLink]="['/empleados', 1, empleado.id]">Modificar</button>
                 <button [routerLink]="['/empleados', 2, empleado.id]" class="ml.2">Borrar</button>
             </td>
         </tr>

@@ -1,0 +1,13 @@
+<h1>Aplicación {{ title }}</h1>
+<nav>
+    <ul>
+        <li><a [routerLink]="['/bienvenido']" [routerLinkActive]="['active']">Inicio</a></li>
+        <li><a [routerLink]="['/empleados']" [routerLinkActive]="['active']">Empleados</a></li>
+        <li><a [routerLink]="['/facturas']" [routerLinkActive]="['active']">Facturas</a></li>
+        <li><a [routerLink]="['/nominas']" [routerLinkActive]="['active']">Nóminas</a></li>
+    </ul>
+</nav>
+<hr>
+<div id="contenedor" class="componentes">
+    <router-outlet></router-outlet>
+</div>

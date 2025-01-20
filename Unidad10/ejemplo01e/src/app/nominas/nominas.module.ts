@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 
 import { NominaComponent } from './components/nomina/nomina.component';
 import { ListaComponent } from './components/lista/lista.component';
+import { SueldoNetoPipe } from './pipes/sueldo-neto.pipe';
 
 
 
 @NgModule({
   declarations: [
     NominaComponent,
-    ListaComponent
+    ListaComponent,
+    SueldoNetoPipe
   ],
   exports: [
     NominaComponent,
