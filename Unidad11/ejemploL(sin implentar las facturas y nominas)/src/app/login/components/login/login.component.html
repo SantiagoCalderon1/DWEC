@@ -1,0 +1,17 @@
+<div class="contenedor-login">
+  <div>
+    <h2>Debes identificarte para acceder a la aplicación</h2>
+    <div class="centrado">
+      <form [formGroup]="loginForm" (ngSubmit)="compruebaUsuario()" novalidate>
+        <label>Usuario: </label>
+        <input type="email" formControlName="usuario" />
+        <br /><br />
+        <label>Contraseña: </label>
+        <input type="password" formControlName="contrasenya" /><br />
+        <br /><br />
+        <!-- <button (click)="compruebaUsuario()">Aceptar</button> -->
+        <input type="submit" name="aceptar" value="Aceptar" />
+      </form>
+    </div>
+  </div>
+</div>

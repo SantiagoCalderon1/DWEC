@@ -1,0 +1,15 @@
+<h3>{{ titulo }}</h3>
+<form #nominaForm="ngForm" (ngSubmit)="guardaNomina()" novalidate>
+    <label>Fecha: </label>
+    <input type="date" name="fecha" [(ngModel)]="nominaact.fecha" [readonly]="tipo == 2"
+        (ngModelChange)="cambiado()"><br>
+    <label>Importe Bruto: </label>
+    <input type="number" name="bruto" [(ngModel)]="nominaact.bruto" [disabled]="tipo == 2"
+        (ngModelChange)="cambiado()"><br>
+    <label>Retención: </label>
+    <input type="number" name="retencion" [(ngModel)]="nominaact.retencion" [disabled]="tipo == 2"
+        (ngModelChange)="cambiado()"><br><br>
+
+    <input type="submit" name="guardar" value="{{ txtBtn }}">
+    <button [routerLink]="['/nominas']" class="ml-2">Cancelar</button>
+</form>
