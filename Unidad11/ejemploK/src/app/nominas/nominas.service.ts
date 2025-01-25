@@ -1,42 +1,57 @@
 import { Injectable } from '@angular/core';
 import { Nomina } from './nomina';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NominasService {
-  constructor() { }
-  private nominas: Nomina[] = [
-    new Nomina(1, '2025-01-01', 1000, 25),
-    new Nomina(2, '2025-01-01', 2000, 52),
-    new Nomina(3, '2025-01-01', 3000, 19),
-    new Nomina(4, '2025-01-01', 4000, 22)
-  ];
-  obtengoNominas(): Nomina[] {
-    return this.nominas;
+
+  //Para hacer la misma modificación de empleados en facturas y nominas empezaré por:
+  /**
+   * 1 Ver que nos devuelve la api, he probado la extensión de POSTMAN
+   * 2 Modificaré la clase y añadiré los atributos que nos viene del objeto de la api
+   * 3 Modificaré el servicio para que haga la petición y devuelva el objeto (o que lo edite o así)
+   * 4 Modificar el componente nominas para que reciba el objeto y se pueda usar 
+   * 5 Modificar el componente lista para que mueste los atributos del objeto 
+   */
+
+  urlApi = 'http://test-api25.jtarrega.es/api/nominas';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+
+  constructor(private http: HttpClient) { }
+
+  obtengoNominasApi(): Observable<any> {
+    return this.http.get(`${this.urlApi}`);
   }
-  guardaNuevaNomina(nomina: Nomina): Observable<any> {
-    let ultimoNum: number = 0;
-    if (this.nominas.length > 0)
-      ultimoNum = this.nominas[this.nominas.length - 1].numero;
-    this.nominas.push(new Nomina(ultimoNum + 1, nomina.fecha, nomina.bruto, nomina.retencion));
-    return of(this.nominas[this.nominas.length-1]);
+
+  guardaNuevaNominaApi(nomina: Nomina): Observable<any> {
+    return this.http.post<any>(
+      `${this.urlApi}`,
+      JSON.stringify(nomina),
+      this.httpOptions
+    );
   }
-  modificaNomina(nnomina: number, nomina: Nomina): Observable<any> {
-    let indice = this.nominas.findIndex(item => item.numero == nnomina);
-    this.nominas[indice] = nomina;
-    return of(this.nominas[indice]);
+
+  obtengoNominaApi(id: number): Observable<any> {
+    return this.http.get(`${this.urlApi}/${id}`);
   }
-  borraNomina(nnomina: number): Observable<any> {
-    let indice = this.nominas.findIndex(item => item.numero == nnomina);
-    let nominaAborrar = this.nominas[indice];
-    this.nominas.splice(indice, 1);
-    return of(nominaAborrar);
+
+  modificaNominaApi(id: number, nomina: Nomina): Observable<any> {
+    return this.http.put<any>(
+      `${this.urlApi}/${id}`,
+      JSON.stringify(nomina),
+      this.httpOptions
+    );
   }
-  obtengoNomina(nnomina: number): Nomina {
-    let indice = this.nominas.findIndex(item => item.numero == nnomina);
-    let tmpNomina = new Nomina(this.nominas[indice].numero, this.nominas[indice].fecha, this.nominas[indice].bruto, this.nominas[indice].retencion);
-    return tmpNomina;
+
+  borraNominaApi(id: number): Observable<any> {
+    return this.http.delete(`${this.urlApi}/${id}`);
   }
 }

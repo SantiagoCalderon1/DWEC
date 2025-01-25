@@ -4,6 +4,7 @@
     <thead>
         <tr>
             <th>Número</th>
+            <th>Nombre</th>
             <th>Fecha</th>
             <th>Bruto</th>
             <th>Retención</th>
@@ -13,14 +14,15 @@
     </thead>
     <tbody *ngIf="nominas">
         <tr *ngFor="let nomina of nominas; let i = index">
-            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ nomina.numero }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ nomina.id }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ nomina.nombre }}</td>
             <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ nomina.fecha }}</td>
             <td [style.color]="nomina.bruto > 0 ? 'blue' : 'red'">{{ nomina.bruto }}</td>
             <td [style.color]="nomina.retencion > 0 ? 'blue' : 'red'">{{ nomina.retencion }}</td>
             <td>{{ nomina.bruto | sueldoNeto:nomina.retencion }}</td>
             <td>
-                <button [routerLink]="['/nominas', 1, nomina.numero]">Modificar</button>
-                <button [routerLink]="['/nominas', 2, nomina.numero]" class="ml-2">Borrar</button>
+                <button [routerLink]="['/nominas', 1, nomina.id]">Modificar</button>
+                <button [routerLink]="['/nominas', 2, nomina.id]" class="ml-2">Borrar</button>
             </td>
         </tr>
     </tbody>

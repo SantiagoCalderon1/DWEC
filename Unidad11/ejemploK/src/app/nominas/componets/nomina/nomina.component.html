@@ -1,5 +1,8 @@
 <h3>{{ titulo }}</h3>
 <form #nominaForm="ngForm" (ngSubmit)="guardaNomina()" novalidate>
+    <label>Nombre: </label>
+    <input type="text" name="nombre" [(ngModel)]="nominaact.nombre" [readonly]="tipo == 2"
+        (ngModelChange)="cambiado()"><br>
     <label>Fecha: </label>
     <input type="date" name="fecha" [(ngModel)]="nominaact.fecha" [readonly]="tipo == 2"
         (ngModelChange)="cambiado()"><br>

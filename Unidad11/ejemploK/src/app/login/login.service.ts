@@ -11,8 +11,8 @@ export class LoginService {
   private identificado: boolean = false;
   estaIdentificado(): boolean {
     console.log('comprobado identificado: '+this.identificado);
-    return this.identificado;
-    // return true;
+    //return this.identificado;
+    return true;
   }
   compruebaUsuario(usuario:string, contrasenya:string):boolean{
     this.identificado = usuario == this.USUARIO && contrasenya == this.CONTRASENYA;

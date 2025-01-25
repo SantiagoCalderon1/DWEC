@@ -1,8 +1,7 @@
 <h2>Listado de Empleados</h2>
 <label>Filtrar por: </label>
 <input type="text" [(ngModel)]="filterSearch" />
-<button [routerLink]="['/empleados', 0, 0]" class="ml-2">Nuevo Empleado</button
-><br /><br />
+<button [routerLink]="['/empleados', 0, 0]" class="ml-2">Nuevo Empleado</button><br /><br />
 <table>
   <thead>
     <tr>
@@ -15,12 +14,10 @@
     </tr>
   </thead>
   <tbody *ngIf="empleados">
-    <tr
-      *ngFor="
+    <tr *ngFor="
         let empleado of empleados | filtroEmpleados : filterSearch;
         let i = index
-      "
-    >
+      ">
       <td>{{ empleado.id }}</td>
       <td [ngClass]="{ fondoAzul: i % 2 == 0, fondoVerde: i % 2 != 0 }">
         {{ empleado.nombre }}
@@ -39,5 +36,9 @@
     </tr>
   </tbody>
 </table>
-<ng-template #cont><td>Contratado</td></ng-template>
-<ng-template #desp><td>Despedido</td></ng-template>
+<ng-template #cont>
+  <td>Contratado</td>
+</ng-template>
+<ng-template #desp>
+  <td>Despedido</td>
+</ng-template>

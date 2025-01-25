@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class EmpleadosService {
-  urlPhp = 'http://test-php.jtarrega.es/';
+  // urlPhp = 'http://test-php.jtarrega.es/';
 
   urlApi = 'http://test-api25.jtarrega.es/api/empleados';
 
@@ -70,34 +70,34 @@ export class EmpleadosService {
   //   return tmpEmpleado;
   // }
 
-  modificaEmpleadoPhp(nempleado: number, empleado: Empleado): Observable<any> {
-    return this.http.post<any>(`${this.urlPhp}/modificacion.php`, {
-      id: nempleado,
-      nombre: empleado.nombre,
-      edad: empleado.edad,
-      cargo: empleado.cargo,
-      contratado: empleado.contratado,
-    });
-  }
+  // modificaEmpleadoPhp(nempleado: number, empleado: Empleado): Observable<any> {
+  //   return this.http.post<any>(`${this.urlPhp}/modificacion.php`, {
+  //     id: nempleado,
+  //     nombre: empleado.nombre,
+  //     edad: empleado.edad,
+  //     cargo: empleado.cargo,
+  //     contratado: empleado.contratado,
+  //   });
+  // }
 
-  obtengoEmpleadoPhp(nempleado: number): Observable<any> {
-    return this.http.get(`${this.urlPhp}seleccionar.php?id=${nempleado}`);
-  }
+  // obtengoEmpleadoPhp(nempleado: number): Observable<any> {
+  //   return this.http.get(`${this.urlPhp}seleccionar.php?id=${nempleado}`);
+  // }
 
-  obtengoEmpleadosPhp(): Observable<any> {
-    return this.http.get(`${this.urlPhp}recuperartodos.php`);
-  }
+  // obtengoEmpleadosPhp(): Observable<any> {
+  //   return this.http.get(`${this.urlPhp}recuperartodos.php`);
+  // }
 
-  guardaNuevoEmpleadoPhp(empleado: Empleado): Observable<any> {
-    return this.http.post<any>(
-      `${this.urlPhp}/alta.php`,
-      JSON.stringify(empleado)
-    );
-  }
+  // guardaNuevoEmpleadoPhp(empleado: Empleado): Observable<any> {
+  //   return this.http.post<any>(
+  //     `${this.urlPhp}/alta.php`,
+  //     JSON.stringify(empleado)
+  //   );
+  // }
 
-  borraEmpleadoPhp(nempleado: number): Observable<any> {
-    return this.http.get(`${this.urlPhp}baja.php?id=${nempleado}`);
-  }
+  // borraEmpleadoPhp(nempleado: number): Observable<any> {
+  //   return this.http.get(`${this.urlPhp}baja.php?id=${nempleado}`);
+  // }
 
   // Nuevos metodos añadidos para acceder a una api
 

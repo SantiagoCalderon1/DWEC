@@ -4,13 +4,17 @@
     <input type="text" name="nombre" [(ngModel)]="empleadoact.nombre" [readonly]="tipo == 2"
         (ngModelChange)="cambiado()" minlength="5" maxlength="60" required #descModel="ngModel"
         [ngClass]="validClasses(descModel, 'is-valid', 'is-invalid')"><br>
-    <div *ngIf="descModel.touched && descModel.invalid" class="errores">Nombre requerido (entre 5 y 60 caracteres)<br></div>
-        <label>Edad: </label>
-        <input type="number" name="edad" [(ngModel)]="empleadoact.edad" [readonly]="tipo == 2"(ngModelChange)="cambiado()"><br><br>
-        <label>Cargo: </label>
-        <input type="text" name="cargo" [(ngModel)]="empleadoact.cargo" [readonly]="tipo == 2"(ngModelChange)="cambiado()"><br><br>
-        <label>Contratado: </label>
-        <input type="checkbox" name="contratado" [(ngModel)]="inputChecked" [disabled]="tipo == 2"(ngModelChange)="cambiado()"><br><br>
+    <div *ngIf="descModel.touched && descModel.invalid" class="errores">Nombre requerido (entre 5 y 60 caracteres)<br>
+    </div>
+    <label>Edad: </label>
+    <input type="number" name="edad" [(ngModel)]="empleadoact.edad" [readonly]="tipo == 2"
+        (ngModelChange)="cambiado()"><br><br>
+    <label>Cargo: </label>
+    <input type="text" name="cargo" [(ngModel)]="empleadoact.cargo" [readonly]="tipo == 2"
+        (ngModelChange)="cambiado()"><br><br>
+    <label>Contratado: </label>
+    <input type="checkbox" name="contratado" [(ngModel)]="inputChecked" [disabled]="tipo == 2"
+        (ngModelChange)="cambiado()"><br><br>
     <input type="submit" name="guardar" value="{{ txtBtn }}">
     <!-- <input type="submit" name="guardar" value="{{ txtBtn }}" [disabled]="empleadoForm.invalid"> -->
     <button name="cancelar" [routerLink]="['/empleados']" class="ml-2">Cancelar</button>

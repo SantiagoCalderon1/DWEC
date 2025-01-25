@@ -1,8 +1,9 @@
 export class Factura {
     constructor(
-      public numero: number,
+      public id: number,
+      public cliente: string,
       public fecha: string,
       public iva: boolean = false,
-      public cantidad:number
+      public importe:number
     ) { }  
   }

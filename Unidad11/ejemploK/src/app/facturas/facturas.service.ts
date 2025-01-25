@@ -1,41 +1,57 @@
 import { Injectable } from '@angular/core';
 import { Factura } from './factura';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacturasService {
-  private facturas: Factura[] = [
-    new Factura(1, '2024-01-01', true, 25),
-    new Factura(2, '2024-01-01', true, 52),
-    new Factura(3, '2024-01-01', true, 19),
-    new Factura(4, '2024-01-01', true, 22)
-  ];
-  obtengoFacturas(): Factura[] {
-    return this.facturas;
+
+  //Para hacer la misma modificación de empleados en facturas y nominas empezaré por:
+  /**
+   * 1 Ver que nos devuelve la api, he probado la extensión de POSTMAN
+   * 2 Modificaré la clase y añadiré los atributos que nos viene del objeto de la api
+   * 3 Modificaré el servicio para que haga la petición y devuelva el objeto (o que lo edite o así)
+   * 4 Modificar el componente factura para que reciba el objeto y se pueda usar 
+   * 5 Modificar el componente lista para que mueste los atributos del objeto 
+   */
+
+  urlApi = 'http://test-api25.jtarrega.es/api/facturas';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+
+  constructor(private http: HttpClient) { }
+
+  obtengoFacturasApi(): Observable<any> {
+    return this.http.get(`${this.urlApi}`);
   }
-  guardaNuevaFactura( factura:Factura): Observable<any>{
-      let ultimoNum: number = 0;
-      if (this.facturas.length > 0)
-        ultimoNum = this.facturas[this.facturas.length-1].numero;
-      this.facturas.push(new Factura(ultimoNum+1, factura.fecha, factura.iva, factura.cantidad));
-      return of(this.facturas[this.facturas.length-1]);
-    }
-    modificaFactura(nfactura:number, factura:Factura): Observable<any>{
-      let indice = this.facturas.findIndex(item => item.numero == nfactura);
-      this.facturas[indice]=factura;
-      return of(this.facturas[indice]);
-    }
-    borraFactura(nfactura:number): Observable<any>{
-      let indice = this.facturas.findIndex(item => item.numero == nfactura);
-      let facturaAborrar = this.facturas[indice];
-      this.facturas.splice(indice, 1);
-      return of(facturaAborrar);
-    }
-    obtengoFactura(nfactura:number):Factura{
-      let indice = this.facturas.findIndex(item => item.numero == nfactura);
-      let tmpFactura = new Factura(this.facturas[indice].numero, this.facturas[indice].fecha, this.facturas[indice].iva, this.facturas[indice].cantidad);
-      return tmpFactura;
-    }
+
+  guardaNuevoFacturaApi(factura: Factura): Observable<any> {
+    return this.http.post<any>(
+      `${this.urlApi}`,
+      JSON.stringify(factura),
+      this.httpOptions
+    );
+  }
+
+  obtengoFacturaApi(id: number): Observable<any> {
+    return this.http.get(`${this.urlApi}/${id}`);
+  }
+
+  modificaFacturaApi(id: number, factura: Factura): Observable<any> {
+    return this.http.put<any>(
+      `${this.urlApi}/${id}`,
+      JSON.stringify(factura),
+      this.httpOptions
+    );
+  }
+
+  borraFacturaApi(id: number): Observable<any> {
+    return this.http.delete(`${this.urlApi}/${id}`);
+  }
 }

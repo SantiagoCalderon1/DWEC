@@ -11,10 +11,25 @@ import { FacturasService } from '../../facturas.service';
 })
 export class ListaComponent {
   facturas: Factura[] = [];
+
   constructor(private _facturasService: FacturasService) { }
+  
   ngOnInit() {
-    this.facturas = this._facturasService.obtengoFacturas();
+    this._facturasService.obtengoFacturasApi().subscribe({
+      next: (resultado) => {
+        if (resultado.mensaje == 'OK') {
+          this.facturas = resultado.datos;
+          console.log(resultado.datos);
+        } else {
+          console.error('Error al recibir datos:', resultado.error);
+        }
+      },
+      error: (error) => {
+        console.error('Error al recibir datos:', error);
+      },
+      complete: () => {
+        console.log('Operación completada.');
+      },
+    });
   }
-  // modificar(numfra: number): void { }
-  // borrar(numfra: number): void { }
 }

@@ -12,10 +12,24 @@ import { NominasService } from '../../nominas.service';
 export class ListaComponent {
   nominas: Nomina[] = [];
     constructor(private _nominasService: NominasService) { }
+
     ngOnInit() {
-      this.nominas = this._nominasService.obtengoNominas();
+      this._nominasService.obtengoNominasApi().subscribe({
+        next: (resultado) => {
+          if (resultado.mensaje == 'OK') {
+            this.nominas = resultado.datos;
+            console.log(resultado.datos);
+          } else {
+            console.error('Error al recibir datos:', resultado.error);
+          }
+        },
+        error: (error) => {
+          console.error('Error al recibir datos:', error);
+        },
+        complete: () => {
+          console.log('Operación completada.');
+        },
+      });
     }
-    // modificar(nnomina: number): void {   }
-    // borrar(nnomina: number): void {   }
 
 }

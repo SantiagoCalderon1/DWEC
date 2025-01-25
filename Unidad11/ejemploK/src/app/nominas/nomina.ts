@@ -1,6 +1,7 @@
 export class Nomina {
     constructor(
-        public numero: number,
+        public id: number,
+        public nombre: string,
         public fecha: string,
         public bruto: number,
         public retencion: number

@@ -14,37 +14,64 @@ import { NgForm } from '@angular/forms';
 })
 export class FacturaComponent implements CanComponentDeactivate {
   @ViewChild('facturaForm', { static: true }) facturaForm: NgForm | undefined;
-  public facturaact: Factura = { numero: 0, fecha: '', iva: false, cantidad: 0 }
+
+  public facturaact: Factura = { id: 0, cliente: '', fecha: '', iva: false, importe: 0 }
   public titulo: string = 'Nueva Factura';
   public tipo: number = 0;
-  public nfra: number = 0;
+  public id: number = 0;
   public txtBtn: string = 'Guardar';
   public formularioCambiado: boolean = false;
 
-  constructor(private _aroute: ActivatedRoute, private _facturasService: FacturasService, private _route: Router) { }
+  constructor(
+    private _aroute: ActivatedRoute,
+    private _facturasService: FacturasService,
+    private _route: Router
+  ) { }
+
+
   ngOnInit() {
     this.tipo = +this._aroute.snapshot.params['tipo'];
-    this.nfra = +this._aroute.snapshot.params['id']; // Recibimos parámetro
+    this.id = +this._aroute.snapshot.params['id']; // Recibimos parámetro
     if (this.tipo == 1) {
-      this.titulo = 'Modificar Factura (' + this.nfra + ')';
-      this.facturaact = this._facturasService.obtengoFactura(this.nfra);
+      this.titulo = 'Modificar Factura (' + this.id + ')';
+      this.traeFactura(this.id);
     } else if (this.tipo == 2) {
-      this.titulo = 'Borrar Empleado (' + this.nfra + ')';
+      this.titulo = 'Borrar Empleado (' + this.id + ')';
       this.txtBtn = 'BORRAR';
-      this.facturaact = this._facturasService.obtengoFactura(this.nfra);
+      this.traeFactura(this.id);
     }
   }
+
+  private traeFactura(id: number) {
+    this._facturasService.obtengoFacturaApi(id).subscribe({
+      next: (resultado) => {
+        if (resultado.mensaje == 'OK') {
+          this.facturaact = resultado.datos;
+        } else {
+          console.error('Error al obtener la factura:', resultado.mensaje);
+        }
+      },
+      error: (error) => {
+        console.error('Error al obtener la factura:', error);
+      },
+      complete: () => {
+        console.log('Operación completada.');
+      },
+    });
+  }
+
+
   guardaFactura(): void {
     if (this.facturaForm!.valid) {
       this.formularioCambiado = false;
       if (this.tipo == 0) {
-        this._facturasService.guardaNuevaFactura(this.facturaact).subscribe({
+        this._facturasService.guardaNuevoFacturaApi(this.facturaact).subscribe({
           next: (resultado) => {
-            console.log('Valor agregado. Array actualizado:', resultado);
+            console.log('Factura Agregada: ', resultado);
             this._route.navigate(['/facturas']);
           },
           error: (error) => {
-            console.error('Error al agregar el valor:', error);
+            console.error('Error al agregar la factura.', error);
           },
           complete: () => {
             console.log('Operación completada.');
@@ -52,13 +79,13 @@ export class FacturaComponent implements CanComponentDeactivate {
         });
       }
       else if (this.tipo == 1) {
-        this._facturasService.modificaFactura(this.nfra, this.facturaact).subscribe({
+        this._facturasService.modificaFacturaApi(this.id, this.facturaact).subscribe({
           next: (resultado) => {
-            console.log('Valor modificado. Array modificado:', resultado);
+            console.log('Factura modificada: ', resultado);
             this._route.navigate(['/facturas']);
           },
           error: (error) => {
-            console.error('Error al modificar el valor:', error);
+            console.error('Error al modificar la factura:', error);
           },
           complete: () => {
             console.log('Operación completada.');
@@ -66,25 +93,26 @@ export class FacturaComponent implements CanComponentDeactivate {
         });
       }
       else if (this.tipo == 2) {
-        this._facturasService.borraFactura(this.nfra).subscribe({
+        this._facturasService.borraFacturaApi(this.id).subscribe({
           next: (resultado) => {
-            console.log('Valor eliminado. Array actualizado:', resultado);
+            console.log('Factura eliminada: ', resultado);
             this._route.navigate(['/facturas']);
           },
           error: (error) => {
-            console.error('Error al borrar el valor:', error);
+            console.error('Error al borrar la factura:', error);
           },
           complete: () => {
             console.log('Operación completada.');
           },
         });
       }
-      // this._route.navigate(['/facturas']);
     } else alert("El formulario tiene campos inválidos");
   }
+
   cambiado(): void {
     this.formularioCambiado = true;
   }
+
   canDeactivate(): boolean {
     if (this.formularioCambiado) {
       return confirm(
@@ -93,4 +121,8 @@ export class FacturaComponent implements CanComponentDeactivate {
     }
     return true;
   }
+
+
+  /// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 }
