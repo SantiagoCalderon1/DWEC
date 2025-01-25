@@ -1,0 +1,15 @@
+<h3>{{ titulo }}</h3>
+<form #commentForm="ngForm" (ngSubmit)="guardaComment()" novalidate>
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" [(ngModel)]="commentact.nombre" [readonly]="tipo == 2"
+        (ngModelChange)="cambiado()"><br>
+    <label>Email: </label>
+    <input type="email" name="email" [(ngModel)]="commentact.email" [readonly]="tipo == 2"
+        (ngModelChange)="cambiado()"><br>
+    <label>Mensaje: </label><br>
+    <textarea name="mensaje" id="mensaje" cols="30" rows="10" [(ngModel)]="commentact.mensaje" [readonly]="tipo == 2"
+        (ngModelChange)="cambiado()"></textarea><br><br>
+
+    <input type="submit" name="guardar" value="{{ txtBtn }}">
+    <button [routerLink]="['/comments']" class="ml-2">Cancelar</button>
+</form>

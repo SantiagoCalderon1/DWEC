@@ -1,0 +1,30 @@
+<h2>Listado de Facturas</h2>
+<button [routerLink]="['/facturas', 0, 0]" class="ml-2">Nueva Factura</button><br><br>
+<table>
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>IVA</th>
+            <th>Importe</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="facturas">
+        <tr *ngFor="let factura of facturas; let i = index">
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ factura.id }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ factura.cliente }}</td>
+            <td [ngClass]="{fondoAzul: i%2 == 0, fondoVerde: i%2 != 0}">{{ factura.fecha }}</td>
+            <div *ngIf="factura.iva then tConIva else tSinIva"></div>
+            <td [style.color]="factura.importe > 0 ? 'blue' : 'red'">{{ factura.importe }}</td>
+            <td>
+                <button [routerLink]="['/facturas', 1, factura.id]">Modificar</button>
+                <button [routerLink]="['/facturas', 2, factura.id]" class="ml-2">Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #tConIva><td>Con IVA</td></ng-template>
+<ng-template #tSinIva><td>Sin IVA</td></ng-template>
