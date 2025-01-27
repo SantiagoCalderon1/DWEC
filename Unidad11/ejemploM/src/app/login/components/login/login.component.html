@@ -1,0 +1,29 @@
+<div id="login" class="row d-flex justify-content-center align-itemscenter">
+  <div class="card col-10 col-md-6">
+    <h4 class="card-header">Acceso - Identifícate para acceder</h4>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="compruebaUsuario()" novalidate>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" formControlName="usuario" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña</label>
+          <input
+            type="password"
+            formControlName="contrasenya"
+            class="formcontrol"
+          />
+        </div>
+        <div>
+          <input
+            class="btn btn-primary"
+            type="submit"
+            name="aceptar"
+            value="Acceder"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
