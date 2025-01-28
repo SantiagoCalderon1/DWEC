@@ -35,6 +35,7 @@ export class ListaComponent {
           this.cargando = false;
         }, 500);
       },
+      
     });
   }
 
