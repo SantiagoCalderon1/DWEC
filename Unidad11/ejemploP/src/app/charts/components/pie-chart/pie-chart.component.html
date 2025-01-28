@@ -1,0 +1,15 @@
+<div class="container d-flex align-items-center justify-content-center contenedor-formulario">
+    <div class="col-10 col-md-8 card text-center my-3">
+        <div class="card-header titulos">GRÁFICO DE SECTORES</div>
+        <div class="card-body d-flex align-items-center justify-content-center" style="max-height: 75vh;">
+            <canvas baseChart 
+            [datasets]="pieChartData" 
+            [labels]="pieChartLabels"
+            [type]="pieChartType" 
+            [options]="pieChartOptions" 
+            [plugins]="pieChartPlugins" 
+            [legend]="pieChartLegend">
+            </canvas>
+        </div>
+    </div>
+</div>

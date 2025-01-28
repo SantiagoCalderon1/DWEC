@@ -5,21 +5,9 @@ import { ListaComponent } from './componets/lista/lista.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
-  declarations: [
-    FacturaComponent,
-    ListaComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule
-  ],
-  exports: [
-    FacturaComponent,
-    ListaComponent
-  ],
+  declarations: [FacturaComponent, ListaComponent],
+  imports: [CommonModule, FormsModule, RouterModule],
+  exports: [FacturaComponent, ListaComponent],
 })
-export class FacturasModule { }
+export class FacturasModule {}

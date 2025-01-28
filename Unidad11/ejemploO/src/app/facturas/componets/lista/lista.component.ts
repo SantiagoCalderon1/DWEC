@@ -7,17 +7,19 @@ import { FacturasService } from '../../facturas.service';
   standalone: false,
 
   templateUrl: './lista.component.html',
-  styleUrl: './lista.component.css'
+  styleUrl: './lista.component.css',
 })
 export class ListaComponent {
   facturas: any;
-  constructor(private _facturasService: FacturasService) { }
+  constructor(private _facturasService: FacturasService) {}
   ngOnInit() {
+  
+
     this._facturasService.obtengoFacturasApi().subscribe({
       next: (resultado) => {
-        if (resultado.mensaje == "OK"){
+        if (resultado.mensaje == 'OK') {
           this.facturas = resultado.datos;
-        }else{
+        } else {
           console.error('Error al recibir datos:', resultado.error);
         }
       },

@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { ChartsModule } from './charts/charts.module';
 
+
 @NgModule({
   declarations: [AppComponent, BienvenidoComponent, EncabezadoComponent],
   imports: [
@@ -29,7 +30,8 @@ import { ChartsModule } from './charts/charts.module';
     CommentsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+
   ],
   providers: [Title, provideHttpClient(withInterceptors([authInterceptor])), provideCharts(withDefaultRegisterables())],
   bootstrap: [AppComponent],

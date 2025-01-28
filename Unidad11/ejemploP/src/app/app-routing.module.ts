@@ -14,9 +14,13 @@ import { abandonarPaginaGuard } from './empleados/abandonar-pagina.guard';
 import { LoginComponent } from './login/components/login/login.component';
 import { loginGuard } from './login/login.guard';
 import { LogoutComponent } from './login/components/logout/logout.component';
+
 import { BarChartComponent } from './charts/components/bar-chart/bar-chart.component';
 import { LineChartComponent } from './charts/components/line-chart/line-chart.component';
 import { DonutChartComponent } from './charts/components/donut-chart/donut-chart.component';
+import { PieChartComponent } from './charts/components/pie-chart/pie-chart.component';
+import { RadarChartComponent } from './charts/components/radar-chart/radar-chart.component';
+import { BubbleChartComponent } from './charts/components/bubble-chart/bubble-chart.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -64,16 +68,29 @@ const routes: Routes = [
     component: BarChartComponent,
     canActivate: [loginGuard],
   },
-
   {
     path: 'grdelineas',
     component: LineChartComponent,
     canActivate: [loginGuard],
   },
-
   {
     path: 'grdedonut',
     component: DonutChartComponent,
+    canActivate: [loginGuard],
+  },
+  {
+    path: 'grsectores',
+    component: PieChartComponent,
+    canActivate: [loginGuard],
+  },
+  {
+    path: 'grderadar',
+    component: RadarChartComponent,
+    canActivate: [loginGuard],
+  },
+  {
+    path: 'grburbujas',
+    component: BubbleChartComponent,
     canActivate: [loginGuard],
   },
 
