@@ -19,7 +19,7 @@
             No hay datos para mostrar
           </h5>
           <div *ngIf="nominas.length > 0" class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
+              <table datatable [dtOptions]="dtOptions" class="table table-striped table-hover table-bordered">
               <thead>
                 <tr>
                   <th scope="col">ID</th>

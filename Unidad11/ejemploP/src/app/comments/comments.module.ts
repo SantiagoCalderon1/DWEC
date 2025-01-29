@@ -4,6 +4,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ListaComponent } from './components/lista/lista.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ListaComponent } from './components/lista/lista.component';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DataTablesModule
   ]
 })
 export class CommentsModule { }

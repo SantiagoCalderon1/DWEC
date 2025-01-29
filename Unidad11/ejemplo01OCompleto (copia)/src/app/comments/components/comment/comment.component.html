@@ -1,0 +1,35 @@
+<div class="container d-flex align-items-center justify-content-center contenedor-formulario">
+    <div class="col-10 col-md-8 card text-center my-3">
+        <div class="card-header titulos">COMENTARIOS - {{ titulo }}</div>
+        <div class="card-body">
+            <h5 class="card-title">Introduce los datos del Comentario</h5>
+            <form #commentForm="ngForm" class="mt-4 text-start" (ngSubmit)="guardaComentario()" novalidate>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control"
+                            [(ngModel)]="commentact.nombre" [readonly]="tipo == 2" (ngModelChange)="cambiado()"
+                            minlength="3" maxlength="50" required>
+                    </div>
+                    <div class="col-12 mt-2 col-md-6 mt-md-0">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" [(ngModel)]="commentact.email"
+                            [readonly]="tipo == 2" (ngModelChange)="cambiado()" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 form-floating">
+                        <textarea id="mensaje" name="mensaje" class="form-control" [(ngModel)]="commentact.mensaje"
+                            [readonly]="tipo == 2" (ngModelChange)="cambiado()" required></textarea>
+                            <label for="mensaje" class="ms-2">Comentarios</label>
+                    </div>
+                </div>
+                <div class="my-3 text-center">
+                    <button name="cancelar" class="btn btn-secondary btn-lg me-3"
+                        [routerLink]="['/comentarios']">Cancelar</button>
+                    <input type="submit" class="btn btn-dark btn-lg" value="{{ txtBtn }}">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

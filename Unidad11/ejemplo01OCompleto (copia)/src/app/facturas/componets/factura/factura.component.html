@@ -1,0 +1,41 @@
+<div class="container d-flex align-items-center justify-content-center contenedor-formulario">
+    <div class="col-10 col-md-8 card text-center my-3">
+        <div class="card-header titulos">FACTURAS - {{ titulo }}</div>
+        <div class="card-body">
+            <h5 class="card-title">Introduce los datos de la Factura</h5>
+            <form #facturaForm="ngForm" class="mt-4 text-start" (ngSubmit)="guardaFactura()" novalidate>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-8">
+                        <label for="cliente" class="form-label">Nombre</label>
+                        <input type="text" id="cliente" name="cliente" class="form-control"
+                            [(ngModel)]="facturaact.cliente" [readonly]="tipo == 2" (ngModelChange)="cambiado()"
+                            minlength="3" maxlength="50" required>
+                    </div>
+                    <div class="col-12 mt-2 col-md-4 mt-md-0">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" name="fecha" name="fecha" class="form-control" [(ngModel)]="facturaact.fecha"
+                            [readonly]="tipo == 2" (ngModelChange)="cambiado()" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-6">
+                        <label for="iva" class="form-label">IVA(%):</label>
+                        <input type="number" id="iva" name="iva" class="form-control" [(ngModel)]="facturaact.iva"
+                            [readonly]="tipo == 2" (ngModelChange)="cambiado()" required>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="importe" class="form-label">Importe:</label>
+                        <input type="number" id="importe" name="importe" class="form-control"
+                            [(ngModel)]="facturaact.importe" [readonly]="tipo == 2" (ngModelChange)="cambiado()"
+                            required>
+                    </div>
+                </div>
+                <div class="my-3 text-center">
+                    <button name="cancelar" class="btn btn-secondary btn-lg me-3"
+                        [routerLink]="['/facturas']">Cancelar</button>
+                    <input type="submit" class="btn btn-dark btn-lg" value="{{ txtBtn }}">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

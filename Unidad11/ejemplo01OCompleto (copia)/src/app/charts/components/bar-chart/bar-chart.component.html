@@ -1,0 +1,15 @@
+<div class="container d-flex align-items-center justify-content-center contenedor-formulario">
+    <div class="col-10 col-md-8 card text-center my-3">
+        <div class="card-header titulos">GRÁFICO DE BARRAS</div>
+        <div class="card-body">
+            <canvas baseChart width="500" height="270" 
+                [datasets]="barChartData" 
+                [labels]="barChartLabels"
+                [options]="barChartOptions" 
+                [plugins]="barChartPlugins" 
+                [legend]="barChartLegend"
+                [type]="barChartType">
+            </canvas>
+        </div>
+    </div>
+</div>

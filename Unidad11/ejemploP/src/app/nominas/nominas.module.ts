@@ -5,6 +5,7 @@ import { ListaComponent } from './componets/lista/lista.component';
 import { FormsModule } from '@angular/forms';
 import { SueldoNetoPipe } from './pipes/sueldo-neto.pipe';
 import { RouterModule } from '@angular/router';
+import { DataTablesModule } from 'angular-datatables';
 
 
 
@@ -17,7 +18,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DataTablesModule
+
   ],
   exports: [
     NominaComponent,

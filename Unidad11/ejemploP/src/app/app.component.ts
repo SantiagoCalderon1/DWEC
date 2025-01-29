@@ -8,7 +8,7 @@ import { LoginService } from './login/login.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  public title: string = 'ejemplo01N';
+  public title: string = 'ejemplo01P';
   constructor(private _loginService: LoginService) {}
   estaIdentificado(): boolean {
     return this._loginService.estaIdentificado();
